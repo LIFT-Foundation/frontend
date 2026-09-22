@@ -73,5 +73,63 @@
         badgeIcon: "activity"
       }
     ]
+  },
+  impactStats: {
+    badge: "Together, We Can",
+    title: "Your Support Creates Real Change",
+    subtitle: "Together, we can bring hope, improve lives, and build a brighter future for everyone in need.",
+    cta: "Get Involved",
+    stats: [
+      {
+        id: "lives",
+        value: "1250+",
+        label: "Lives Impacted",
+        icon: "sprout"
+      },
+      {
+        id: "volunteers",
+        value: "820+",
+        label: "Volunteers",
+        icon: "user"
+      },
+      {
+        id: "projects",
+        value: "350+",
+        label: "Projects Done",
+        icon: "heart-handshake"
+      }
+    ]
+  },
+  events: {
+    title: "Upcoming Events & Campaigns",
+    subtitle: "Join our upcoming events and campaigns to make a bigger impact in your community.",
+    cta: "View All Events",
+    featuredImage: "https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?q=80&w=1000&auto=format&fit=crop",
+    items: [
+      {
+        id: 1,
+        month: "JUN",
+        day: "20",
+        title: "Food Drive Campaign",
+        description: "Helping families with food supplies.",
+        time: "10:00 AM - 2:00 PM"
+      },
+      {
+        id: 2,
+        month: "JUN",
+        day: "28",
+        title: "Clean Water Initiative",
+        description: "Bringing clean water to those in need.",
+        time: "09:00 AM - 1:00 PM"
+      },
+      {
+        id: 3,
+        month: "JUL",
+        day: "05",
+        title: "Education For All",
+        description: "Supporting children's education and future.",
+        time: "09:00 AM - 1:00 PM"
+      }
+    ]
   }
 };
