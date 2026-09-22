@@ -1,4 +1,4 @@
-﻿/** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
@@ -23,7 +23,7 @@ export default {
           200: '#fce2d0',
           300: '#f9c5a7',
           400: '#f6a378',
-          500: '#f28e63',
+          500: '#f28e63', // Main button color
           600: '#ea713f',
           700: '#c55225',
         },
@@ -34,6 +34,20 @@ export default {
           tealBadge: '#0d9488',
         }
       },
+      fontFamily: {
+        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+      },
+      borderRadius: {
+        '2xl': '1rem',
+        '3xl': '1.5rem',
+        '4xl': '2rem',
+        '5xl': '2.5rem',
+      },
+      boxShadow: {
+        'card': '0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02)',
+        'float': '0 20px 40px -15px rgba(0, 0, 0, 0.15)',
+        'button': '0 4px 14px rgba(242, 142, 99, 0.35)',
+      }
     },
   },
   plugins: [],
