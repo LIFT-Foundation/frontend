@@ -1,5 +1,5 @@
-﻿import React from 'react';
-import { HeartHandshake } from 'lucide-react';
+﻿import React, { useState } from 'react';
+import { ChevronDown, HeartHandshake } from 'lucide-react';
 import { siteData } from '../../data/content';
 
 export default function Navbar({ onDonateClick }) {
@@ -19,6 +19,17 @@ export default function Navbar({ onDonateClick }) {
             </span>
           </div>
         </a>
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-teal-100/90">
+          {siteData.navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="hover:text-white transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-peach-400 hover:after:w-full after:transition-all after:duration-200"
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
       </nav>
     </header>
   );
