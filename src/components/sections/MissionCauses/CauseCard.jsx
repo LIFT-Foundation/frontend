@@ -1,18 +1,22 @@
 import React from 'react';
-import { BookOpen, Droplets, Home, Activity } from 'lucide-react';
+import { BookOpen, Utensils, Users, Heart, Home, Church } from 'lucide-react';
 
 export default function CauseCard({ cause }) {
   // Map icon name to Lucide component
   const renderIcon = (iconName) => {
     switch (iconName) {
-      case 'book':
+      case 'book-open':
         return <BookOpen className="w-5 h-5 text-white stroke-[2.2]" />;
-      case 'droplet':
-        return <Droplets className="w-5 h-5 text-white stroke-[2.2]" />;
+      case 'utensils':
+        return <Utensils className="w-5 h-5 text-white stroke-[2.2]" />;
+      case 'users':
+        return <Users className="w-5 h-5 text-white stroke-[2.2]" />;
+      case 'heart':
+        return <Heart className="w-5 h-5 text-white stroke-[2.2]" />;
       case 'home':
         return <Home className="w-5 h-5 text-white stroke-[2.2]" />;
-      case 'activity':
-        return <Activity className="w-5 h-5 text-white stroke-[2.2]" />;
+      case 'church':
+        return <Church className="w-5 h-5 text-white stroke-[2.2]" />;
       default:
         return <BookOpen className="w-5 h-5 text-white" />;
     }

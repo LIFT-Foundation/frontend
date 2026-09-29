@@ -1,170 +1,195 @@
 export const siteData = {
   brand: {
-    name: "Charitylp",
-    subtitle: "LIFT Foundation",
-    tagline: "Bringing hope, changing lives, and building a better tomorrow.",
-    copyright: "© 2025 Charitylp / LIFT Foundation. All rights reserved."
+    name: "LIFT Foundation",
+    subtitle: "Love In Fellowship & Truth",
+    tagline: "Sharing God's Love. Serving People. Transforming Lives.",
+    copyright: "© 2025 LIFT Foundation – Love In Fellowship & Truth Mission. All rights reserved."
   },
-  
+
   navLinks: [
     { name: "Home", href: "#" },
     { name: "About", href: "#about" },
-    { name: "Causes", href: "#causes" },
+    { name: "Programs", href: "#causes" },
     { name: "Events", href: "#events" },
-    { name: "Pages", href: "#pages", hasDropdown: true }
+    { name: "Get Involved", href: "#volunteer" }
   ],
 
   hero: {
-    badge: "TOGETHER, WE CAN",
-    title: ["Give Hope.", "Change Lives.", "Create Impact."],
-    subtitle: "Your small act of kindness can bring big changes in someone's life.",
+    badge: "LOVE · FELLOWSHIP · TRUTH",
+    title: ["Sharing God's Love.", "Serving People.", "Transforming Lives."],
+    subtitle: "A Christian foundation serving children, youth, families, the elderly and communities across Sri Lanka.",
     primaryCta: "Donate Now",
-    secondaryCta: "Explore Causes",
-    // Image of warm smiling children matching the template
+    secondaryCta: "Our Programs",
     image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop"
   },
 
   donationCard: {
-    title: "Make a Donation Today",
-    subtitle: "Every donation brings hope",
+    title: "Your Gift Changes Lives",
+    subtitle: "Every donation serves someone in need",
     frequencies: ["One Time", "Monthly"],
-    amounts: [25, 50, 100, 250],
-    defaultAmount: 50,
+    amounts: [10, 25, 50, 100],
+    defaultAmount: 25,
     causes: [
-      "Select Cause",
-      "Education for All",
-      "Clean Water Initiative",
-      "Food & Shelter Support",
-      "Health & Medical Aid"
+      "Select a Program",
+      "Education Support",
+      "Nourish with Love (Meals)",
+      "Children & Youth",
+      "Elderly Care",
+      "Family Support",
+      "Christian Leaders Support"
     ],
+    amountLabels: {
+      10: "Provides a nutritious meal for a child",
+      25: "Supports a child's education for a month",
+      50: "Assists a vulnerable family in need",
+      100: "Supports a Christian leader in ministry"
+    },
     securityNote: "Secure & Trusted Donations"
   },
 
   missionCauses: {
-    badge: "Our Mission",
-    title: "Be the Hope Someone Needs Today",
-    subtitle: "We believe in bringing hope, support, and resources to people who need it most in our communities.",
+    badge: "Areas of Impact",
+    title: "Serving Communities Across Sri Lanka",
+    subtitle: "Rooted in God's love, we serve children, families, and communities through practical and spiritual care.",
     items: [
       {
         id: "education",
-        title: "Education for All",
-        description: "Help children get quality education.",
+        title: "Education",
+        description: "Free Education Centers providing quality educational support to children across Sri Lanka — with 9 Provincial, 25 District & 331 Divisional Centers planned by 2030.",
         image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop",
-        badgeBg: "bg-[#0e7a68]", // Teal/green matching template
-        badgeIcon: "book"
+        badgeBg: "bg-[#0e7a68]",
+        badgeIcon: "book-open"
       },
       {
-        id: "water",
-        title: "Clean Water",
-        description: "Provide clean and safe drinking water.",
-        image: "https://images.unsplash.com/photo-1541888946425-d0fbb18086f6?q=80&w=800&auto=format&fit=crop",
-        badgeBg: "bg-[#0284c7]", // Blue matching template
-        badgeIcon: "droplet"
-      },
-      {
-        id: "food",
-        title: "Food & Shelter",
-        description: "No one should sleep hungry or homeless.",
+        id: "nourish",
+        title: "Nourish with Love",
+        description: "Providing nutritious meals to children and communities — because no child should go hungry. Long-term expansion planned nationwide.",
         image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=800&auto=format&fit=crop",
-        badgeBg: "bg-[#ea580c]", // Orange matching template
+        badgeBg: "bg-[#ea580c]",
+        badgeIcon: "utensils"
+      },
+      {
+        id: "children",
+        title: "Children & Youth",
+        description: "Holistic support for children and youth through development programs, workshops, camps, and mentorship grounded in faith.",
+        image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=800&auto=format&fit=crop",
+        badgeBg: "bg-[#7c3aed]",
+        badgeIcon: "users"
+      },
+      {
+        id: "elderly",
+        title: "Elderly Care",
+        description: "Bringing food, care, and fellowship to the elderly in homes and communities — honouring those who have walked before us.",
+        image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=800&auto=format&fit=crop",
+        badgeBg: "bg-[#0284c7]",
+        badgeIcon: "heart"
+      },
+      {
+        id: "family",
+        title: "Family Support",
+        description: "Essential assistance to vulnerable families — practical help grounded in love and truth, strengthening communities one family at a time.",
+        image: "https://images.unsplash.com/photo-1602524816810-5c2c70660e74?q=80&w=800&auto=format&fit=crop",
+        badgeBg: "bg-[#d97706]",
         badgeIcon: "home"
       },
       {
-        id: "health",
-        title: "Health & Wellness",
-        description: "Support better health for a better future.",
-        image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=800&auto=format&fit=crop",
-        badgeBg: "bg-[#0d9488]", // Teal/Cyan matching template
-        badgeIcon: "activity"
+        id: "leaders",
+        title: "Christian Leaders",
+        description: "Equipping and supporting under-resourced Christian leaders and ministries across Sri Lanka to further God's kingdom.",
+        image: "https://images.unsplash.com/photo-1507692049790-de58290a4334?q=80&w=800&auto=format&fit=crop",
+        badgeBg: "bg-[#be185d]",
+        badgeIcon: "church"
       }
     ]
   },
 
   impactStats: {
-    badge: "Together, We Can",
-    title: "Your Support Creates Real Change",
-    subtitle: "Together, we can bring hope, improve lives, and build a brighter future for everyone in need.",
+    badge: "Our Commitment",
+    title: "Building a Better Future Together",
+    subtitle: "Rooted in faith, driven by love — we are committed to transforming lives across Sri Lanka through education, nourishment, and community care.",
     cta: "Get Involved",
-    stats: [
+    pillars: [
       {
-        id: "lives",
-        value: "1250+",
-        label: "Lives Impacted",
-        icon: "sprout"
+        id: "faith",
+        label: "Faith-Driven",
+        icon: "cross",
+        description: "Everything we do is grounded in God's love and Christian truth."
       },
       {
-        id: "volunteers",
-        value: "820+",
-        label: "Volunteers",
-        icon: "user"
+        id: "community",
+        label: "Community-Focused",
+        icon: "users",
+        description: "Serving children, youth, families, the elderly and Christian leaders."
       },
       {
-        id: "projects",
-        value: "350+",
-        label: "Projects Done",
-        icon: "heart-handshake"
+        id: "transparent",
+        label: "Transparent",
+        icon: "shield-check",
+        description: "Accountable to our donors and the communities we serve."
       }
     ]
   },
 
   events: {
     title: "Upcoming Events & Campaigns",
-    subtitle: "Join our upcoming events and campaigns to make a bigger impact in your community.",
+    subtitle: "Join us in serving communities — every event is an opportunity to show God's love in action.",
     cta: "View All Events",
     featuredImage: "https://images.unsplash.com/photo-1593113646773-028c64a8f1b8?q=80&w=1000&auto=format&fit=crop",
     items: [
       {
         id: 1,
-        month: "JUN",
-        day: "20",
-        title: "Food Drive Campaign",
-        description: "Helping families with food supplies.",
-        time: "10:00 AM - 2:00 PM"
+        month: "OCT",
+        day: "12",
+        title: "Outreach & Evangelism",
+        description: "Community outreach bringing hope and the gospel to local communities across Sri Lanka.",
+        time: "9:00 AM – 1:00 PM"
       },
       {
         id: 2,
-        month: "JUN",
-        day: "28",
-        title: "Clean Water Initiative",
-        description: "Bringing clean water to those in need.",
-        time: "09:00 AM - 1:00 PM"
+        month: "OCT",
+        day: "26",
+        title: "Nourish with Love – Meal Drive",
+        description: "Preparing and distributing nutritious meals to children and vulnerable families.",
+        time: "8:00 AM – 12:00 PM"
       },
       {
         id: 3,
-        month: "JUL",
-        day: "05",
-        title: "Education For All",
-        description: "Supporting children's education and future.",
-        time: "09:00 AM - 1:00 PM"
+        month: "NOV",
+        day: "08",
+        title: "Youth Development Workshop",
+        description: "Empowering young people through skills training, mentorship and fellowship in faith.",
+        time: "10:00 AM – 3:00 PM"
       }
     ]
   },
 
   testimonials: {
-    title: "Voices of Change",
-    subtitle: "See how we're making a difference through the words of those we've helped.",
+    title: "Stories of Hope",
+    subtitle: "The greatest testimony is a life transformed by God's love and grace.",
+    comingSoon: true,
+    comingSoonText: "We are collecting stories from the communities we serve. Real testimonials will be shared here soon.",
     item: {
-      quote: "Thanks to their support, my children can go to school and dream of a better future.",
-      author: "Ayesha Khan",
-      role: "Beneficiary",
-      avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=300&auto=format&fit=crop"
+      quote: "We are currently collecting stories from the communities we serve. Real testimonials coming soon — to God's glory.",
+      author: "LIFT Foundation",
+      role: "Sri Lanka",
+      avatar: null
     }
   },
 
   callToAction: {
-    title: "Join Us & Make a Difference",
-    subtitle: "Be a part of our mission. Together, we can build a better tomorrow for all.",
+    title: "Join Our Mission",
+    subtitle: "Be part of something greater. Together, we can share God's love and transform lives across Sri Lanka.",
     cards: [
       {
         id: "volunteer",
         title: "Become a Volunteer",
-        description: "Join our amazing team and make a difference.",
+        description: "Join our team and serve communities with love, compassion and faith.",
         buttonText: "Join Now"
       },
       {
         id: "donate",
         title: "Donate & Support",
-        description: "Your donation helps us continue our vital work.",
+        description: "Your donation helps us continue serving children, families and communities.",
         buttonText: "Donate Now"
       }
     ]
@@ -172,25 +197,25 @@ export const siteData = {
 
   newsletter: {
     title: "Stay Connected With Us",
-    subtitle: "Subscribe to get updates on our latest causes and events.",
+    subtitle: "Subscribe to receive updates on our programs, events and ways to make a difference.",
     placeholder: "Enter your email",
     buttonText: "Subscribe"
   },
 
   footer: {
-    tagline: "Bringing hope, changing lives, and building a better tomorrow.",
+    tagline: "Sharing God's Love. Serving People. Transforming Lives.",
     columns: [
       {
         title: "Quick Links",
-        links: ["Home", "About", "Causes", "Events", "Contact"]
+        links: ["Home", "About Us", "Our Programs", "Our Impact", "Events", "Get Involved", "Donate", "Contact"]
       },
       {
-        title: "Our Causes",
-        links: ["Education", "Clean Water", "Food & Shelter", "Health & Wellness", "Emergency Relief"]
+        title: "Our Programs",
+        links: ["Education", "Children & Youth", "Nourish with Love", "Elderly Care", "Family Support", "Christian Leaders"]
       },
       {
-        title: "Support",
-        links: ["Become a Volunteer", "Donate Now", "FAQs", "Privacy Policy", "Terms & Conditions"]
+        title: "Transparency",
+        links: ["Annual Reports", "Financial Accountability", "Privacy Policy", "Terms & Conditions"]
       }
     ],
     socials: [

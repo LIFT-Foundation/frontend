@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ShieldCheck, ChevronDown, Check } from 'lucide-react';
+import { ShieldCheck, ChevronDown, Check, Sparkles } from 'lucide-react';
 import { siteData } from '../../../data/content';
 
 export default function DonationCard() {
@@ -7,8 +7,11 @@ export default function DonationCard() {
   const [amount, setAmount] = useState(siteData.donationCard.defaultAmount);
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
-  const [selectedCause, setSelectedCause] = useState('Select Cause');
+  const [selectedCause, setSelectedCause] = useState('Select a Program');
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const { donationCard } = siteData;
+  const amountDescription = donationCard.amountLabels[amount] || null;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,17 +26,17 @@ export default function DonationCard() {
       {/* Card Header */}
       <div className="text-center sm:text-left mb-5">
         <h3 className="text-xl font-bold tracking-tight text-gray-900">
-          {siteData.donationCard.title}
+          {donationCard.title}
         </h3>
         <p className="text-xs text-gray-500 mt-1">
-          {siteData.donationCard.subtitle}
+          {donationCard.subtitle}
         </p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Frequency Tabs (One Time / Monthly) */}
         <div className="flex p-1 bg-gray-100 rounded-xl text-xs font-semibold text-gray-600">
-          {siteData.donationCard.frequencies.map((freq) => (
+          {donationCard.frequencies.map((freq) => (
             <button
               key={freq}
               type="button"
@@ -51,7 +54,7 @@ export default function DonationCard() {
 
         {/* Preset Amounts Grid */}
         <div className="grid grid-cols-4 gap-2">
-          {siteData.donationCard.amounts.map((val) => (
+          {donationCard.amounts.map((val) => (
             <button
               key={val}
               type="button"
@@ -66,6 +69,16 @@ export default function DonationCard() {
             </button>
           ))}
         </div>
+
+        {/* Amount Impact Description */}
+        {amountDescription && (
+          <div className="flex items-start gap-2 px-3 py-2.5 bg-peach-50 border border-peach-200/70 rounded-xl">
+            <Sparkles className="w-3.5 h-3.5 text-peach-500 mt-0.5 flex-shrink-0" />
+            <p className="text-[11px] text-peach-700 font-medium leading-snug">
+              {amountDescription}
+            </p>
+          </div>
+        )}
 
         {/* Full Name Input */}
         <div className="space-y-1">
@@ -97,10 +110,10 @@ export default function DonationCard() {
           />
         </div>
 
-        {/* Select Cause Dropdown */}
+        {/* Select Program Dropdown */}
         <div className="space-y-1 relative">
           <label className="block text-[11px] font-semibold text-gray-700">
-            Select Cause
+            Support a Program
           </label>
           <div className="relative">
             <select
@@ -108,7 +121,7 @@ export default function DonationCard() {
               onChange={(e) => setSelectedCause(e.target.value)}
               className="w-full appearance-none px-3.5 py-2 text-xs rounded-xl border border-gray-200 focus:border-peach-500 focus:ring-2 focus:ring-peach-200 outline-none transition-all bg-gray-50/40 text-gray-700 cursor-pointer pr-8"
             >
-              {siteData.donationCard.causes.map((c) => (
+              {donationCard.causes.map((c) => (
                 <option key={c} value={c}>
                   {c}
                 </option>
@@ -126,7 +139,7 @@ export default function DonationCard() {
           {isSubmitted ? (
             <>
               <Check className="w-4 h-4" />
-              <span>Thank You for Donating!</span>
+              <span>Thank You for Giving!</span>
             </>
           ) : (
             <span>Donate Now</span>
@@ -136,7 +149,7 @@ export default function DonationCard() {
         {/* Security / Trust note */}
         <div className="pt-1 flex items-center justify-center gap-1.5 text-[11px] text-gray-500 font-medium">
           <ShieldCheck className="w-3.5 h-3.5 text-peach-500" />
-          <span>{siteData.donationCard.securityNote}</span>
+          <span>{donationCard.securityNote}</span>
         </div>
       </form>
     </div>
