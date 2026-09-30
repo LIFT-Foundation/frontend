@@ -35,7 +35,9 @@ export default {
         }
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        sans: ['"Inter"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        handwriting: ['"Caveat"', 'cursive'],
+        serif: ['"Playfair Display"', 'Georgia', 'serif'],
       },
       borderRadius: {
         '2xl': '1rem',

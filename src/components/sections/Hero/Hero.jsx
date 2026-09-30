@@ -1,93 +1,97 @@
 import React from 'react';
-import SectionBadge from '../../common/SectionBadge';
-import DonationCard from './DonationCard';
+import { Heart, ArrowRight } from 'lucide-react';
 import { siteData } from '../../../data/content';
 
-export default function Hero({ onExploreCauses }) {
-  const scrollToDonation = () => {
-    const el = document.getElementById('donation-card');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
+export default function Hero({ onExplorePrograms, onDonateClick }) {
+  const { hero } = siteData;
 
   return (
-    <section className="relative bg-teal-900 text-white pt-10 pb-28 md:pb-36 lg:pb-44 overflow-hidden">
-      {/* Background Subtle Radial Glow */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-teal-700/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-peach-500/10 rounded-full blur-3xl pointer-events-none" />
+    <section className="relative bg-[#0c3930] text-white overflow-hidden min-h-[520px] lg:min-h-[580px] flex items-center">
+      {/* Background Soft Organic Foliage / Leaf Pattern Watermark on Left */}
+      <div className="absolute inset-y-0 left-0 w-full lg:w-3/5 overflow-hidden pointer-events-none select-none z-0">
+        <svg
+          viewBox="0 0 600 600"
+          className="absolute -left-20 top-1/2 -translate-y-1/2 w-[700px] h-[700px] opacity-[0.06] text-white fill-current"
+        >
+          <path d="M120,400 C150,220 280,120 450,150 C480,300 380,480 200,490 C140,490 110,460 120,400 Z" />
+          <path d="M100,200 C120,80 240,20 380,50 C400,180 300,320 150,330 C110,330 90,290 100,200 Z" />
+          <path d="M50,450 C80,350 180,300 280,320 C290,420 220,520 120,530 C70,530 40,500 50,450 Z" />
+        </svg>
+      </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-center">
+      <div className="w-full relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[520px] lg:min-h-[580px]">
           
-          {/* Left Column: Headline and CTAs */}
-          <div className="lg:col-span-4 space-y-6">
-            <SectionBadge variant="hero">
-              {siteData.hero.badge}
-            </SectionBadge>
+          {/* Left Column: Headline and Call-to-actions */}
+          <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:pl-16 lg:pr-8 xl:pl-24 py-12 lg:py-16 space-y-6">
+            {/* Tagline Badge */}
+            <div className="flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] text-teal-200/90 uppercase">
+              <span className="w-6 h-[1.5px] bg-[#f28e63] inline-block" />
+              <span>{hero.tag}</span>
+            </div>
 
-            <h1 className="text-4xl sm:text-5xl xl:text-6xl font-extrabold tracking-tight leading-[1.12] text-white">
-              {siteData.hero.title[0]} <br />
-              {siteData.hero.title[1]} <br />
-              {siteData.hero.title[2]}
+            {/* Main Hero Heading */}
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold tracking-tight leading-[1.08] text-white">
+              <span>{hero.titleLine1}</span> <br />
+              <span className="text-[#f28e63]">{hero.titleLine2}</span> <br />
+              <span>{hero.titleLine3}</span>
             </h1>
 
-            <p className="text-sm sm:text-base text-teal-100/80 max-w-sm leading-relaxed font-normal">
-              {siteData.hero.subtitle}
+            {/* Subtitle */}
+            <p className="text-xs sm:text-[13px] text-teal-100/80 max-w-md leading-relaxed font-normal">
+              {hero.subtitle}
             </p>
 
+            {/* CTAs */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <button
                 type="button"
-                onClick={scrollToDonation}
-                className="px-6 py-3 rounded-full bg-peach-500 hover:bg-peach-600 text-white font-semibold text-xs sm:text-sm shadow-button hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                onClick={onDonateClick}
+                className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#f28e63] hover:bg-[#ea7849] text-white font-semibold text-xs shadow-button hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
               >
-                {siteData.hero.primaryCta}
+                <Heart className="w-3.5 h-3.5 fill-white text-white" />
+                <span>{hero.primaryCta}</span>
+                <ArrowRight className="w-4 h-4 ml-0.5" />
               </button>
+
               <a
-                href="#causes"
-                onClick={onExploreCauses}
-                className="px-6 py-3 rounded-full border border-teal-600/70 hover:border-teal-400 bg-teal-800/20 hover:bg-teal-800/50 text-white font-medium text-xs sm:text-sm backdrop-blur-sm transition-all duration-200"
+                href="#programs"
+                onClick={onExplorePrograms}
+                className="flex items-center gap-1.5 px-6 py-3 rounded-full border border-teal-500/50 hover:border-teal-300 bg-teal-900/30 hover:bg-teal-800/40 text-white font-medium text-xs backdrop-blur-sm transition-all duration-200"
               >
-                {siteData.hero.secondaryCta}
+                <span>{hero.secondaryCta}</span>
+                <ArrowRight className="w-4 h-4" />
               </a>
             </div>
           </div>
 
-          {/* Center Column: Warm Children Photo */}
-          <div className="lg:col-span-4 flex justify-center items-center relative">
-            <div className="relative w-full max-w-[340px] sm:max-w-[380px] aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-teal-800/40 group">
+          {/* Right Column: Full-Height Organic Curved Photo of Happy Children */}
+          <div className="lg:col-span-6 xl:col-span-6 relative min-h-[360px] sm:min-h-[440px] lg:min-h-full overflow-hidden">
+            {/* Organic S-Curve Divider Overlay visible on large screens */}
+            <div className="absolute inset-0 w-full h-full">
               <img
-                src={siteData.hero.image}
-                alt="Children Smiling with Hope"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                src={hero.image}
+                alt="Children in Sri Lanka smiling with hope"
+                className="w-full h-full object-cover object-center scale-[1.02]"
                 loading="eager"
               />
-              {/* Soft overlay gradient matching the teal background */}
-              <div className="absolute inset-0 bg-gradient-to-t from-teal-950/70 via-transparent to-transparent opacity-60" />
+
+              {/* Soft dark vignette on left edge to blend seamlessly into teal */}
+              <div className="hidden lg:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0c3930] via-[#0c3930]/40 to-transparent pointer-events-none" />
+              
+              {/* Soft gradient bottom on mobile */}
+              <div className="lg:hidden absolute inset-0 bg-gradient-to-t from-[#0c3930] via-transparent to-transparent pointer-events-none" />
+
+              {/* "Together We Can ♡" Handwritten Badge at bottom-right */}
+              <div className="absolute bottom-6 right-6 sm:bottom-8 sm:right-10 z-20 pointer-events-none select-none">
+                <span className="font-handwriting text-white text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] flex items-center gap-1.5">
+                  Together We Can <span className="text-[#f28e63] font-sans text-2xl sm:text-3xl">♡</span>
+                </span>
+              </div>
             </div>
           </div>
 
-          {/* Right Column: Make a Donation Card */}
-          <div className="lg:col-span-4 flex justify-center lg:justify-end">
-            <DonationCard />
-          </div>
-
         </div>
-      </div>
-
-      {/* Curved Bottom Wave SVG Divider matching the template */}
-      <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none z-10 pointer-events-none">
-        <svg
-          viewBox="0 0 1440 120"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="relative block w-full h-12 sm:h-16 md:h-20 lg:h-24 preserve-3d"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M0,0 C320,110 500,120 720,80 C980,30 1200,20 1440,70 L1440,120 L0,120 Z"
-            fill="#faf9f6"
-          />
-        </svg>
       </div>
     </section>
   );
