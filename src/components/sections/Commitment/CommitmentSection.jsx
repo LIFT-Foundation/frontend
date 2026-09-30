@@ -8,75 +8,81 @@ export default function CommitmentSection({ onGetInvolved }) {
   const renderIcon = (type) => {
     switch (type) {
       case 'plus':
-        return <Plus className="w-5 h-5 text-teal-200 stroke-[2.2]" />;
+        return <Plus className="w-4 h-4 text-white stroke-[2.5]" />;
       case 'users':
-        return <Users className="w-5 h-5 text-teal-200 stroke-[1.8]" />;
+        return <Users className="w-4 h-4 text-white stroke-[2]" />;
       case 'shield-check':
-        return <ShieldCheck className="w-5 h-5 text-teal-200 stroke-[1.8]" />;
+        return <ShieldCheck className="w-4 h-4 text-white stroke-[2]" />;
       default:
-        return <ShieldCheck className="w-5 h-5 text-teal-200 stroke-[1.8]" />;
+        return <ShieldCheck className="w-4 h-4 text-white stroke-[2]" />;
     }
   };
 
   return (
-    <section className="py-6 sm:py-10 px-4 sm:px-8 max-w-7xl mx-auto">
-      <div className="bg-[#0b332c] rounded-[2rem] sm:rounded-[2.5rem] p-7 sm:p-10 lg:p-12 text-white shadow-2xl relative overflow-hidden">
-        {/* Decorative Leaf / Branch Silhouette in background */}
-        <div className="absolute right-0 top-0 bottom-0 w-80 opacity-10 pointer-events-none flex items-center justify-end pr-4">
-          <svg viewBox="0 0 200 200" fill="currentColor" className="w-72 h-72 text-white">
-            <path d="M45,-78.3C58.3,-71.1,69,-59.1,77.3,-45.5C85.7,-31.9,91.7,-16,91.2,-0.3C90.7,15.4,83.7,30.8,74.7,44.1C65.7,57.4,54.7,68.6,41.4,75.4C28.1,82.2,14.1,84.7,-0.7,85.9C-15.5,87.1,-31.1,87,-44.6,80.3C-58.1,73.6,-69.5,60.3,-77.8,45.4C-86.1,30.5,-91.3,14,-90.6,-2.1C-89.9,-18.2,-83.3,-33.9,-73.4,-46.6C-63.5,-59.3,-50.3,-69.1,-36.4,-76C-22.5,-82.9,-8,-87,4,-93.2C16,-99.4,31.7,-85.5,45,-78.3Z" transform="translate(100 100)" />
+    <section className="py-8 sm:py-12 px-4 sm:px-8 max-w-7xl mx-auto">
+      <div className="bg-[#0c3930] rounded-[2.2rem] sm:rounded-[2.8rem] p-8 sm:p-10 lg:p-12 text-white shadow-2xl relative overflow-hidden">
+        {/* Right Corner Leaf Graphic Silhouette matching screenshot */}
+        <div className="absolute right-0 top-0 bottom-0 w-72 pointer-events-none select-none overflow-hidden flex items-center justify-end">
+          <svg viewBox="0 0 200 300" className="w-64 h-full text-white opacity-[0.06] fill-current">
+            <path d="M120,40 C150,10 180,30 190,70 C200,110 170,160 130,170 C90,180 80,130 90,90 Z" />
+            <path d="M70,140 C100,100 150,110 160,150 C170,190 130,230 90,220 C50,210 50,170 70,140 Z" />
+            <path d="M100,210 C130,180 170,200 170,240 C170,280 130,300 90,290 C60,280 70,240 100,210 Z" />
           </svg>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center relative z-10">
 
           {/* Left Column: Heading, subtitle, and CTA */}
-          <div className="lg:col-span-5 space-y-3.5">
-            <div className="flex items-center gap-2 text-[11px] font-semibold tracking-wider text-teal-200 uppercase">
-              <span className="w-2 h-2 rounded-full bg-[#f28e63]" />
+          <div className="lg:col-span-5 space-y-4">
+            {/* Orange bullet + Our Commitment */}
+            <div className="flex items-center gap-2 text-[11px] font-semibold tracking-wider text-teal-100 uppercase">
+              <span className="w-2 h-2 rounded-full bg-[#f28e63] inline-block" />
               <span>{commitment.badge}</span>
             </div>
 
-            <h3 className="text-2xl sm:text-3xl lg:text-[2rem] font-bold text-white tracking-tight leading-snug">
+            {/* Title */}
+            <h3 className="text-2xl sm:text-3xl lg:text-[2.25rem] font-bold text-white tracking-tight leading-[1.15]">
               <span>{commitment.titleStart}</span>
               <span className="text-[#f28e63]">{commitment.titleHighlight}</span>
             </h3>
 
-            <p className="text-xs sm:text-sm text-teal-100/75 leading-relaxed max-w-sm">
+            {/* Subtitle */}
+            <p className="text-xs sm:text-[13px] text-teal-100/75 leading-relaxed max-w-sm font-normal">
               {commitment.subtitle}
             </p>
 
+            {/* Get Involved Button */}
             <div className="pt-2">
               <button
                 type="button"
                 onClick={onGetInvolved}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#f28e63] hover:bg-[#ea7849] text-white font-semibold text-xs shadow-button hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#f28e63] hover:bg-[#ea7849] text-white font-semibold text-xs tracking-wide shadow-button hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
               >
                 <span>{commitment.cta}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <ArrowRight className="w-3.5 h-3.5 ml-0.5" />
               </button>
             </div>
           </div>
 
-          {/* Right Column: 3 Pillars (Faith-Driven, Community-Focused, Transparent) */}
-          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-4 text-center">
+          {/* Right Column: 3 Semi-Transparent Rounded Pillar Cards */}
+          <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-3.5 sm:gap-4 text-center">
             {commitment.pillars.map((pillar) => (
               <div
                 key={pillar.id}
-                className="flex flex-col items-center justify-start p-4 sm:p-5 rounded-2xl bg-teal-800/25 border border-teal-700/30 hover:bg-teal-800/40 hover:border-teal-600/50 transition-all duration-300 group"
+                className="flex flex-col items-center justify-start p-5 sm:p-6 rounded-[1.75rem] bg-[#07241e]/55 border border-white/5 hover:border-white/15 transition-all duration-300"
               >
-                {/* Outlined circular icon */}
-                <div className="w-10 h-10 rounded-full border border-teal-600/60 bg-teal-900/40 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+                {/* Outlined circular icon with dual ring effect */}
+                <div className="w-11 h-11 rounded-full border border-teal-300/40 bg-[#0c3930]/80 flex items-center justify-center mb-3.5 shadow-inner">
                   {renderIcon(pillar.icon)}
                 </div>
 
                 {/* Pillar Label */}
-                <h4 className="text-xs sm:text-sm font-bold text-white tracking-tight mb-1.5">
+                <h4 className="text-xs sm:text-[13px] font-bold text-white tracking-tight mb-1.5">
                   {pillar.title}
                 </h4>
 
                 {/* Pillar Description */}
-                <p className="text-[11px] text-teal-200/70 leading-relaxed font-normal">
+                <p className="text-[10.5px] text-teal-100/70 leading-relaxed font-normal">
                   {pillar.description}
                 </p>
               </div>
