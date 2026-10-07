@@ -50,13 +50,13 @@ export const siteData = {
   ],
 
   mission: {
-    badge: "OUR MISSION & PURPOSE",
-    title: "Empowering Sri Lanka's Next Generation",
-    description: "Driven by Christ's love, LIFT Foundation focuses on breaking the cycle of poverty through high-quality education, daily nutrition, and holistic child development in vulnerable Sri Lankan communities.",
-    cta: "Learn More About LIFT",
+    badge: "OUR MISSION",
+    title: "Be the Hope Someone Needs Today",
+    description: "We believe every child deserves the opportunity to learn, grow and thrive. Through education, nutrition and community-based support, LIFT Foundation works alongside underserved communities to create brighter futures for children and young people across Sri Lanka.",
+    cta: "Learn More About Us",
     scriptureQuote: "Let your light shine before others, that they may see your good deeds and glorify your Father in heaven.",
     scriptureRef: "Matthew 5:16",
-    centerImage: "https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?q=80&w=800&auto=format&fit=crop"
+    centerImage: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop"
   },
 
   // 3 CORE PROGRAMS (Phase 1 Focused Positioning)

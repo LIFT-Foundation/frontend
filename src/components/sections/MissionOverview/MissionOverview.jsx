@@ -2,7 +2,7 @@ import React from 'react';
 import { ArrowRight, Quote } from 'lucide-react';
 import { siteData } from '../../../data/content';
 
-export default function MissionOverview() {
+export default function MissionOverview({ onLearnMoreClick }) {
   const { mission } = siteData;
 
   return (
@@ -29,13 +29,14 @@ export default function MissionOverview() {
 
           {/* Pill Button */}
           <div className="pt-2">
-            <a
-              href="#about"
+            <button
+              type="button"
+              onClick={onLearnMoreClick}
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#0c3930] hover:bg-[#07241e] text-white font-semibold text-xs tracking-wide shadow-sm hover:shadow transition-all duration-200"
             >
               <span>{mission.cta}</span>
               <ArrowRight className="w-3.5 h-3.5" />
-            </a>
+            </button>
           </div>
         </div>
 
@@ -49,13 +50,13 @@ export default function MissionOverview() {
           </svg>
         </div>
 
-        {/* Right Column: Wide Sigiriya Photo with Floating Scripture Card on top right */}
+        {/* Right Column: Classroom Children Photo with Floating Scripture Card on top right */}
         <div className="lg:col-span-6 relative">
           <div className="relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-md aspect-[16/10] sm:aspect-[16/9] w-full group">
-            {/* Sigiriya Photo with person facing rock */}
+            {/* Real Children Learning Photo */}
             <img
-              src="https://images.unsplash.com/photo-1586861635167-e5223aadc9fe?q=80&w=1200&auto=format&fit=crop"
-              alt="Hiker looking at Sigiriya rock fortress Sri Lanka"
+              src={mission.centerImage}
+              alt="Children learning together in Sri Lanka classroom"
               className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               loading="lazy"
             />

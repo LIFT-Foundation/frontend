@@ -13,10 +13,12 @@ import CommitmentSection from './components/sections/Commitment/CommitmentSectio
 import StoriesAndMission from './components/sections/StoriesMission/StoriesAndMission';
 import Newsletter from './components/sections/Newsletter/Newsletter';
 import DonatePage from './components/pages/DonatePage';
+import AboutUsPage from './components/pages/AboutUsPage';
 import { X, Check } from 'lucide-react';
 
 export default function App() {
   const [showDonatePage, setShowDonatePage] = useState(false);
+  const [showAboutPage, setShowAboutPage] = useState(false);
   const [showVolunteerModal, setShowVolunteerModal] = useState(false);
   const [volunteerSubmitted, setVolunteerSubmitted] = useState(false);
 
@@ -44,11 +46,27 @@ export default function App() {
 
   const navigateToDonate = () => {
     setShowDonatePage(true);
+    setShowAboutPage(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navigateToAbout = () => {
+    setShowAboutPage(true);
+    setShowDonatePage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   if (showDonatePage) {
     return <DonatePage onBackToHome={() => setShowDonatePage(false)} />;
+  }
+
+  if (showAboutPage) {
+    return (
+      <AboutUsPage
+        onBackToHome={() => setShowAboutPage(false)}
+        onDonateClick={navigateToDonate}
+      />
+    );
   }
 
   return (
@@ -71,7 +89,7 @@ export default function App() {
       {/* Main Narrative Flow */}
       <main className="flex-1">
         {/* 2. Who We Are (Mission Overview & Scripture Quote) */}
-        <MissionOverview />
+        <MissionOverview onLearnMoreClick={navigateToAbout} />
 
         {/* 3. Our Programs (3 Core Programs Grid: Education, Children & Youth, Nourish) */}
         <MissionCauses />
