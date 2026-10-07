@@ -56,7 +56,7 @@ export const siteData = {
     cta: "Learn More About Us",
     scriptureQuote: "Let your light shine before others, that they may see your good deeds and glorify your Father in heaven.",
     scriptureRef: "Matthew 5:16",
-    centerImage: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200&auto=format&fit=crop"
+    centerImage: "/images/mission-children-learning.jpg"
   },
 
   // 3 CORE PROGRAMS (Phase 1 Focused Positioning)
