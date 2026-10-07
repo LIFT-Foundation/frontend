@@ -20,27 +20,45 @@ export default function QuickRibbon() {
     }
   };
 
+  // Exactly 2 sets (6 items total) so 3 items fill 100% of visible screen width
+  const displayItems = [...ribbonItems, ...ribbonItems];
+
   return (
-    <div className="bg-white border-b border-gray-100 shadow-sm py-4 relative z-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-4 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
-          {ribbonItems.map((item, idx) => (
+    <div className="bg-white border-b border-gray-100 shadow-sm py-4 relative z-20 overflow-hidden">
+      <style>{`
+        @keyframes marqueeSlowLoop {
+          0% { transform: translateX(0%); }
+          100% { transform: translateX(-50%); }
+        }
+        .animate-ribbon-slow {
+          display: flex;
+          width: 200%;
+          animation: marqueeSlowLoop 36s linear infinite;
+        }
+        .animate-ribbon-slow:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 overflow-hidden">
+        <div className="animate-ribbon-slow flex items-center">
+          {displayItems.map((item, idx) => (
             <div
-              key={item.id}
-              className={`flex items-center gap-3 pt-2.5 sm:pt-0 ${
-                idx === 0 ? 'pt-0' : ''
-              } lg:px-3 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer group`}
+              key={`${item.id}-${idx}`}
+              className="w-1/6 flex-shrink-0 px-2 sm:px-4 flex items-center justify-center cursor-pointer group"
             >
-              <div className="text-teal-800 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
-                {getIcon(item.icon)}
-              </div>
-              <div className="min-w-0">
-                <h4 className="text-[12px] font-bold text-gray-900 group-hover:text-teal-900 leading-tight">
-                  {item.title}
-                </h4>
-                <p className="text-[10px] text-gray-500 leading-tight mt-0.5">
-                  {item.subtitle}
-                </p>
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-full bg-teal-50/80 border border-teal-100 flex items-center justify-center text-teal-800 flex-shrink-0 group-hover:scale-110 group-hover:bg-[#fdf0e8] transition-transform">
+                  {getIcon(item.icon)}
+                </div>
+                <div className="min-w-0 pr-4 border-r border-gray-200/50">
+                  <h4 className="text-[12px] sm:text-[13px] font-bold text-gray-900 group-hover:text-teal-900 leading-tight whitespace-nowrap">
+                    {item.title}
+                  </h4>
+                  <p className="text-[10px] font-normal text-gray-500 leading-tight mt-0.5 whitespace-nowrap">
+                    {item.subtitle}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
