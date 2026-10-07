@@ -23,7 +23,7 @@ export default function QuickRibbon() {
   return (
     <div className="bg-white border-b border-gray-100 shadow-sm py-4 relative z-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 divide-y sm:divide-y-0 lg:divide-x divide-gray-100">
+        <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-4 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
           {ribbonItems.map((item, idx) => (
             <div
               key={item.id}

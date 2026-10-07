@@ -7,7 +7,7 @@ import MissionOverview from './components/sections/MissionOverview/MissionOvervi
 import MissionCauses from './components/sections/MissionCauses/MissionCauses';
 import VisionSection from './components/sections/Vision/VisionSection';
 import WhyEducationSection from './components/sections/WhyEducation/WhyEducationSection';
-import InitiativesSection from './components/sections/Initiatives/InitiativesSection';
+import ProjectsSection from './components/sections/Projects/ProjectsSection';
 import HowToHelpSection from './components/sections/HowToHelp/HowToHelpSection';
 import CommitmentSection from './components/sections/Commitment/CommitmentSection';
 import StoriesAndMission from './components/sections/StoriesMission/StoriesAndMission';
@@ -73,17 +73,17 @@ export default function App() {
         {/* 2. Who We Are (Mission Overview & Scripture Quote) */}
         <MissionOverview />
 
-        {/* 3. Our Areas of Impact (4 Core Programs Grid) */}
+        {/* 3. Our Programs (3 Core Programs Grid: Education, Children & Youth, Nourish) */}
         <MissionCauses />
 
-        {/* 4. Our Vision for Sri Lanka (9 Provinces -> 25 Districts -> 331 Divisional Centres) */}
+        {/* 4. Our Projects (Key Operational Projects: Little Light Montessori, Education Centres, Meal Drives) */}
+        <ProjectsSection />
+
+        {/* 5. Our Vision for Sri Lanka (9 Provinces -> 25 Districts -> 331 Divisional Centres) */}
         <VisionSection />
 
-        {/* 5. Why Education Matters (Children + Poverty + Education Gap) */}
+        {/* 6. Why Education Matters (Children + Poverty + Education Gap) */}
         <WhyEducationSection />
-
-        {/* 6. Current Initiatives & Impact Highlights (Replaces generic events) */}
-        <InitiativesSection />
 
         {/* 7. How You Can Help (Sponsor a child, Support education, Provide a meal, Support a centre) */}
         <HowToHelpSection onDonateClick={navigateToDonate} />

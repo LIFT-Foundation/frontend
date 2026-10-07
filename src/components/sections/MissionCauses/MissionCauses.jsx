@@ -25,8 +25,8 @@ export default function MissionCauses() {
         </p>
       </div>
 
-      {/* 8 Programs in 4 Columns x 2 Rows Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+      {/* 3 Core Programs Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-6 sm:gap-8">
         {areasOfImpact.items.map((cause) => (
           <CauseCard key={cause.id} cause={cause} />
         ))}

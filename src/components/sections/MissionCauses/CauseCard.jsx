@@ -48,10 +48,15 @@ export default function CauseCard({ cause }) {
       {/* Card Content */}
       <div className="pt-2 pb-5 px-4 text-center flex-1 flex flex-col justify-between">
         <div>
-          <h3 className="text-xs sm:text-[13px] font-bold text-gray-900 group-hover:text-teal-900 transition-colors">
+          <h3 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-teal-900 transition-colors">
             {cause.title}
           </h3>
-          <p className="text-[10px] text-gray-500 mt-1 leading-relaxed">
+          {cause.tagline && (
+            <span className="inline-block text-[11px] font-semibold text-[#ea580c] uppercase tracking-wider mt-0.5 mb-1">
+              {cause.tagline}
+            </span>
+          )}
+          <p className="text-xs text-gray-500 mt-1 leading-relaxed">
             {cause.description}
           </p>
         </div>
