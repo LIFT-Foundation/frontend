@@ -6,48 +6,53 @@ export default function Hero({ onExplorePrograms, onDonateClick }) {
   const { hero } = siteData;
 
   return (
-    <section className="relative bg-[#0c3930] text-white overflow-hidden min-h-[520px] lg:min-h-[580px] flex items-center">
-      {/* Background Soft Organic Foliage / Leaf Pattern Watermark on Left */}
-      <div className="absolute inset-y-0 left-0 w-full lg:w-3/5 overflow-hidden pointer-events-none select-none z-0">
+    <section className="relative bg-[#0b382d] text-white overflow-hidden min-h-[540px] lg:min-h-[600px] flex items-center">
+      {/* Top-Left Soft Organic Wave Silhouettes matching exact target design mockup */}
+      <div className="absolute inset-y-0 left-0 w-full lg:w-2/3 overflow-hidden pointer-events-none select-none z-0">
         <svg
-          viewBox="0 0 600 600"
-          className="absolute -left-20 top-1/2 -translate-y-1/2 w-[700px] h-[700px] opacity-[0.06] text-white fill-current"
+          viewBox="0 0 800 800"
+          className="absolute -top-32 -left-32 w-[950px] h-[950px] opacity-[0.22] text-[#06211a] fill-current"
         >
-          <path d="M120,400 C150,220 280,120 450,150 C480,300 380,480 200,490 C140,490 110,460 120,400 Z" />
-          <path d="M100,200 C120,80 240,20 380,50 C400,180 300,320 150,330 C110,330 90,290 100,200 Z" />
-          <path d="M50,450 C80,350 180,300 280,320 C290,420 220,520 120,530 C70,530 40,500 50,450 Z" />
+          <path d="M0,0 L650,0 C550,220 420,380 280,500 C160,600 50,680 0,720 Z" />
+        </svg>
+
+        <svg
+          viewBox="0 0 800 800"
+          className="absolute top-12 -left-20 w-[750px] h-[750px] opacity-[0.14] text-[#134d3f] fill-current"
+        >
+          <path d="M0,150 C250,150 480,280 400,520 C320,700 120,760 0,800 Z" />
         </svg>
       </div>
 
       <div className="w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[520px] lg:min-h-[580px]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[540px] lg:min-h-[600px]">
           
           {/* Left Column: Headline and Call-to-actions */}
-          <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:pl-16 lg:pr-8 xl:pl-24 py-12 lg:py-16 space-y-6">
-            {/* Tagline Badge */}
-            <div className="flex items-center gap-2 text-[11px] font-semibold tracking-[0.2em] text-teal-200/90 uppercase">
-              <span className="w-6 h-[1.5px] bg-[#f28e63] inline-block" />
+          <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:pl-16 lg:pr-8 xl:pl-24 py-12 lg:py-16 space-y-6 z-10">
+            {/* Tagline Badge with Orange Indicator Line */}
+            <div className="flex items-center gap-2.5 text-[11px] sm:text-[12px] font-semibold tracking-[0.24em] text-teal-200/90 uppercase">
+              <span className="w-7 h-[2px] bg-[#f28e63] inline-block" />
               <span>{hero.tag}</span>
             </div>
 
             {/* Main Hero Heading */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-bold tracking-tight leading-[1.08] text-white">
+            <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.6rem] font-extrabold tracking-tight leading-[1.08] text-white">
               <span>{hero.titleLine1}</span> <br />
               <span className="text-[#f28e63]">{hero.titleLine2}</span> <br />
               <span>{hero.titleLine3}</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xs sm:text-[13px] text-teal-100/80 max-w-md leading-relaxed font-normal">
+            <p className="text-xs sm:text-[13px] text-teal-100/90 max-w-md leading-relaxed font-normal">
               {hero.subtitle}
             </p>
 
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            {/* Action Buttons */}
+            <div className="flex flex-wrap items-center gap-3.5 pt-2">
               <button
                 type="button"
                 onClick={onDonateClick}
-                className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#f28e63] hover:bg-[#ea7849] text-white font-semibold text-xs shadow-button hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+                className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#f28e63] hover:bg-[#ea7849] text-white font-bold text-xs shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
               >
                 <Heart className="w-3.5 h-3.5 fill-white text-white" />
                 <span>{hero.primaryCta}</span>
@@ -57,7 +62,7 @@ export default function Hero({ onExplorePrograms, onDonateClick }) {
               <a
                 href="#programs"
                 onClick={onExplorePrograms}
-                className="flex items-center gap-1.5 px-6 py-3 rounded-full border border-teal-500/50 hover:border-teal-300 bg-teal-900/30 hover:bg-teal-800/40 text-white font-medium text-xs backdrop-blur-sm transition-all duration-200"
+                className="flex items-center gap-2 px-6 py-3 rounded-full border border-teal-400/30 hover:border-teal-300 bg-teal-950/30 hover:bg-teal-900/50 text-white font-semibold text-xs backdrop-blur-sm transition-all duration-200"
               >
                 <span>{hero.secondaryCta}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -65,24 +70,21 @@ export default function Hero({ onExplorePrograms, onDonateClick }) {
             </div>
           </div>
 
-          {/* Right Column: Full-Height Organic Curved Photo of Happy Children */}
-          <div className="lg:col-span-6 xl:col-span-6 relative min-h-[360px] sm:min-h-[440px] lg:min-h-full overflow-hidden">
-            {/* Organic S-Curve Divider Overlay visible on large screens */}
+          {/* Right Column: Full-Height Curved Photo of Children */}
+          <div className="lg:col-span-6 xl:col-span-6 relative min-h-[380px] sm:min-h-[460px] lg:min-h-full overflow-hidden">
             <div className="absolute inset-0 w-full h-full">
               <img
                 src={hero.image}
-                alt="Children in Sri Lanka smiling with hope"
-                className="w-full h-full object-cover object-center scale-[1.02]"
+                alt="Happy Sri Lankan children smiling and pointing forward"
+                className="w-full h-full object-cover object-center scale-[1.01]"
                 loading="eager"
               />
 
-              {/* Soft dark vignette on left edge to blend seamlessly into teal */}
-              <div className="hidden lg:block absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#0c3930] via-[#0c3930]/40 to-transparent pointer-events-none" />
+              {/* Wide smooth organic gradient blending photo into dark forest green */}
+              <div className="hidden lg:block absolute inset-y-0 left-0 w-64 bg-gradient-to-r from-[#0b382d] via-[#0b382d]/70 to-transparent pointer-events-none" />
               
               {/* Soft gradient bottom on mobile */}
-              <div className="lg:hidden absolute inset-0 bg-gradient-to-t from-[#0c3930] via-transparent to-transparent pointer-events-none" />
-
-              {/* Clean Image View */}
+              <div className="lg:hidden absolute inset-0 bg-gradient-to-t from-[#0b382d] via-transparent to-transparent pointer-events-none" />
             </div>
           </div>
 

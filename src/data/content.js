@@ -2,7 +2,7 @@ export const siteData = {
   brand: {
     name: "LIFT Foundation",
     subtitle: "LOVE IN FELLOWSHIP & TRUTH",
-    tagline: "Sharing God's Love. Empowering Children. Transforming Communities.",
+    tagline: "Sharing God's Love. Serving People. Transforming Lives.",
     copyright: "© 2025 LIFT Foundation (liftfoundationsl.org). All rights reserved."
   },
 
@@ -20,12 +20,12 @@ export const siteData = {
   hero: {
     tag: "LOVE · FELLOWSHIP · TRUTH",
     titleLine1: "Sharing God's Love.",
-    titleLine2: "Empowering Children.",
-    titleLine3: "Transforming Communities.",
-    subtitle: "A Christian foundation empowering children and young people through education, nutrition, and community development across Sri Lanka.",
+    titleLine2: "Serving People.",
+    titleLine3: "Transforming Lives.",
+    subtitle: "A Christian foundation serving children, youth, families, the elderly and communities across Sri Lanka.",
     primaryCta: "Donate Now",
     secondaryCta: "Our Programs",
-    image: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=1200&auto=format&fit=crop"
+    image: "/images/hero-children.jpg"
   },
 
   ribbonItems: [
@@ -280,7 +280,7 @@ export const siteData = {
   footer: {
     brandName: "LIFT Foundation",
     brandSubtitle: "LOVE IN FELLOWSHIP & TRUTH",
-    tagline: "Sharing God's Love. Empowering Children. Transforming Communities.",
+    tagline: "Sharing God's Love. Serving People. Transforming Lives.",
     columns: [
       {
         title: "Quick Links",
