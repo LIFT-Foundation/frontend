@@ -82,12 +82,7 @@ export default function Hero({ onExplorePrograms, onDonateClick }) {
               {/* Soft gradient bottom on mobile */}
               <div className="lg:hidden absolute inset-0 bg-gradient-to-t from-[#0c3930] via-transparent to-transparent pointer-events-none" />
 
-              {/* "Together We Can ♡" Handwritten Badge at bottom-right */}
-              <div className="absolute bottom-6 right-6 sm:bottom-8 sm:right-10 z-20 pointer-events-none select-none">
-                <span className="font-handwriting text-white text-3xl sm:text-4xl lg:text-5xl font-bold tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)] flex items-center gap-1.5">
-                  Together We Can <span className="text-[#f28e63] font-sans text-2xl sm:text-3xl">♡</span>
-                </span>
-              </div>
+              {/* Clean Image View */}
             </div>
           </div>
 

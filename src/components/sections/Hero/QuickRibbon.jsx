@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, Users, Heart, HandHelping, UserCheck, Church } from 'lucide-react';
+import { BookOpen, Users, Heart, GraduationCap } from 'lucide-react';
 import { siteData } from '../../../data/content';
 
 export default function QuickRibbon() {
@@ -13,12 +13,8 @@ export default function QuickRibbon() {
         return <Users className="w-5 h-5 text-teal-800 stroke-[1.8]" />;
       case 'heart':
         return <Heart className="w-5 h-5 text-teal-800 stroke-[1.8]" />;
-      case 'hands-helping':
-        return <HandHelping className="w-5 h-5 text-teal-800 stroke-[1.8]" />;
-      case 'user-check':
-        return <UserCheck className="w-5 h-5 text-teal-800 stroke-[1.8]" />;
-      case 'church':
-        return <Church className="w-5 h-5 text-teal-800 stroke-[1.8]" />;
+      case 'graduation-cap':
+        return <GraduationCap className="w-5 h-5 text-teal-800 stroke-[1.8]" />;
       default:
         return <Heart className="w-5 h-5 text-teal-800 stroke-[1.8]" />;
     }
@@ -27,7 +23,7 @@ export default function QuickRibbon() {
   return (
     <div className="bg-white border-b border-gray-100 shadow-sm py-4 relative z-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 divide-y sm:divide-y-0 lg:divide-x divide-gray-100">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 divide-y sm:divide-y-0 lg:divide-x divide-gray-100">
           {ribbonItems.map((item, idx) => (
             <div
               key={item.id}
