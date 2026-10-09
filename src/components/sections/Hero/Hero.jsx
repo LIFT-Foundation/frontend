@@ -35,11 +35,11 @@ export default function Hero({ onExplorePrograms, onDonateClick }) {
               <span>{hero.tag}</span>
             </div>
 
-            {/* Main Hero Heading */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.6rem] font-extrabold tracking-tight leading-[1.08] text-white">
-              <span>{hero.titleLine1}</span> <br />
-              <span className="text-[#f28e63]">{hero.titleLine2}</span> <br />
-              <span>{hero.titleLine3}</span>
+            {/* Main Hero Heading (Exactly 3 Lines with clean breathable spacing) */}
+            <h1 className="text-3xl sm:text-4xl md:text-[2.55rem] lg:text-[2.7rem] xl:text-[3.1rem] font-extrabold tracking-tight leading-[1.18] text-white flex flex-col gap-1.5 sm:gap-2">
+              <span className="block whitespace-nowrap">{hero.titleLine1}</span>
+              <span className="block whitespace-nowrap text-[#f28e63]">{hero.titleLine2}</span>
+              <span className="block whitespace-nowrap">{hero.titleLine3}</span>
             </h1>
 
             {/* Subtitle */}
