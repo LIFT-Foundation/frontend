@@ -20,8 +20,8 @@ export const siteData = {
   hero: {
     tag: "LOVE · FELLOWSHIP · TRUTH",
     titleLine1: "Sharing God's Love.",
-    titleLine2: "Serving People.",
-    titleLine3: "Transforming Lives.",
+    titleLine2: "Empowering Children.",
+    titleLine3: "Transforming Communities.",
     subtitle: "A Christian foundation serving children, youth, families, the elderly and communities across Sri Lanka.",
     primaryCta: "Donate Now",
     secondaryCta: "Our Programs",
