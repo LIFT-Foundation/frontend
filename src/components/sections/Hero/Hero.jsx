@@ -26,9 +26,9 @@ export default function Hero({ onExplorePrograms, onDonateClick }) {
 
       <div className="w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[540px] lg:min-h-[600px]">
-          
+
           {/* Left Column: Headline and Call-to-actions */}
-          <div className="lg:col-span-6 xl:col-span-6 flex flex-col justify-center px-6 sm:px-12 lg:pl-16 lg:pr-8 xl:pl-24 py-12 lg:py-16 space-y-6 z-10">
+          <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-center px-6 sm:px-10 lg:pl-14 lg:pr-4 xl:pl-20 py-12 lg:py-16 space-y-6 z-10">
             {/* Tagline Badge with Orange Indicator Line */}
             <div className="flex items-center gap-2.5 text-[11px] sm:text-[12px] font-semibold tracking-[0.24em] text-teal-200/90 uppercase">
               <span className="w-7 h-[2px] bg-[#f28e63] inline-block" />
@@ -71,18 +71,18 @@ export default function Hero({ onExplorePrograms, onDonateClick }) {
           </div>
 
           {/* Right Column: Full-Height Curved Photo of Children */}
-          <div className="lg:col-span-6 xl:col-span-6 relative min-h-[380px] sm:min-h-[460px] lg:min-h-full overflow-hidden">
+          <div className="lg:col-span-7 xl:col-span-7 relative min-h-[380px] sm:min-h-[460px] lg:min-h-full overflow-hidden">
             <div className="absolute inset-0 w-full h-full">
               <img
                 src={hero.image}
                 alt="Happy Sri Lankan children smiling and pointing forward"
-                className="w-full h-full object-cover object-center scale-[1.01]"
+                className="w-full h-full object-cover object-left lg:object-center scale-[1.01]"
                 loading="eager"
               />
 
-              {/* Wide smooth organic gradient blending photo into dark forest green */}
-              <div className="hidden lg:block absolute inset-y-0 left-0 w-64 bg-gradient-to-r from-[#0b382d] via-[#0b382d]/70 to-transparent pointer-events-none" />
-              
+              {/* Smoother, narrower organic gradient blend so more of the left side of the photo is visible */}
+              <div className="hidden lg:block absolute inset-y-0 left-0 w-36 bg-gradient-to-r from-[#0b382d] via-[#0b382d]/40 to-transparent pointer-events-none" />
+
               {/* Soft gradient bottom on mobile */}
               <div className="lg:hidden absolute inset-0 bg-gradient-to-t from-[#0b382d] via-transparent to-transparent pointer-events-none" />
             </div>
