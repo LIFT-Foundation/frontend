@@ -36,6 +36,12 @@ export const siteData = {
       icon: "book-open"
     },
     {
+      id: "montessori",
+      title: "Little Light Montessori",
+      subtitle: "Early Childhood Foundation",
+      icon: "graduation-cap"
+    },
+    {
       id: "youth",
       title: "Children & Youth",
       subtitle: "Stronger Generations",
@@ -59,12 +65,12 @@ export const siteData = {
     centerImage: "/images/mission-children-learning.jpg"
   },
 
-  // 3 CORE PROGRAMS (Phase 1 Focused Positioning)
+  // 4 CORE PROGRAMS
   areasOfImpact: {
     badge: "OUR PROGRAMS",
-    titleStart: "Our 3 Core Focus ",
+    titleStart: "Our 4 Core Focus ",
     titleHighlight: "Programs",
-    subtitle: "Rooted in God's love, our Phase 1 strategy focuses directly on Education, Youth Development, and Nutrition across Sri Lanka.",
+    subtitle: "Rooted in God's love, our strategy focuses directly on Education, Early Childhood Development, Youth Empowerment, and Nutrition across Sri Lanka.",
     items: [
       {
         id: "education",
@@ -75,6 +81,16 @@ export const siteData = {
         badgeBg: "bg-[#0d7a64]",
         badgeIcon: "book-open",
         btnColor: "bg-[#e2f3ee] text-[#0d7a64] hover:bg-[#d0ece3]"
+      },
+      {
+        id: "montessori",
+        title: "Little Light Montessori",
+        tagline: "Early Childhood",
+        description: "Christ-centred early childhood education in Kandana providing a holistic learning foundation for young minds.",
+        image: "https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=800&auto=format&fit=crop",
+        badgeBg: "bg-[#0284c7]",
+        badgeIcon: "graduation-cap",
+        btnColor: "bg-[#e0f2fe] text-[#0284c7] hover:bg-[#bae6fd]"
       },
       {
         id: "children-youth",

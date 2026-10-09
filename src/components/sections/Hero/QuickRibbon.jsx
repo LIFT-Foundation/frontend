@@ -45,7 +45,7 @@ export default function QuickRibbon() {
           {displayItems.map((item, idx) => (
             <div
               key={`${item.id}-${idx}`}
-              className="w-1/6 flex-shrink-0 px-2 sm:px-4 flex items-center justify-center cursor-pointer group"
+              className="w-1/8 min-w-[240px] flex-shrink-0 px-2 sm:px-4 flex items-center justify-center cursor-pointer group"
             >
               <div className="flex items-center gap-3">
                 <div className="w-9 h-9 rounded-full bg-teal-50/80 border border-teal-100 flex items-center justify-center text-teal-800 flex-shrink-0 group-hover:scale-110 group-hover:bg-[#fdf0e8] transition-transform">
