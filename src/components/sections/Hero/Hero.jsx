@@ -2,92 +2,125 @@ import React from 'react';
 import { Heart, ArrowRight } from 'lucide-react';
 import { siteData } from '../../../data/content';
 
+// organic left edge of the photo shifted left (viewBox 1440 x 640)
+const EDGE =
+  'M620,0 C560,70 640,150 580,235 C520,320 630,400 570,485 C540,530 560,590 540,640';
+
 export default function Hero({ onExplorePrograms, onDonateClick }) {
   const { hero } = siteData;
 
   return (
-    <section className="relative bg-[#0b382d] text-white overflow-hidden min-h-[540px] lg:min-h-[600px] flex items-center">
-      {/* Top-Left Soft Organic Wave Silhouettes matching exact target design mockup */}
-      <div className="absolute inset-y-0 left-0 w-full lg:w-2/3 overflow-hidden pointer-events-none select-none z-0">
-        <svg
-          viewBox="0 0 800 800"
-          className="absolute -top-32 -left-32 w-[950px] h-[950px] opacity-[0.22] text-[#06211a] fill-current"
-        >
-          <path d="M0,0 L650,0 C550,220 420,380 280,500 C160,600 50,680 0,720 Z" />
-        </svg>
+    <section className="relative isolate overflow-hidden bg-[#07362a] text-white min-h-[580px] lg:min-h-[640px] flex items-center">
+      {/* DESKTOP: photo + green blend, all in one SVG */}
+      <svg
+        className="hidden lg:block absolute inset-0 w-full h-full z-0 pointer-events-none"
+        viewBox="0 0 1440 640"
+        preserveAspectRatio="xMidYMid slice"
+        aria-hidden="true"
+      >
+        <defs>
+          <linearGradient id="hv-green" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stopColor="#052a1c" />
+            <stop offset="55%" stopColor="#0a4a37" />
+            <stop offset="100%" stopColor="#0e5c47" />
+          </linearGradient>
 
-        <svg
-          viewBox="0 0 800 800"
-          className="absolute top-12 -left-20 w-[750px] h-[750px] opacity-[0.14] text-[#134d3f] fill-current"
-        >
-          <path d="M0,150 C250,150 480,280 400,520 C320,700 120,760 0,800 Z" />
-        </svg>
-      </div>
+          <filter id="hv-blur-mask" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="28" />
+          </filter>
+          <filter id="hv-blur-glow" x="-30%" y="-30%" width="160%" height="160%">
+            <feGaussianBlur stdDeviation="22" />
+          </filter>
+          <filter id="hv-blur-wave" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="40" />
+          </filter>
 
-      <div className="w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[540px] lg:min-h-[600px]">
+          {/* white = photo visible, blurred => soft organic edge */}
+          <mask id="hv-photo-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="1440" height="640">
+            <rect width="1440" height="640" fill="black" />
+            <path d={`${EDGE} L1440,640 L1440,0 Z`} fill="white" filter="url(#hv-blur-mask)" />
+          </mask>
+        </defs>
 
-          {/* Left Column: Headline and Call-to-actions */}
-          <div className="lg:col-span-5 xl:col-span-5 flex flex-col justify-center px-6 sm:px-10 lg:pl-14 lg:pr-4 xl:pl-20 py-12 lg:py-16 space-y-6 z-10">
-            {/* Tagline Badge with Orange Indicator Line */}
-            <div className="flex items-center gap-2.5 text-[11px] sm:text-[12px] font-semibold tracking-[0.24em] text-teal-200/90 uppercase">
-              <span className="w-7 h-[2px] bg-[#f28e63] inline-block" />
-              <span>{hero.tag}</span>
-            </div>
+        {/* base green */}
+        <rect width="1440" height="640" fill="url(#hv-green)" />
 
-            {/* Main Hero Heading (Exactly 3 Lines with clean breathable spacing) */}
-            <h1 className="text-3xl sm:text-4xl md:text-[2.55rem] lg:text-[2.7rem] xl:text-[3.1rem] font-extrabold tracking-tight leading-[1.18] text-white flex flex-col gap-1.5 sm:gap-2">
-              <span className="block whitespace-nowrap">{hero.titleLine1}</span>
-              <span className="block whitespace-nowrap text-[#f28e63]">{hero.titleLine2}</span>
-              <span className="block whitespace-nowrap">{hero.titleLine3}</span>
-            </h1>
+        {/* photo (right side, masked) */}
+        <image
+          href={hero.image}
+          x="300"
+          y="0"
+          width="1140"
+          height="640"
+          preserveAspectRatio="xMidYMid slice"
+          mask="url(#hv-photo-mask)"
+        />
 
-            {/* Subtitle */}
-            <p className="text-xs sm:text-[13px] text-teal-100/90 max-w-md leading-relaxed font-normal">
-              {hero.subtitle}
-            </p>
+        {/* light green rim glow along the curve */}
+        <path
+          d={EDGE}
+          fill="none"
+          stroke="#2f9a7a"
+          strokeWidth="46"
+          opacity="0.35"
+          filter="url(#hv-blur-glow)"
+        />
 
-            {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3.5 pt-2">
-              <button
-                type="button"
-                onClick={onDonateClick}
-                className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#f28e63] hover:bg-[#ea7849] text-white font-bold text-xs shadow-md hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
-              >
-                <Heart className="w-3.5 h-3.5 fill-white text-white" />
-                <span>{hero.primaryCta}</span>
-                <ArrowRight className="w-4 h-4 ml-0.5" />
-              </button>
+        {/* dark organic waves bottom-left / top-left */}
+        <ellipse cx="140" cy="640" rx="380" ry="170" fill="#03231a" opacity="0.9" filter="url(#hv-blur-wave)" />
+        <ellipse cx="100" cy="40" rx="320" ry="160" fill="#0e5c47" opacity="0.7" filter="url(#hv-blur-wave)" />
+      </svg>
 
-              <a
-                href="#programs"
-                onClick={onExplorePrograms}
-                className="flex items-center gap-2 px-6 py-3 rounded-full border border-teal-400/30 hover:border-teal-300 bg-teal-950/30 hover:bg-teal-900/50 text-white font-semibold text-xs backdrop-blur-sm transition-all duration-200"
-              >
-                <span>{hero.secondaryCta}</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
+      {/* MOBILE / TABLET: photo bg + top-to-bottom fade */}
+      <div
+        className="lg:hidden absolute inset-0 z-0 bg-cover bg-center pointer-events-none"
+        style={{ backgroundImage: `url(${hero.image})` }}
+      />
+      <div className="lg:hidden absolute inset-0 z-[1] bg-gradient-to-b from-[#07362a] via-[#07362a]/85 to-[#07362a]/35 pointer-events-none" />
+
+      {/* Content shifted more to the left */}
+      <div className="w-full px-6 sm:px-10 lg:pl-16 xl:pl-24 lg:pr-8 py-16 lg:py-20 relative z-10">
+        <div className="max-w-xl lg:max-w-xl">
+          <div className="flex items-center gap-2.5 text-[11px] sm:text-[12px] font-bold tracking-[0.26em] text-teal-200/90 uppercase mb-7">
+            <span className="w-8 h-[2.5px] bg-[#f28e63] inline-block rounded-full" />
+            <span>{hero.tag}</span>
           </div>
 
-          {/* Right Column: Full-Height Curved Photo of Children */}
-          <div className="lg:col-span-7 xl:col-span-7 relative min-h-[380px] sm:min-h-[460px] lg:min-h-full overflow-hidden">
-            <div className="absolute inset-0 w-full h-full">
-              <img
-                src={hero.image}
-                alt="Happy Sri Lankan children smiling and pointing forward"
-                className="w-full h-full object-cover object-left lg:object-center scale-[1.01]"
-                loading="eager"
-              />
+          <h1 className="text-3xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.65rem] font-extrabold tracking-tight leading-[1.08] text-white flex flex-col gap-1.5 sm:gap-2.5 drop-shadow-md">
+            <span className="block whitespace-nowrap">{hero.titleLine1}</span>
+            <span className="block whitespace-nowrap text-[#f28e63]">{hero.titleLine2}</span>
+            <span className="block whitespace-nowrap">{hero.titleLine3}</span>
+          </h1>
 
-              {/* Smoother, narrower organic gradient blend so more of the left side of the photo is visible */}
-              <div className="hidden lg:block absolute inset-y-0 left-0 w-36 bg-gradient-to-r from-[#0b382d] via-[#0b382d]/40 to-transparent pointer-events-none" />
+          <p className="mt-7 text-sm sm:text-base text-teal-50/90 max-w-lg leading-relaxed font-normal drop-shadow">
+            {hero.subtitle}
+          </p>
 
-              {/* Soft gradient bottom on mobile */}
-              <div className="lg:hidden absolute inset-0 bg-gradient-to-t from-[#0b382d] via-transparent to-transparent pointer-events-none" />
-            </div>
+          <div className="mt-9 flex flex-wrap items-center gap-4">
+            <button
+              type="button"
+              onClick={onDonateClick}
+              className="inline-flex min-h-14 items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-[#f28e63] hover:bg-[#ea7849] text-white font-bold text-sm shadow-lg shadow-[#042820]/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
+            >
+              <Heart className="w-4 h-4 fill-white text-white" />
+              <span>{hero.primaryCta}</span>
+              <ArrowRight className="w-4 h-4 ml-0.5" />
+            </button>
+
+            <a
+              href="#programs"
+              onClick={(e) => {
+                if (onExplorePrograms) {
+                  e.preventDefault();
+                  onExplorePrograms();
+                }
+              }}
+              className="inline-flex min-h-14 items-center justify-center gap-2.5 px-7 py-3.5 rounded-full border border-teal-300/40 hover:border-teal-200 bg-[#07382d]/40 hover:bg-white/10 text-white font-semibold text-sm backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
+            >
+              <span>{hero.secondaryCta}</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
-
         </div>
       </div>
     </section>
