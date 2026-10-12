@@ -61,19 +61,22 @@ export default function MissionOverview({ onLearnMoreClick }) {
               loading="lazy"
             />
 
-            {/* Floating Scripture Card (Positioned top-right/overlapping right edge inside photo) */}
-            <div className="absolute top-4 right-4 bottom-4 sm:top-5 sm:right-5 sm:bottom-5 w-[210px] sm:w-[250px] bg-[#f2faf7]/95 backdrop-blur-md rounded-2xl p-4 sm:p-5 flex flex-col justify-between shadow-lg border border-white/60">
+            {/* Floating Glassmorphic Scripture Card (Positioned at bottom with glass feel) */}
+            <div className="absolute bottom-3 right-3 left-3 sm:left-auto sm:right-4 sm:bottom-4 sm:max-w-[320px] md:max-w-[340px] bg-white/50 hover:bg-white/60 backdrop-blur-md rounded-2xl p-3.5 sm:p-4 shadow-[0_8px_32px_0_rgba(0,0,0,0.14)] border border-white/70 flex flex-col justify-between transition-all duration-300">
               <div>
-                <span className="text-2xl font-serif text-teal-800/80 font-bold block leading-none select-none">
+                <span className="text-xl sm:text-2xl font-serif text-[#ea7849] font-bold block leading-none select-none">
                   “
                 </span>
-                <p className="font-serif italic text-gray-800 text-[11px] sm:text-[12px] leading-relaxed mt-1">
+                <p className="font-serif italic text-gray-900 text-[11px] sm:text-[12px] leading-relaxed mt-1">
                   "{mission.scriptureQuote}"
                 </p>
               </div>
 
-              <div className="pt-2 border-t border-teal-200/40 text-right">
-                <span className="text-[10px] font-bold text-teal-900 tracking-wider">
+              <div className="pt-2 mt-2 border-t border-gray-900/10 flex items-center justify-between text-right">
+                <span className="text-[10px] font-semibold text-teal-900/60 tracking-wider">
+                  HOLY BIBLE
+                </span>
+                <span className="text-[10.5px] font-bold text-[#0c3930] tracking-wide">
                   {mission.scriptureRef}
                 </span>
               </div>
