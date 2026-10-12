@@ -36,12 +36,6 @@ export const siteData = {
       icon: "book-open"
     },
     {
-      id: "montessori",
-      title: "Little Light Montessori",
-      subtitle: "Early Childhood Foundation",
-      icon: "graduation-cap"
-    },
-    {
       id: "youth",
       title: "Children & Youth",
       subtitle: "Stronger Generations",
@@ -52,6 +46,12 @@ export const siteData = {
       title: "Nourish with Love",
       subtitle: "Meals for a Better Tomorrow",
       icon: "heart"
+    },
+    {
+      id: "montessori",
+      title: "Little Light Montessori",
+      subtitle: "Early Childhood Foundation",
+      icon: "graduation-cap"
     }
   ],
 
@@ -77,27 +77,17 @@ export const siteData = {
         title: "Education",
         tagline: "Brighter Futures",
         description: "Free Education Centres — educational support for children in underserved communities across Sri Lanka.",
-        image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop",
+        image: "/images/card-education.jpg",
         badgeBg: "bg-[#0d7a64]",
         badgeIcon: "book-open",
         btnColor: "bg-[#e2f3ee] text-[#0d7a64] hover:bg-[#d0ece3]"
-      },
-      {
-        id: "montessori",
-        title: "Little Light Montessori",
-        tagline: "Early Childhood",
-        description: "Christ-centred early childhood education in Kandana providing a holistic learning foundation for young minds.",
-        image: "https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=800&auto=format&fit=crop",
-        badgeBg: "bg-[#0284c7]",
-        badgeIcon: "graduation-cap",
-        btnColor: "bg-[#e0f2fe] text-[#0284c7] hover:bg-[#bae6fd]"
       },
       {
         id: "children-youth",
         title: "Children & Youth",
         tagline: "Stronger Generations",
         description: "Development, life skills, and leadership opportunities equipping young people for meaningful futures.",
-        image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop",
+        image: "/images/card-children-youth.jpg",
         badgeBg: "bg-[#b81d68]",
         badgeIcon: "users",
         btnColor: "bg-[#fbe8f1] text-[#b81d68] hover:bg-[#f6d5e5]"
@@ -107,10 +97,20 @@ export const siteData = {
         title: "Nourish with Love",
         tagline: "Meals for a Better Tomorrow",
         description: "Nutritious meals and food support for children and vulnerable communities to foster health and learning.",
-        image: "https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=800&auto=format&fit=crop",
+        image: "/images/card-nourish.jpg",
         badgeBg: "bg-[#ea580c]",
         badgeIcon: "utensils",
         btnColor: "bg-[#fdf0e8] text-[#ea580c] hover:bg-[#fae4d7]"
+      },
+      {
+        id: "montessori",
+        title: "Little Light Montessori",
+        tagline: "Early Childhood",
+        description: "Christ-centred early childhood education in Kandana providing a holistic learning foundation for young minds.",
+        image: "/images/card-montessori.jpg",
+        badgeBg: "bg-[#0284c7]",
+        badgeIcon: "graduation-cap",
+        btnColor: "bg-[#e0f2fe] text-[#0284c7] hover:bg-[#bae6fd]"
       }
     ]
   },
@@ -128,7 +128,7 @@ export const siteData = {
         location: "Kandana, Gampaha District",
         status: "Active & Operational",
         description: "Christ-centred early childhood education in Kandana providing a world-class foundation for young minds.",
-        image: "https://images.unsplash.com/photo-1588072432836-e10032774350?q=80&w=800&auto=format&fit=crop"
+        image: "/images/card-montessori.jpg"
       },
       {
         id: "education-centers",
