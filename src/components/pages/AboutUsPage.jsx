@@ -32,7 +32,7 @@ export default function AboutUsPage({ onBackToHome, onDonateClick }) {
           </h1>
 
           <p className="text-xs sm:text-sm text-teal-100/90 max-w-2xl leading-relaxed">
-            A Christian foundation dedicated to empowering children and young people across Sri Lanka through education, nutrition, and community development.
+            A Christian foundation in Sri Lanka committed to empowering children and young people through education, nutrition, and community-based support.
           </p>
         </div>
       </div>
@@ -50,10 +50,13 @@ export default function AboutUsPage({ onBackToHome, onDonateClick }) {
             A Purpose-Driven Sri Lankan Christian Foundation
           </h2>
           <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-            LIFT Foundation (Love In Fellowship & Truth) was founded with a profound conviction: every child in Sri Lanka, regardless of their background or circumstance, deserves the opportunity to learn, grow, and thrive in a safe and supportive environment.
+            Love In Fellowship & Truth Foundation is committed to helping children and young people access opportunities to learn, grow, and build a brighter future.
           </p>
           <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-            We work alongside local communities, educators, and churches to establish sustainable solutions to childhood poverty, educational dropouts, and malnutrition.
+            Through education support, nutritional assistance, and youth development initiatives, we aim to respond to the practical needs of children and underserved communities across Sri Lanka.
+          </p>
+          <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+            We seek to work collaboratively with local communities, educators, churches, and like-minded partners to develop meaningful and sustainable initiatives.
           </p>
         </section>
 
@@ -66,7 +69,7 @@ export default function AboutUsPage({ onBackToHome, onDonateClick }) {
             </div>
             <h3 className="text-xl font-bold text-white">Our Mission</h3>
             <p className="text-xs sm:text-sm text-teal-100/90 leading-relaxed">
-              We believe every child deserves the opportunity to learn, grow and thrive. Through education, nutrition and community-based support, LIFT Foundation works alongside underserved communities to create brighter futures for children and young people across Sri Lanka.
+              We aim to empower children and young people through education, nutrition, and community-based support, helping them develop their potential and pursue a brighter future.
             </p>
           </div>
 
@@ -77,7 +80,10 @@ export default function AboutUsPage({ onBackToHome, onDonateClick }) {
             </div>
             <h3 className="text-xl font-bold text-gray-900">Our Vision 2030</h3>
             <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-              To establish 331 divisional free education and development centres across all 25 districts of Sri Lanka, ensuring no child is left behind due to poverty or lack of educational resources.
+              Our long-term vision is to expand access to free educational support across Sri Lanka, with a target of establishing 331 divisional-level education and development centres by 2030.
+            </p>
+            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
+              This is a long-term goal that we aim to pursue progressively through local partnerships, community participation, and sustainable funding.
             </p>
           </div>
         </section>
@@ -95,19 +101,19 @@ export default function AboutUsPage({ onBackToHome, onDonateClick }) {
             <div className="p-5 rounded-2xl bg-gray-50 border border-gray-100 space-y-2">
               <h4 className="text-sm font-bold text-gray-900">1. Education</h4>
               <p className="text-xs text-gray-500 leading-relaxed">
-                Free after-school learning centres, tuition assistance, books, and educational kits for children in rural communities.
+                Supporting children’s learning through free educational programmes, learning resources, books, and tuition assistance, based on programme availability and funding.
               </p>
             </div>
             <div className="p-5 rounded-2xl bg-gray-50 border border-gray-100 space-y-2">
               <h4 className="text-sm font-bold text-gray-900">2. Children & Youth</h4>
               <p className="text-xs text-gray-500 leading-relaxed">
-                Holistic mentorship, values-based leadership workshops, and life skills training for young people.
+                Encouraging children’s personal growth and young people’s development through mentoring, life-skills activities, and leadership development initiatives.
               </p>
             </div>
             <div className="p-5 rounded-2xl bg-gray-50 border border-gray-100 space-y-2">
               <h4 className="text-sm font-bold text-gray-900">3. Nourish with Love</h4>
               <p className="text-xs text-gray-500 leading-relaxed">
-                Daily nutritious meals and health drives to ensure children have the physical strength to excel in school.
+                Working towards improving children’s access to nutritious food through community-based meal and nutrition support initiatives.
               </p>
             </div>
           </div>
@@ -123,11 +129,11 @@ export default function AboutUsPage({ onBackToHome, onDonateClick }) {
           <h2 className="text-2xl font-bold text-white">Rooted in Christ's Love</h2>
 
           <p className="text-xs sm:text-sm text-teal-100/90 leading-relaxed max-w-3xl">
-            As a Christian foundation, everything we do is inspired by the love, grace, and compassion of Jesus Christ. We believe in serving all people unconditionally, regardless of ethnicity, religion, or social background.
+            As a Christian foundation, our work is inspired by the love, grace, and compassion of Jesus Christ. We seek to serve people with dignity, kindness, and respect, regardless of their background.
           </p>
 
           <blockquote className="border-l-2 border-[#f28e63] pl-4 italic text-xs text-teal-200/90 py-1">
-            "Let your light shine before others, that they may see your good deeds and glorify your Father in heaven." — Matthew 5:16
+            “Let your light shine before others, that they may see your good deeds and glorify your Father in heaven.” — Matthew 5:16
           </blockquote>
         </section>
 
@@ -139,7 +145,7 @@ export default function AboutUsPage({ onBackToHome, onDonateClick }) {
               <span>Sri Lanka Focus</span>
             </h3>
             <p className="text-xs text-gray-600 leading-relaxed">
-              Our ground operations are 100% focused on Sri Lanka. We operate through community-based hubs in all 9 provinces, working directly with local leaders who understand the unique needs of each village.
+              We are committed to developing practical, community-focused initiatives in Sri Lanka, beginning with children and youth. Our long-term plans aim to extend educational and nutritional support to more communities as resources and partnerships allow.
             </p>
           </div>
 
