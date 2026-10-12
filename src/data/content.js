@@ -68,9 +68,9 @@ export const siteData = {
   // 4 CORE PROGRAMS
   areasOfImpact: {
     badge: "OUR PROGRAMS",
-    titleStart: "Our 4 Core Focus ",
-    titleHighlight: "Programs",
-    subtitle: "Rooted in God's love, our strategy focuses directly on Education, Early Childhood Development, Youth Empowerment, and Nutrition across Sri Lanka.",
+    titleStart: "Empowering Children.",
+    titleHighlight: "Building Brighter Futures.",
+    subtitle: "Through education, nutrition, and child development, LIFT Foundation works alongside underserved communities across Sri Lanka.",
     items: [
       {
         id: "education",

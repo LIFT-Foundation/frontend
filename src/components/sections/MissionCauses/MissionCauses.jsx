@@ -16,7 +16,7 @@ export default function MissionCauses() {
         </div>
         
         <h2 className="text-2xl sm:text-3xl lg:text-[2rem] font-bold text-gray-900 tracking-tight">
-          <span>{areasOfImpact.titleStart}</span>
+          <span>{areasOfImpact.titleStart}</span>{' '}
           <span className="text-[#f28e63]">{areasOfImpact.titleHighlight}</span>
         </h2>
         
