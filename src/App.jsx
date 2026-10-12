@@ -98,7 +98,7 @@ export default function App() {
         <ProjectsSection />
 
         {/* 5. Our Vision for Sri Lanka (9 Provinces -> 25 Districts -> 331 Divisional Centres) */}
-        <VisionSection />
+        <VisionSection onSponsorClick={navigateToDonate} />
 
         {/* 6. Why Education Matters (Children + Poverty + Education Gap) */}
         <WhyEducationSection />

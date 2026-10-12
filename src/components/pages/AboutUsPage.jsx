@@ -28,7 +28,7 @@ export default function AboutUsPage({ onBackToHome, onDonateClick }) {
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
-            Love In Fellowship & Truth
+            Love In Fellowship & Truth Foundation
           </h1>
 
           <p className="text-xs sm:text-sm text-teal-100/90 max-w-2xl leading-relaxed">
@@ -39,7 +39,7 @@ export default function AboutUsPage({ onBackToHome, onDonateClick }) {
 
       {/* Main Content Sections */}
       <main className="flex-1 py-12 sm:py-16 px-4 sm:px-8 max-w-5xl mx-auto w-full space-y-16">
-        
+
         {/* 1. Who We Are */}
         <section id="who-we-are" className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-100 shadow-sm space-y-4">
           <div className="inline-flex items-center gap-2 text-xs font-bold text-[#0d7a64] uppercase tracking-wider">
