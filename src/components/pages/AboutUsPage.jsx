@@ -157,16 +157,16 @@ export default function AboutUsPage({ onBackToHome, onDonateClick }) {
             <ul className="space-y-2 text-xs text-gray-600">
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#0d7a64] flex-shrink-0 mt-0.5" />
-                <span>Annual financial audits and published reports</span>
+                <span>We are committed to responsible stewardship of donations, clear project budgets, and honest communication with our supporters</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#0d7a64] flex-shrink-0 mt-0.5" />
-                <span>Quarterly progress reports sent directly to international donors</span>
+                <span>We aim to provide appropriate updates on project activities, progress, and the use of funds</span>
               </li>
-              <li className="flex items-start gap-2">
+              {/* <li className="flex items-start gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#0d7a64] flex-shrink-0 mt-0.5" />
                 <span>Direct project-level fund allocation and zero tolerance for waste</span>
-              </li>
+              </li> */}
             </ul>
           </div>
         </section>
