@@ -8,15 +8,15 @@ export default function QuickRibbon() {
   const getIcon = (iconName) => {
     switch (iconName) {
       case 'book-open':
-        return <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-teal-800 stroke-[1.8]" />;
+        return <BookOpen className="w-4 h-4 sm:w-5 sm:h-5 text-teal-800 stroke-[1.8] group-hover/item:scale-110 group-hover/item:text-[#ea580c] transition-all duration-300" />;
       case 'users':
-        return <Users className="w-4 h-4 sm:w-5 sm:h-5 text-teal-800 stroke-[1.8]" />;
+        return <Users className="w-4 h-4 sm:w-5 sm:h-5 text-teal-800 stroke-[1.8] group-hover/item:scale-110 group-hover/item:text-[#ea580c] transition-all duration-300" />;
       case 'heart':
-        return <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-teal-800 stroke-[1.8]" />;
+        return <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-teal-800 stroke-[1.8] group-hover/item:scale-110 group-hover/item:text-[#ea580c] transition-all duration-300" />;
       case 'graduation-cap':
-        return <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-teal-800 stroke-[1.8]" />;
+        return <GraduationCap className="w-4 h-4 sm:w-5 sm:h-5 text-teal-800 stroke-[1.8] group-hover/item:scale-110 group-hover/item:text-[#ea580c] transition-all duration-300" />;
       default:
-        return <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-teal-800 stroke-[1.8]" />;
+        return <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-teal-800 stroke-[1.8] group-hover/item:scale-110 group-hover/item:text-[#ea580c] transition-all duration-300" />;
     }
   };
 
@@ -37,16 +37,16 @@ export default function QuickRibbon() {
         <div
           key={`${keyPrefix}-${item.id}-${idx}`}
           onClick={scrollToPrograms}
-          className="flex items-center gap-3 px-6 sm:px-8 py-1 flex-shrink-0 cursor-pointer select-none group/item"
+          className="flex items-center gap-3 px-6 sm:px-8 py-1.5 flex-shrink-0 cursor-pointer select-none group/item hover:-translate-y-0.5 transition-transform duration-200"
         >
-          <div className="w-9 h-9 rounded-full bg-teal-50/90 border border-teal-100 flex items-center justify-center text-teal-800 flex-shrink-0 group-hover/item:scale-110 group-hover/item:bg-[#fdf0e8] transition-all duration-200">
+          <div className="w-9 h-9 rounded-full bg-teal-50/90 border border-teal-100 flex items-center justify-center text-teal-800 flex-shrink-0 group-hover/item:scale-110 group-hover/item:bg-[#fdf0e8] group-hover/item:border-[#f9c5a7] transition-all duration-300 shadow-sm">
             {getIcon(item.icon)}
           </div>
           <div className="min-w-0 pr-6 border-r border-gray-200/60">
-            <h4 className="text-[12px] sm:text-[13px] font-bold text-gray-900 group-hover/item:text-teal-900 leading-tight whitespace-nowrap transition-colors">
+            <h4 className="text-[12px] sm:text-[13px] font-bold text-gray-900 group-hover/item:text-[#0b332c] leading-tight whitespace-nowrap transition-colors">
               {item.title}
             </h4>
-            <p className="text-[10px] font-normal text-gray-500 leading-tight mt-0.5 whitespace-nowrap">
+            <p className="text-[10px] font-normal text-gray-500 group-hover/item:text-[#ea580c] leading-tight mt-0.5 whitespace-nowrap transition-colors">
               {item.subtitle}
             </p>
           </div>
@@ -56,7 +56,7 @@ export default function QuickRibbon() {
   );
 
   return (
-    <div className="bg-white border-b border-gray-100 shadow-sm py-3.5 relative z-20 overflow-hidden group">
+    <div className="bg-white/90 backdrop-blur-md border-b border-gray-100/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] py-3 relative z-20 overflow-hidden group">
       <style>{`
         @keyframes continuousMarquee {
           0% {
@@ -77,8 +77,8 @@ export default function QuickRibbon() {
       `}</style>
 
       {/* Gentle Edge Fades */}
-      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-r from-white to-transparent z-10" />
-      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-l from-white to-transparent z-10" />
+      <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-r from-white/95 to-transparent z-10" />
+      <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-l from-white/95 to-transparent z-10" />
 
       {/* Seamless Infinite Track */}
       <div className="flex w-max">

@@ -1,6 +1,11 @@
 import React from 'react';
 import { Heart, ArrowRight } from 'lucide-react';
 import { siteData } from '../../../data/content';
+import ParticleBackground from '../../effects/ParticleBackground';
+import Typewriter from '../../effects/Typewriter';
+import RippleButton from '../../effects/RippleButton';
+import ScrollReveal from '../../effects/ScrollReveal';
+import ParallaxLayer from '../../effects/ParallaxLayer';
 
 // organic left edge of the photo shifted left (viewBox 1440 x 640)
 const EDGE =
@@ -9,8 +14,19 @@ const EDGE =
 export default function Hero({ onExplorePrograms, onDonateClick }) {
   const { hero } = siteData;
 
+  const dynamicWords = [
+    hero.titleLine2,
+    "Nourishing Families.",
+    "Educating Youth.",
+    "Igniting Hope.",
+    "Transforming Lives.",
+  ];
+
   return (
     <section className="relative isolate overflow-hidden bg-[#07362a] text-white min-h-[580px] lg:min-h-[640px] flex items-center">
+      {/* 3D Interactive Floating Particles Background */}
+      <ParticleBackground particleCount={50} />
+
       {/* DESKTOP: photo + green blend, all in one SVG */}
       <svg
         className="hidden lg:block absolute inset-0 w-full h-full z-0 pointer-events-none"
@@ -81,46 +97,74 @@ export default function Hero({ onExplorePrograms, onDonateClick }) {
       {/* Content shifted more to the left */}
       <div className="w-full px-6 sm:px-10 lg:pl-16 xl:pl-24 lg:pr-8 py-16 lg:py-20 relative z-10">
         <div className="max-w-xl lg:max-w-xl">
-          <div className="flex items-center gap-2.5 text-[11px] sm:text-[12px] font-bold tracking-[0.26em] text-teal-200/90 uppercase mb-7">
-            <span className="w-8 h-[2.5px] bg-[#f28e63] inline-block rounded-full" />
-            <span>{hero.tag}</span>
-          </div>
+          {/* Top Tag Badge */}
+          <ScrollReveal direction="down" delay={100}>
+            <div className="flex items-center gap-2.5 text-[11px] sm:text-[12px] font-bold tracking-[0.26em] text-teal-200/90 uppercase mb-7">
+              <span className="w-8 h-[2.5px] bg-[#f28e63] inline-block rounded-full" />
+              <span>{hero.tag}</span>
+            </div>
+          </ScrollReveal>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.65rem] font-extrabold tracking-tight leading-[1.08] text-white flex flex-col gap-1.5 sm:gap-2.5 drop-shadow-md">
-            <span className="block whitespace-nowrap">{hero.titleLine1}</span>
-            <span className="block whitespace-nowrap text-[#f28e63]">{hero.titleLine2}</span>
-            <span className="block whitespace-nowrap">{hero.titleLine3}</span>
-          </h1>
+          {/* Heading with dynamic Typing Animation */}
+          <ScrollReveal direction="up" delay={200}>
+            <h1 className="text-3xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.65rem] font-extrabold tracking-tight leading-[1.08] text-white flex flex-col gap-1.5 sm:gap-2.5 drop-shadow-md">
+              <span className="block whitespace-nowrap">{hero.titleLine1}</span>
+              <span className="block whitespace-nowrap text-[#f28e63] min-h-[1.15em]">
+                <Typewriter words={dynamicWords} typingSpeed={85} deletingSpeed={45} delayBetweenWords={2400} />
+              </span>
+              <span className="block whitespace-nowrap">{hero.titleLine3}</span>
+            </h1>
+          </ScrollReveal>
 
-          <p className="mt-7 text-sm sm:text-base text-teal-50/90 max-w-lg leading-relaxed font-normal drop-shadow">
-            {hero.subtitle}
-          </p>
+          {/* Subtitle */}
+          <ScrollReveal direction="up" delay={300}>
+            <p className="mt-7 text-sm sm:text-base text-teal-50/90 max-w-lg leading-relaxed font-normal drop-shadow">
+              {hero.subtitle}
+            </p>
+          </ScrollReveal>
 
-          <div className="mt-9 flex flex-wrap items-center gap-4">
-            <button
-              type="button"
-              onClick={onDonateClick}
-              className="inline-flex min-h-14 items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-[#f28e63] hover:bg-[#ea7849] text-white font-bold text-sm shadow-lg shadow-[#042820]/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
-            >
-              <Heart className="w-4 h-4 fill-white text-white" />
-              <span>{hero.primaryCta}</span>
-              <ArrowRight className="w-4 h-4 ml-0.5" />
-            </button>
+          {/* Interactive Call-to-Actions */}
+          <ScrollReveal direction="up" delay={400}>
+            <div className="mt-9 flex flex-wrap items-center gap-4">
+              <RippleButton
+                onClick={onDonateClick}
+                className="inline-flex min-h-14 items-center justify-center gap-2.5 px-7 py-3.5 rounded-full bg-[#f28e63] hover:bg-[#ea7849] text-white font-bold text-sm shadow-lg shadow-[#042820]/40 hover:shadow-[#f28e63]/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer group"
+              >
+                <Heart className="w-4 h-4 fill-white text-white animate-heartbeat" />
+                <span>{hero.primaryCta}</span>
+                <ArrowRight className="w-4 h-4 ml-0.5 group-hover:translate-x-1 transition-transform duration-200" />
+              </RippleButton>
 
-            <a
-              href="#programs"
-              onClick={(e) => {
-                if (onExplorePrograms) {
-                  e.preventDefault();
-                  onExplorePrograms();
-                }
-              }}
-              className="inline-flex min-h-14 items-center justify-center gap-2.5 px-7 py-3.5 rounded-full border border-teal-300/40 hover:border-teal-200 bg-[#07382d]/40 hover:bg-white/10 text-white font-semibold text-sm backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
-            >
-              <span>{hero.secondaryCta}</span>
-              <ArrowRight className="w-4 h-4" />
-            </a>
-          </div>
+              <a
+                href="#programs"
+                onClick={(e) => {
+                  if (onExplorePrograms) {
+                    e.preventDefault();
+                    onExplorePrograms();
+                  }
+                }}
+                className="inline-flex min-h-14 items-center justify-center gap-2.5 px-7 py-3.5 rounded-full border border-teal-300/40 hover:border-teal-200 bg-[#07382d]/40 hover:bg-white/10 text-white font-semibold text-sm backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer group"
+              >
+                <span>{hero.secondaryCta}</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+              </a>
+            </div>
+          </ScrollReveal>
+
+          {/* Frosted Glass Floating Badge with Parallax depth */}
+          <ScrollReveal direction="fade" delay={550}>
+            <ParallaxLayer speed={-0.08} className="mt-8 pt-1">
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-2xl glass-badge shadow-xl backdrop-blur-md animate-float-slow">
+                <div className="relative flex h-2.5 w-2.5">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
+                </div>
+                <span className="text-xs text-teal-100 font-medium tracking-wide">
+                  Active across <strong className="text-white">Sri Lanka</strong> · 10,000+ Children & Families Reached
+                </span>
+              </div>
+            </ParallaxLayer>
+          </ScrollReveal>
         </div>
       </div>
     </section>

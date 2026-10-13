@@ -15,6 +15,7 @@ import Newsletter from './components/sections/Newsletter/Newsletter';
 import DonatePage from './components/pages/DonatePage';
 import AboutUsPage from './components/pages/AboutUsPage';
 import { X, Check } from 'lucide-react';
+import RippleButton from './components/effects/RippleButton';
 
 export default function App() {
   const [showDonatePage, setShowDonatePage] = useState(false);
@@ -124,18 +125,18 @@ export default function App() {
 
       {/* Volunteer / Partner Modal */}
       {showVolunteerModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
-          <div className="bg-white rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl relative border border-gray-100">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fadeIn">
+          <div className="bg-white/95 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl relative border border-white/60">
             <button
               onClick={() => setShowVolunteerModal(false)}
-              className="absolute top-5 right-5 p-1.5 rounded-full hover:bg-gray-100 text-gray-400 hover:text-gray-700 transition-colors"
+              className="absolute top-5 right-5 p-1.5 rounded-full hover:bg-gray-100 text-gray-400 hover:text-gray-700 transition-colors cursor-pointer"
             >
               <X className="w-5 h-5" />
             </button>
 
             {volunteerSubmitted ? (
               <div className="py-8 text-center space-y-3">
-                <div className="w-14 h-14 bg-teal-100 text-teal-800 rounded-full flex items-center justify-center mx-auto">
+                <div className="w-14 h-14 bg-teal-100 text-teal-800 rounded-full flex items-center justify-center mx-auto animate-float-slow">
                   <Check className="w-8 h-8 stroke-[2.5]" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 font-sans">Welcome to the LIFT Network!</h3>
@@ -163,7 +164,7 @@ export default function App() {
                       value={volunteerForm.name}
                       onChange={(e) => setVolunteerForm({ ...volunteerForm, name: e.target.value })}
                       placeholder="e.g. John Doe"
-                      className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-gray-200 focus:border-teal-700 focus:ring-2 focus:ring-teal-100 outline-none"
+                      className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-gray-200 focus:border-teal-700 focus:ring-2 focus:ring-teal-100 outline-none transition-all"
                     />
                   </div>
 
@@ -177,7 +178,7 @@ export default function App() {
                       value={volunteerForm.email}
                       onChange={(e) => setVolunteerForm({ ...volunteerForm, email: e.target.value })}
                       placeholder="e.g. john@example.com"
-                      className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-gray-200 focus:border-teal-700 focus:ring-2 focus:ring-teal-100 outline-none"
+                      className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-gray-200 focus:border-teal-700 focus:ring-2 focus:ring-teal-100 outline-none transition-all"
                     />
                   </div>
 
@@ -188,7 +189,7 @@ export default function App() {
                     <select
                       value={volunteerForm.interest}
                       onChange={(e) => setVolunteerForm({ ...volunteerForm, interest: e.target.value })}
-                      className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-gray-200 focus:border-teal-700 focus:ring-2 focus:ring-teal-100 outline-none bg-white text-gray-700"
+                      className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-gray-200 focus:border-teal-700 focus:ring-2 focus:ring-teal-100 outline-none bg-white text-gray-700 transition-all"
                     >
                       <option>Free Education Centres (Tutoring & Books)</option>
                       <option>Nourish with Love (Meal Drives)</option>
@@ -198,12 +199,12 @@ export default function App() {
                     </select>
                   </div>
 
-                  <button
+                  <RippleButton
                     type="submit"
                     className="w-full py-3 rounded-xl bg-teal-950 hover:bg-teal-900 text-white font-semibold text-xs tracking-wide shadow-md transition-all duration-200 mt-2"
                   >
                     Submit Application
-                  </button>
+                  </RippleButton>
                 </form>
               </div>
             )}

@@ -10,10 +10,9 @@ export const siteData = {
     { name: "Home", href: "#" },
     { name: "About", href: "#about" },
     { name: "Programs", href: "#programs" },
+    { name: "Impact", href: "#impact" },
     { name: "Projects", href: "#projects" },
-    { name: "Vision 2030", href: "#vision" },
-    { name: "Why Education", href: "#why-education" },
-    { name: "How You Can Help", href: "#how-to-help" },
+    { name: "Get Involved", href: "#get-involved" },
     { name: "Contact", href: "#contact" }
   ],
 

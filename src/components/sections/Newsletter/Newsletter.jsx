@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Mail, ArrowRight, Check } from 'lucide-react';
 import { siteData } from '../../../data/content';
+import ScrollReveal from '../../effects/ScrollReveal';
+import RippleButton from '../../effects/RippleButton';
 
 export default function Newsletter() {
   const { newsletter } = siteData;
@@ -18,57 +20,59 @@ export default function Newsletter() {
   };
 
   return (
-    <section className="py-8 px-4 sm:px-8 max-w-7xl mx-auto">
-      <div className="bg-[#fce9df] rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 lg:p-10 border border-peach-200/50 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-        
-        {/* Left Side: Mail Icon + Title & Subtitle */}
-        <div className="flex items-start sm:items-center gap-4">
-          <div className="w-12 h-12 rounded-2xl bg-[#ea580c] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
-            <Mail className="w-6 h-6 stroke-[2]" />
+    <section className="py-10 px-4 sm:px-8 max-w-7xl mx-auto">
+      <ScrollReveal direction="up" delay={100}>
+        <div className="bg-[#fce9df] rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8 lg:p-10 border border-peach-200/50 shadow-sm flex flex-col lg:flex-row lg:items-center justify-between gap-6 hover:shadow-xl transition-shadow duration-300">
+          
+          {/* Left Side: Mail Icon + Title & Subtitle */}
+          <div className="flex items-start sm:items-center gap-4 group">
+            <div className="w-12 h-12 rounded-2xl bg-[#ea580c] text-white flex items-center justify-center flex-shrink-0 shadow-sm group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+              <Mail className="w-6 h-6 stroke-[2]" />
+            </div>
+            <div>
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight">
+                {newsletter.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-gray-600 mt-1">
+                {newsletter.subtitle}
+              </p>
+            </div>
           </div>
-          <div>
-            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 tracking-tight">
-              {newsletter.title}
-            </h3>
-            <p className="text-xs sm:text-sm text-gray-600 mt-1">
-              {newsletter.subtitle}
-            </p>
-          </div>
-        </div>
 
-        {/* Right Side: Horizontal Form */}
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col sm:flex-row items-center gap-2.5 w-full lg:w-auto"
-        >
-          <input
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder={newsletter.placeholder}
-            className="w-full sm:w-80 px-5 py-3 text-xs sm:text-sm rounded-full bg-white border border-transparent focus:border-peach-400 focus:ring-2 focus:ring-peach-200 outline-none text-gray-800 placeholder:text-gray-400 shadow-sm transition-all"
-          />
-
-          <button
-            type="submit"
-            className="w-full sm:w-auto px-6 py-3 rounded-full bg-teal-950 hover:bg-teal-900 text-white font-semibold text-xs sm:text-sm tracking-wide shadow-sm hover:shadow transition-all duration-200 flex-shrink-0 flex items-center justify-center gap-1.5"
+          {/* Right Side: Horizontal Form */}
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col sm:flex-row items-center gap-2.5 w-full lg:w-auto"
           >
-            {subscribed ? (
-              <>
-                <Check className="w-4 h-4 text-peach-300" />
-                <span>Subscribed!</span>
-              </>
-            ) : (
-              <>
-                <span>{newsletter.cta}</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </>
-            )}
-          </button>
-        </form>
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder={newsletter.placeholder}
+              className="w-full sm:w-80 px-5 py-3 text-xs sm:text-sm rounded-full bg-white border border-transparent focus:border-peach-400 focus:ring-2 focus:ring-peach-200 outline-none text-gray-800 placeholder:text-gray-400 shadow-sm transition-all"
+            />
 
-      </div>
+            <RippleButton
+              type="submit"
+              className="w-full sm:w-auto px-6 py-3 rounded-full bg-teal-950 hover:bg-teal-900 text-white font-semibold text-xs sm:text-sm tracking-wide shadow-sm hover:shadow-lg transition-all duration-200 flex-shrink-0 flex items-center justify-center gap-1.5 group"
+            >
+              {subscribed ? (
+                <>
+                  <Check className="w-4 h-4 text-peach-300" />
+                  <span>Subscribed!</span>
+                </>
+              ) : (
+                <>
+                  <span>{newsletter.cta}</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                </>
+              )}
+            </RippleButton>
+          </form>
+
+        </div>
+      </ScrollReveal>
     </section>
   );
 }

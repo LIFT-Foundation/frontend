@@ -37,7 +37,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#07241e] text-white pt-12 pb-8 mt-12 border-t border-teal-900/60">
+    <footer id="contact" className="bg-[#07241e] text-white pt-12 pb-8 mt-12 border-t border-teal-900/60 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 pb-10 border-b border-teal-800/40">
           
