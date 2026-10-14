@@ -62,36 +62,39 @@ export default function MissionOverview({ onLearnMoreClick }) {
           </ParallaxLayer>
         </div>
 
-        {/* Right Column: Classroom Children Photo with Floating Frosted Glass Scripture Card */}
-        <div className="lg:col-span-6 relative">
-          <ScrollReveal direction="right" delay={250}>
+        {/* Right Column: Classroom Children Photo + Elegant Scripture Card Below */}
+        <div className="lg:col-span-6 space-y-4">
+          <ScrollReveal direction="right" delay={200}>
             <div className="relative rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden shadow-xl aspect-[16/10] sm:aspect-[16/9] w-full group">
-              {/* Real Children Learning Photo */}
+              {/* Real Children Learning Photo (100% visible, unobstructed) */}
               <img
                 src={mission.centerImage}
                 alt="Children learning together in Sri Lanka classroom"
                 className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
+            </div>
+          </ScrollReveal>
 
-              {/* Floating Glassmorphic Frosted Scripture Card */}
-              <div className="absolute bottom-3 right-3 left-3 sm:left-auto sm:right-4 sm:bottom-4 sm:max-w-[330px] md:max-w-[350px] bg-white/70 hover:bg-white/85 backdrop-blur-xl rounded-2xl p-4 sm:p-5 shadow-[0_12px_40px_0_rgba(0,0,0,0.18)] border border-white/80 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1">
-                <div>
-                  <span className="text-xl sm:text-2xl font-serif text-[#ea7849] font-bold block leading-none select-none">
-                    “
-                  </span>
-                  <p className="font-serif italic text-gray-900 text-[11px] sm:text-[12px] leading-relaxed mt-1">
+          {/* Scripture Card placed cleanly underneath the photo */}
+          <ScrollReveal direction="up" delay={300}>
+            <div className="bg-gradient-to-br from-white via-[#f7faf8] to-[#eef6f2] rounded-2xl p-4 sm:p-5 shadow-md border border-teal-900/10 transition-all duration-300 hover:shadow-lg">
+              <div className="flex items-start gap-3">
+                <span className="text-2xl sm:text-3xl font-serif text-[#ea7849] font-bold leading-none select-none flex-shrink-0 mt-0.5">
+                  “
+                </span>
+                <div className="flex-1">
+                  <p className="font-serif italic text-gray-800 text-xs sm:text-[13px] leading-relaxed">
                     "{mission.scriptureQuote}"
                   </p>
-                </div>
-
-                <div className="pt-2.5 mt-2.5 border-t border-gray-900/10 flex items-center justify-between text-right">
-                  <span className="text-[10px] font-semibold text-teal-900/60 tracking-wider">
-                    HOLY BIBLE
-                  </span>
-                  <span className="text-[10.5px] font-bold text-[#0c3930] tracking-wide">
-                    {mission.scriptureRef}
-                  </span>
+                  <div className="pt-2.5 mt-2.5 border-t border-gray-900/10 flex items-center justify-between">
+                    <span className="text-[10px] font-semibold text-teal-900/60 tracking-wider uppercase">
+                      HOLY BIBLE
+                    </span>
+                    <span className="text-[11px] font-bold text-[#0c3930] tracking-wide">
+                      {mission.scriptureRef}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
