@@ -2,7 +2,7 @@ import React from 'react';
 import { BookOpen, Utensils, Users, GraduationCap, Home, Heart, Church, Sprout, ArrowRight } from 'lucide-react';
 import TiltCard from '../../effects/TiltCard';
 
-export default function CauseCard({ cause }) {
+export default function CauseCard({ cause, onLearnMore }) {
   const renderIcon = (iconName) => {
     const props = { className: "w-4 h-4 text-white stroke-[2.2]" };
     switch (iconName) {
@@ -66,15 +66,19 @@ export default function CauseCard({ cause }) {
 
           {/* Learn More Pill Button matching exact card theme */}
           <div className="pt-3 mt-2 flex items-center justify-center">
-            <a
-              href="#programs"
-              className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[11px] font-semibold transition-all duration-200 hover:scale-105 active:scale-95 shadow-sm group/btn ${
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                if (onLearnMore) onLearnMore(cause);
+              }}
+              className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[11px] font-semibold transition-all duration-200 hover:scale-105 active:scale-95 shadow-sm group/btn cursor-pointer ${
                 cause.btnColor || 'bg-gray-100 text-gray-700'
               }`}
             >
               <span>Learn More</span>
               <ArrowRight className="w-3 h-3 group-hover/btn:translate-x-0.5 transition-transform duration-200" />
-            </a>
+            </button>
           </div>
         </div>
       </div>

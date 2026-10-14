@@ -292,6 +292,130 @@ export const siteData = {
     cta: "Subscribe"
   },
 
+  educationProgram: {
+    badge: "EDUCATION PROGRAM",
+    title: "Building Brighter Futures Through Education",
+    lead1: "Every child deserves the opportunity to learn, grow, and build a brighter future. Love In Fellowship & Truth Foundation is committed to improving access to educational support for children from underserved communities across Sri Lanka.",
+    lead2: "Through community-based learning initiatives, educational resources, and partnerships, we aim to help children overcome barriers to learning and reach their potential.",
+    primaryCta: "Support Education",
+    secondaryCta: "Partner With Us",
+    image: "/images/card-education.jpg",
+
+    whyEducationMatters: {
+      badge: "WHY EDUCATION MATTERS",
+      title: "Overcoming Barriers to Learning",
+      description1: "Access to quality educational support can help children develop essential knowledge, skills, and confidence. However, some children face barriers such as limited learning resources, financial difficulties, and a lack of additional educational support.",
+      description2: "Our education initiative aims to respond to these needs by working with communities and partners to create better learning opportunities for children."
+    },
+
+    aims: {
+      badge: "WHAT WE AIM TO PROVIDE",
+      title: "Four Core Pillars of Educational Support",
+      items: [
+        {
+          number: "01",
+          title: "Free Education Support",
+          description: "We aim to develop community-based educational programmes that help children strengthen their learning outside regular school hours.",
+          icon: "book-open"
+        },
+        {
+          number: "02",
+          title: "Learning Resources",
+          description: "We seek to provide essential educational materials, including books, stationery, and learning kits, according to children’s needs and available resources.",
+          icon: "package"
+        },
+        {
+          number: "03",
+          title: "Tuition and Learning Assistance",
+          description: "Where funding and programme arrangements allow, we aim to support children who need additional help with their school subjects.",
+          icon: "graduation-cap"
+        },
+        {
+          number: "04",
+          title: "Safe and Supportive Learning Environments",
+          description: "We aim to work with local communities, educators, and other partners to create supportive environments where children can learn, develop confidence, and pursue their educational goals.",
+          icon: "shield-check"
+        }
+      ]
+    },
+
+    vision2030: {
+      badge: "OUR VISION 2030",
+      title: "Expanding Educational Opportunities Across Sri Lanka",
+      subtitle: "Our long-term vision is to progressively expand access to free educational support through a network of community-based education and development centres.",
+      expansionGoalTitle: "Our long-term expansion goal:",
+      milestones: [
+        {
+          count: "9",
+          label: "Provinces",
+          detail: "Build a foundation for wider educational outreach across Sri Lanka."
+        },
+        {
+          count: "25",
+          label: "Districts",
+          detail: "Expand educational support through district-level initiatives."
+        },
+        {
+          count: "331",
+          label: "Divisional-Level Centres",
+          detail: "Work towards establishing education and development centres across Sri Lanka by 2030."
+        }
+      ],
+      note: "This is a long-term goal that will depend on sustainable funding, local partnerships, community participation, and the successful development of each phase."
+    },
+
+    makeDifference: {
+      badge: "HOW YOU CAN MAKE A DIFFERENCE",
+      title: "Be Part of Transforming a Life",
+      subtitle: "Your support can help us work towards creating better educational opportunities for children in underserved communities.",
+      actions: [
+        {
+          id: "materials",
+          title: "Support Learning Materials",
+          description: "Help us work towards providing books, stationery, and other essential educational resources.",
+          actionText: "Support Materials",
+          type: "donate"
+        },
+        {
+          id: "programmes",
+          title: "Support Educational Programmes",
+          description: "Contribute towards the development of community-based learning opportunities for children.",
+          actionText: "Support Programmes",
+          type: "donate"
+        },
+        {
+          id: "partner",
+          title: "Become a Partner",
+          description: "Partner with Love In Fellowship & Truth Foundation to help develop and expand educational initiatives in Sri Lanka.",
+          actionText: "Partner With Us",
+          type: "partner"
+        },
+        {
+          id: "volunteer",
+          title: "Volunteer Your Skills",
+          description: "Support our educational mission through teaching, mentoring, professional skills, or community engagement.",
+          actionText: "Volunteer Your Skills",
+          type: "volunteer"
+        }
+      ]
+    },
+
+    commitment: {
+      badge: "OUR COMMITMENT",
+      title: "Responsible Stewardship & Clear Communication",
+      point1: "We are committed to responsible use of donations, clear communication with supporters, and the gradual development of sustainable educational initiatives.",
+      point2: "We aim to provide appropriate updates on programme activities, progress, and the use of funds."
+    },
+
+    closingCta: {
+      title: "Help a Child Build a Brighter Future",
+      subtitle: "Together, we can work towards a future where more children have access to educational support and the opportunity to fulfil their potential.",
+      primaryBtn: "Support Education",
+      secondaryBtn: "Contact Us",
+      footerNote: "Love In Fellowship & Truth Foundation — Love. Fellowship. Truth."
+    }
+  },
+
   footer: {
     brandName: "LIFT Foundation",
     brandSubtitle: "LOVE IN FELLOWSHIP & TRUTH",

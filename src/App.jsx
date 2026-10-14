@@ -14,12 +14,14 @@ import StoriesAndMission from './components/sections/StoriesMission/StoriesAndMi
 import Newsletter from './components/sections/Newsletter/Newsletter';
 import DonatePage from './components/pages/DonatePage';
 import AboutUsPage from './components/pages/AboutUsPage';
+import EducationProgramPage from './components/pages/EducationProgramPage';
 import { X, Check } from 'lucide-react';
 import RippleButton from './components/effects/RippleButton';
 
 export default function App() {
   const [showDonatePage, setShowDonatePage] = useState(false);
   const [showAboutPage, setShowAboutPage] = useState(false);
+  const [showEducationPage, setShowEducationPage] = useState(false);
   const [showVolunteerModal, setShowVolunteerModal] = useState(false);
   const [volunteerSubmitted, setVolunteerSubmitted] = useState(false);
 
@@ -48,13 +50,113 @@ export default function App() {
   const navigateToDonate = () => {
     setShowDonatePage(true);
     setShowAboutPage(false);
+    setShowEducationPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const navigateToAbout = () => {
     setShowAboutPage(true);
     setShowDonatePage(false);
+    setShowEducationPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navigateToEducation = () => {
+    setShowEducationPage(true);
+    setShowDonatePage(false);
+    setShowAboutPage(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const renderVolunteerModal = () => {
+    if (!showVolunteerModal) return null;
+    return (
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fadeIn">
+        <div className="bg-white/95 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl relative border border-white/60">
+          <button
+            onClick={() => setShowVolunteerModal(false)}
+            className="absolute top-5 right-5 p-1.5 rounded-full hover:bg-gray-100 text-gray-400 hover:text-gray-700 transition-colors cursor-pointer"
+          >
+            <X className="w-5 h-5" />
+          </button>
+
+          {volunteerSubmitted ? (
+            <div className="py-8 text-center space-y-3">
+              <div className="w-14 h-14 bg-teal-100 text-teal-800 rounded-full flex items-center justify-center mx-auto animate-float-slow">
+                <Check className="w-8 h-8 stroke-[2.5]" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 font-sans">Welcome to the LIFT Network!</h3>
+              <p className="text-xs text-gray-500">
+                Thank you for stepping forward to partner with us. Our team will contact you shortly.
+              </p>
+            </div>
+          ) : (
+            <div>
+              <h3 className="text-xl font-bold text-gray-900 mb-1">
+                Partner / Volunteer With Us
+              </h3>
+              <p className="text-xs text-gray-500 mb-6">
+                Join our network of educators, volunteers, and community partners transforming Sri Lanka.
+              </p>
+
+              <form onSubmit={handleVolunteerSubmit} className="space-y-4">
+                <div>
+                  <label className="block text-xs font-semibold text-gray-700 mb-1">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={volunteerForm.name}
+                    onChange={(e) => setVolunteerForm({ ...volunteerForm, name: e.target.value })}
+                    placeholder="e.g. John Doe"
+                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-gray-200 focus:border-teal-700 focus:ring-2 focus:ring-teal-100 outline-none transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-gray-700 mb-1">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    required
+                    value={volunteerForm.email}
+                    onChange={(e) => setVolunteerForm({ ...volunteerForm, email: e.target.value })}
+                    placeholder="e.g. john@example.com"
+                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-gray-200 focus:border-teal-700 focus:ring-2 focus:ring-teal-100 outline-none transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-gray-700 mb-1">
+                    Area of Partnership
+                  </label>
+                  <select
+                    value={volunteerForm.interest}
+                    onChange={(e) => setVolunteerForm({ ...volunteerForm, interest: e.target.value })}
+                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-gray-200 focus:border-teal-700 focus:ring-2 focus:ring-teal-100 outline-none bg-white text-gray-700 transition-all"
+                  >
+                    <option>Free Education Centres (Tutoring & Books)</option>
+                    <option>Nourish with Love (Meal Drives)</option>
+                    <option>Little Light Montessori Care</option>
+                    <option>Youth Leadership Development</option>
+                    <option>Institutional Partnership</option>
+                  </select>
+                </div>
+
+                <RippleButton
+                  type="submit"
+                  className="w-full py-3 rounded-xl bg-teal-950 hover:bg-teal-900 text-white font-semibold text-xs tracking-wide shadow-md transition-all duration-200 mt-2"
+                >
+                  Submit Application
+                </RippleButton>
+              </form>
+            </div>
+          )}
+        </div>
+      </div>
+    );
   };
 
   if (showDonatePage) {
@@ -67,6 +169,29 @@ export default function App() {
         onBackToHome={() => setShowAboutPage(false)}
         onDonateClick={navigateToDonate}
       />
+    );
+  }
+
+  if (showEducationPage) {
+    return (
+      <>
+        <EducationProgramPage
+          onBackToHome={() => {
+            setShowEducationPage(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onDonateClick={navigateToDonate}
+          onPartnerClick={() => setShowVolunteerModal(true)}
+          onContactClick={() => {
+            setShowEducationPage(false);
+            setTimeout(() => {
+              const el = document.getElementById('contact');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+          }}
+        />
+        {renderVolunteerModal()}
+      </>
     );
   }
 
@@ -85,7 +210,7 @@ export default function App() {
       </div>
 
       {/* Quick Focus Programs Ribbon Bar */}
-      <QuickRibbon />
+      <QuickRibbon onSelectProgram={(id) => { if (id === 'education') navigateToEducation(); }} />
 
       {/* Main Narrative Flow */}
       <main className="flex-1">
@@ -93,7 +218,7 @@ export default function App() {
         <MissionOverview onLearnMoreClick={navigateToAbout} />
 
         {/* 3. Our Programs (3 Core Programs Grid: Education, Children & Youth, Nourish) */}
-        <MissionCauses />
+        <MissionCauses onLearnMoreEducation={navigateToEducation} />
 
         {/* 4. Our Projects (Key Operational Projects: Little Light Montessori, Education Centres, Meal Drives) */}
         <ProjectsSection />
@@ -124,93 +249,7 @@ export default function App() {
       <Footer />
 
       {/* Volunteer / Partner Modal */}
-      {showVolunteerModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md animate-fadeIn">
-          <div className="bg-white/95 backdrop-blur-2xl rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl relative border border-white/60">
-            <button
-              onClick={() => setShowVolunteerModal(false)}
-              className="absolute top-5 right-5 p-1.5 rounded-full hover:bg-gray-100 text-gray-400 hover:text-gray-700 transition-colors cursor-pointer"
-            >
-              <X className="w-5 h-5" />
-            </button>
-
-            {volunteerSubmitted ? (
-              <div className="py-8 text-center space-y-3">
-                <div className="w-14 h-14 bg-teal-100 text-teal-800 rounded-full flex items-center justify-center mx-auto animate-float-slow">
-                  <Check className="w-8 h-8 stroke-[2.5]" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 font-sans">Welcome to the LIFT Network!</h3>
-                <p className="text-xs text-gray-500">
-                  Thank you for stepping forward to partner with us. Our team will contact you shortly.
-                </p>
-              </div>
-            ) : (
-              <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-1">
-                  Partner / Volunteer With Us
-                </h3>
-                <p className="text-xs text-gray-500 mb-6">
-                  Join our network of educators, volunteers, and community partners transforming Sri Lanka.
-                </p>
-
-                <form onSubmit={handleVolunteerSubmit} className="space-y-4">
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1">
-                      Full Name
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={volunteerForm.name}
-                      onChange={(e) => setVolunteerForm({ ...volunteerForm, name: e.target.value })}
-                      placeholder="e.g. John Doe"
-                      className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-gray-200 focus:border-teal-700 focus:ring-2 focus:ring-teal-100 outline-none transition-all"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1">
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      required
-                      value={volunteerForm.email}
-                      onChange={(e) => setVolunteerForm({ ...volunteerForm, email: e.target.value })}
-                      placeholder="e.g. john@example.com"
-                      className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-gray-200 focus:border-teal-700 focus:ring-2 focus:ring-teal-100 outline-none transition-all"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1">
-                      Area of Partnership
-                    </label>
-                    <select
-                      value={volunteerForm.interest}
-                      onChange={(e) => setVolunteerForm({ ...volunteerForm, interest: e.target.value })}
-                      className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-gray-200 focus:border-teal-700 focus:ring-2 focus:ring-teal-100 outline-none bg-white text-gray-700 transition-all"
-                    >
-                      <option>Free Education Centres (Tutoring & Books)</option>
-                      <option>Nourish with Love (Meal Drives)</option>
-                      <option>Little Light Montessori Care</option>
-                      <option>Youth Leadership Development</option>
-                      <option>Institutional Partnership</option>
-                    </select>
-                  </div>
-
-                  <RippleButton
-                    type="submit"
-                    className="w-full py-3 rounded-xl bg-teal-950 hover:bg-teal-900 text-white font-semibold text-xs tracking-wide shadow-md transition-all duration-200 mt-2"
-                  >
-                    Submit Application
-                  </RippleButton>
-                </form>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
+      {renderVolunteerModal()}
     </div>
   );
 }

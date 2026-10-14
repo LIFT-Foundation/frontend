@@ -2,7 +2,7 @@ import React from 'react';
 import { BookOpen, Users, Heart, GraduationCap } from 'lucide-react';
 import { siteData } from '../../../data/content';
 
-export default function QuickRibbon() {
+export default function QuickRibbon({ onSelectProgram }) {
   const { ribbonItems } = siteData;
 
   const getIcon = (iconName) => {
@@ -28,6 +28,14 @@ export default function QuickRibbon() {
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handleClick = (item) => {
+    if (item.id === 'edu' && onSelectProgram) {
+      onSelectProgram('education');
+      return;
+    }
+    scrollToPrograms();
+  };
+
   const renderGroup = (keyPrefix, isAriaHidden = false) => (
     <div
       className="flex items-center shrink-0 animate-marquee-continuous"
@@ -36,7 +44,7 @@ export default function QuickRibbon() {
       {marqueeGroup.map((item, idx) => (
         <div
           key={`${keyPrefix}-${item.id}-${idx}`}
-          onClick={scrollToPrograms}
+          onClick={() => handleClick(item)}
           className="flex items-center gap-3 px-6 sm:px-8 py-1.5 flex-shrink-0 cursor-pointer select-none group/item hover:-translate-y-0.5 transition-transform duration-200"
         >
           <div className="w-9 h-9 rounded-full bg-teal-50/90 border border-teal-100 flex items-center justify-center text-teal-800 flex-shrink-0 group-hover/item:scale-110 group-hover/item:bg-[#fdf0e8] group-hover/item:border-[#f9c5a7] transition-all duration-300 shadow-sm">

@@ -4,8 +4,19 @@ import CauseCard from './CauseCard';
 import { siteData } from '../../../data/content';
 import ScrollReveal from '../../effects/ScrollReveal';
 
-export default function MissionCauses() {
+export default function MissionCauses({ onLearnMoreEducation, onLearnMoreCause }) {
   const { areasOfImpact } = siteData;
+
+  const handleLearnMore = (cause) => {
+    if (cause.id === 'education' && onLearnMoreEducation) {
+      onLearnMoreEducation();
+    } else if (onLearnMoreCause) {
+      onLearnMoreCause(cause);
+    } else {
+      const el = document.getElementById('projects');
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="programs" className="py-16 sm:py-24 px-4 sm:px-8 max-w-7xl mx-auto scroll-mt-16">
@@ -32,7 +43,7 @@ export default function MissionCauses() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-6">
         {areasOfImpact.items.map((cause, idx) => (
           <ScrollReveal key={cause.id} direction="up" delay={150 + idx * 120}>
-            <CauseCard cause={cause} />
+            <CauseCard cause={cause} onLearnMore={handleLearnMore} />
           </ScrollReveal>
         ))}
       </div>
