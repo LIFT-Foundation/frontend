@@ -416,6 +416,145 @@ export const siteData = {
     }
   },
 
+  youthProgram: {
+    badge: "CHILDREN & YOUTH DEVELOPMENT",
+    title: "Empowering Young Lives. Inspiring Brighter Futures.",
+    lead1: "Every child deserves the opportunity to grow with confidence, discover their potential, and build a better future. Love In Fellowship & Truth Foundation aims to support children and young people across Sri Lanka through personal development, mentoring, life skills, and leadership opportunities.",
+    lead2: "Our goal is to help young people develop the knowledge, values, and practical skills they need to become confident, responsible, and active members of their communities.",
+    primaryCta: "Support Children & Youth",
+    secondaryCta: "Partner With Us",
+    image: "/images/card-children-youth.jpg",
+
+    whyMatters: {
+      badge: "WHY CHILDREN & YOUTH DEVELOPMENT MATTERS",
+      description1: "Children and young people need more than academic education to thrive. They also benefit from encouragement, positive guidance, practical life skills, and opportunities to develop their talents.",
+      description2: "Through community-based initiatives and collaboration with local partners, we aim to create opportunities that encourage personal growth, strengthen confidence, and prepare young people for the future."
+    },
+
+    areasOfFocus: {
+      badge: "OUR AREAS OF FOCUS",
+      items: [
+        {
+          number: "01",
+          title: "Personal Development",
+          description: "We aim to encourage confidence, self-awareness, positive decision-making, and personal responsibility among children and young people.",
+          icon: "sparkles"
+        },
+        {
+          number: "02",
+          title: "Life Skills Development",
+          description: "We seek to create opportunities for young people to develop practical skills, communication, teamwork, problem-solving, and other abilities that can support their future.",
+          icon: "briefcase"
+        },
+        {
+          number: "03",
+          title: "Mentoring and Guidance",
+          description: "We aim to connect young people with positive guidance and encouragement through appropriate mentoring activities and community engagement.",
+          icon: "users"
+        },
+        {
+          number: "04",
+          title: "Leadership Development",
+          description: "We hope to equip young people with opportunities to develop leadership, serve others, work together, and contribute positively to their communities.",
+          icon: "award"
+        },
+        {
+          number: "05",
+          title: "Values and Character Development",
+          description: "Inspired by our Christian faith, we encourage compassion, honesty, respect, kindness, responsibility, and service to others while treating every person with dignity.",
+          icon: "heart"
+        }
+      ]
+    },
+
+    makeDifference: {
+      badge: "HOW WE HOPE TO MAKE A DIFFERENCE",
+      intro: "Through future workshops, mentoring activities, youth gatherings, skills-development sessions, and community-based programmes, we aim to help young people:",
+      bullets: [
+        "Build confidence and discover their strengths.",
+        "Develop practical life and communication skills.",
+        "Strengthen teamwork and leadership abilities.",
+        "Make responsible and informed decisions.",
+        "Participate positively in their communities.",
+        "Develop hope and a sense of purpose for the future."
+      ],
+      note: "Activities will be developed progressively according to community needs, available resources, and suitable partnerships."
+    },
+
+    approach: {
+      badge: "OUR APPROACH",
+      items: [
+        {
+          id: "community",
+          title: "Community-Based Support",
+          description: "We aim to work alongside local communities, educators, churches, volunteers, and other partners to identify needs and develop meaningful activities.",
+          icon: "home"
+        },
+        {
+          id: "inclusive",
+          title: "Inclusive Opportunities",
+          description: "We seek to provide respectful and supportive opportunities for children and young people, regardless of their social or economic background.",
+          icon: "globe"
+        },
+        {
+          id: "safe",
+          title: "Safe and Responsible Engagement",
+          description: "We recognise the importance of children’s safety, dignity, privacy, and wellbeing. Our programmes aim to follow appropriate child safeguarding practices and responsible volunteer engagement.",
+          icon: "shield-check"
+        }
+      ]
+    },
+
+    howYouCanHelp: {
+      badge: "HOW YOU CAN HELP",
+      actions: [
+        {
+          id: "programme",
+          title: "Support a Programme",
+          description: "Help us work towards developing meaningful personal development and life-skills opportunities for children and young people.",
+          actionText: "Support a Programme",
+          type: "donate"
+        },
+        {
+          id: "volunteer",
+          title: "Become a Volunteer",
+          description: "Contribute your time, knowledge, professional skills, or experience to suitable youth-development activities.",
+          actionText: "Become a Volunteer",
+          type: "volunteer"
+        },
+        {
+          id: "partner",
+          title: "Partner With Us",
+          description: "Collaborate with Love In Fellowship & Truth Foundation to develop sustainable opportunities for young people in Sri Lanka.",
+          actionText: "Partner With Us",
+          type: "partner"
+        },
+        {
+          id: "leadership",
+          title: "Support Leadership Development",
+          description: "Help us work towards creating opportunities for young people to grow as responsible leaders and community contributors.",
+          actionText: "Support Leadership",
+          type: "donate"
+        }
+      ]
+    },
+
+    commitment: {
+      badge: "OUR COMMITMENT",
+      point1: "We are committed to developing programmes responsibly, using available resources carefully, and communicating honestly with supporters about our activities and progress.",
+      point2: "As our work grows, we aim to strengthen our programmes through community participation, partnerships, and ongoing learning."
+    },
+
+    closingCta: {
+      title: "HELP INSPIRE THE NEXT GENERATION",
+      subtitle1: "Every young person deserves encouragement, opportunity, and the chance to build a brighter future.",
+      subtitle2: "Together, we can work towards empowering children and young people to grow, learn, lead, and make a positive difference.",
+      primaryBtn: "Support Children & Youth",
+      secondaryBtn: "Contact Us",
+      footerNote: "Love In Fellowship & Truth Foundation — Love. Fellowship. Truth."
+    }
+  },
+
   footer: {
     brandName: "LIFT Foundation",
     brandSubtitle: "LOVE IN FELLOWSHIP & TRUTH",

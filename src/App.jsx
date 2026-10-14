@@ -15,6 +15,7 @@ import Newsletter from './components/sections/Newsletter/Newsletter';
 import DonatePage from './components/pages/DonatePage';
 import AboutUsPage from './components/pages/AboutUsPage';
 import EducationProgramPage from './components/pages/EducationProgramPage';
+import YouthProgramPage from './components/pages/YouthProgramPage';
 import { X, Check } from 'lucide-react';
 import RippleButton from './components/effects/RippleButton';
 
@@ -22,6 +23,7 @@ export default function App() {
   const [showDonatePage, setShowDonatePage] = useState(false);
   const [showAboutPage, setShowAboutPage] = useState(false);
   const [showEducationPage, setShowEducationPage] = useState(false);
+  const [showYouthPage, setShowYouthPage] = useState(false);
   const [showVolunteerModal, setShowVolunteerModal] = useState(false);
   const [volunteerSubmitted, setVolunteerSubmitted] = useState(false);
 
@@ -51,6 +53,7 @@ export default function App() {
     setShowDonatePage(true);
     setShowAboutPage(false);
     setShowEducationPage(false);
+    setShowYouthPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -58,11 +61,21 @@ export default function App() {
     setShowAboutPage(true);
     setShowDonatePage(false);
     setShowEducationPage(false);
+    setShowYouthPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const navigateToEducation = () => {
     setShowEducationPage(true);
+    setShowDonatePage(false);
+    setShowAboutPage(false);
+    setShowYouthPage(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navigateToYouth = () => {
+    setShowYouthPage(true);
+    setShowEducationPage(false);
     setShowDonatePage(false);
     setShowAboutPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -195,6 +208,29 @@ export default function App() {
     );
   }
 
+  if (showYouthPage) {
+    return (
+      <>
+        <YouthProgramPage
+          onBackToHome={() => {
+            setShowYouthPage(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onDonateClick={navigateToDonate}
+          onPartnerClick={() => setShowVolunteerModal(true)}
+          onContactClick={() => {
+            setShowYouthPage(false);
+            setTimeout(() => {
+              const el = document.getElementById('contact');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+          }}
+        />
+        {renderVolunteerModal()}
+      </>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[#faf9f6] flex flex-col selection:bg-peach-200 selection:text-teal-950 font-sans">
       {/* 1. Header & Hero Section (Updated Positioning: Child & Youth Focus) */}
@@ -210,7 +246,12 @@ export default function App() {
       </div>
 
       {/* Quick Focus Programs Ribbon Bar */}
-      <QuickRibbon onSelectProgram={(id) => { if (id === 'education') navigateToEducation(); }} />
+      <QuickRibbon
+        onSelectProgram={(id) => {
+          if (id === 'education') navigateToEducation();
+          else if (id === 'youth') navigateToYouth();
+        }}
+      />
 
       {/* Main Narrative Flow */}
       <main className="flex-1">
@@ -218,7 +259,10 @@ export default function App() {
         <MissionOverview onLearnMoreClick={navigateToAbout} />
 
         {/* 3. Our Programs (3 Core Programs Grid: Education, Children & Youth, Nourish) */}
-        <MissionCauses onLearnMoreEducation={navigateToEducation} />
+        <MissionCauses
+          onLearnMoreEducation={navigateToEducation}
+          onLearnMoreYouth={navigateToYouth}
+        />
 
         {/* 4. Our Projects (Key Operational Projects: Little Light Montessori, Education Centres, Meal Drives) */}
         <ProjectsSection />

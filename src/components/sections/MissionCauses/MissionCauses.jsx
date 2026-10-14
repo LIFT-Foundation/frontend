@@ -4,12 +4,14 @@ import CauseCard from './CauseCard';
 import { siteData } from '../../../data/content';
 import ScrollReveal from '../../effects/ScrollReveal';
 
-export default function MissionCauses({ onLearnMoreEducation, onLearnMoreCause }) {
+export default function MissionCauses({ onLearnMoreEducation, onLearnMoreYouth, onLearnMoreCause }) {
   const { areasOfImpact } = siteData;
 
   const handleLearnMore = (cause) => {
     if (cause.id === 'education' && onLearnMoreEducation) {
       onLearnMoreEducation();
+    } else if (cause.id === 'children-youth' && onLearnMoreYouth) {
+      onLearnMoreYouth();
     } else if (onLearnMoreCause) {
       onLearnMoreCause(cause);
     } else {
