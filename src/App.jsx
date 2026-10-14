@@ -17,6 +17,7 @@ import AboutUsPage from './components/pages/AboutUsPage';
 import EducationProgramPage from './components/pages/EducationProgramPage';
 import YouthProgramPage from './components/pages/YouthProgramPage';
 import NourishProgramPage from './components/pages/NourishProgramPage';
+import MontessoriProgramPage from './components/pages/MontessoriProgramPage';
 import { X, Check } from 'lucide-react';
 import RippleButton from './components/effects/RippleButton';
 
@@ -26,6 +27,7 @@ export default function App() {
   const [showEducationPage, setShowEducationPage] = useState(false);
   const [showYouthPage, setShowYouthPage] = useState(false);
   const [showNourishPage, setShowNourishPage] = useState(false);
+  const [showMontessoriPage, setShowMontessoriPage] = useState(false);
   const [showVolunteerModal, setShowVolunteerModal] = useState(false);
   const [volunteerSubmitted, setVolunteerSubmitted] = useState(false);
 
@@ -57,6 +59,7 @@ export default function App() {
     setShowEducationPage(false);
     setShowYouthPage(false);
     setShowNourishPage(false);
+    setShowMontessoriPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -66,6 +69,7 @@ export default function App() {
     setShowEducationPage(false);
     setShowYouthPage(false);
     setShowNourishPage(false);
+    setShowMontessoriPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -75,6 +79,7 @@ export default function App() {
     setShowAboutPage(false);
     setShowYouthPage(false);
     setShowNourishPage(false);
+    setShowMontessoriPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -84,11 +89,23 @@ export default function App() {
     setShowDonatePage(false);
     setShowAboutPage(false);
     setShowNourishPage(false);
+    setShowMontessoriPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const navigateToNourish = () => {
     setShowNourishPage(true);
+    setShowYouthPage(false);
+    setShowEducationPage(false);
+    setShowDonatePage(false);
+    setShowAboutPage(false);
+    setShowMontessoriPage(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navigateToMontessori = () => {
+    setShowMontessoriPage(true);
+    setShowNourishPage(false);
     setShowYouthPage(false);
     setShowEducationPage(false);
     setShowDonatePage(false);
@@ -269,6 +286,29 @@ export default function App() {
     );
   }
 
+  if (showMontessoriPage) {
+    return (
+      <>
+        <MontessoriProgramPage
+          onBackToHome={() => {
+            setShowMontessoriPage(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onDonateClick={navigateToDonate}
+          onPartnerClick={() => setShowVolunteerModal(true)}
+          onContactClick={() => {
+            setShowMontessoriPage(false);
+            setTimeout(() => {
+              const el = document.getElementById('contact');
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+          }}
+        />
+        {renderVolunteerModal()}
+      </>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[#faf9f6] flex flex-col selection:bg-peach-200 selection:text-teal-950 font-sans">
       {/* 1. Header & Hero Section (Updated Positioning: Child & Youth Focus) */}
@@ -289,6 +329,7 @@ export default function App() {
           if (id === 'education') navigateToEducation();
           else if (id === 'youth') navigateToYouth();
           else if (id === 'nourish') navigateToNourish();
+          else if (id === 'montessori') navigateToMontessori();
         }}
       />
 
@@ -302,6 +343,7 @@ export default function App() {
           onLearnMoreEducation={navigateToEducation}
           onLearnMoreYouth={navigateToYouth}
           onLearnMoreNourish={navigateToNourish}
+          onLearnMoreMontessori={navigateToMontessori}
         />
 
         {/* 4. Our Projects (Key Operational Projects: Little Light Montessori, Education Centres, Meal Drives) */}

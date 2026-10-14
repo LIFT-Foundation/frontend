@@ -8,6 +8,7 @@ export default function MissionCauses({
   onLearnMoreEducation,
   onLearnMoreYouth,
   onLearnMoreNourish,
+  onLearnMoreMontessori,
   onLearnMoreCause
 }) {
   const { areasOfImpact } = siteData;
@@ -19,6 +20,8 @@ export default function MissionCauses({
       onLearnMoreYouth();
     } else if (cause.id === 'nourish' && onLearnMoreNourish) {
       onLearnMoreNourish();
+    } else if (cause.id === 'montessori' && onLearnMoreMontessori) {
+      onLearnMoreMontessori();
     } else if (onLearnMoreCause) {
       onLearnMoreCause(cause);
     } else {

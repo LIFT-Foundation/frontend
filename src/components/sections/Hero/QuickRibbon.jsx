@@ -41,6 +41,10 @@ export default function QuickRibbon({ onSelectProgram }) {
       onSelectProgram('nourish');
       return;
     }
+    if (item.id === 'montessori' && onSelectProgram) {
+      onSelectProgram('montessori');
+      return;
+    }
     scrollToPrograms();
   };
 

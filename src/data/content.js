@@ -659,6 +659,141 @@ export const siteData = {
     }
   },
 
+  montessoriProgram: {
+    badge: "LITTLE LIGHT MONTESSORI",
+    title: "Nurturing Little Minds. Building Bright Beginnings.",
+    lead1: "Every child deserves a caring environment where they can learn, explore, develop confidence, and discover their potential. Little Light Montessori is a planned early childhood education initiative of Love In Fellowship & Truth Foundation, envisioned to provide young children with a nurturing, child-centred, and values-based learning environment in Kandana, Sri Lanka.",
+    lead2: "Our vision is to lay a strong foundation for lifelong learning by encouraging curiosity, creativity, social development, and a love of learning from an early age.",
+    primaryCta: "Support Little Light Montessori",
+    secondaryCta: "Partner With Us",
+    image: "/images/card-montessori.jpg",
+
+    vision: {
+      badge: "OUR VISION FOR EARLY CHILDHOOD EDUCATION",
+      description1: "The early years of childhood are an important stage in a child’s development. A supportive learning environment can help children develop communication, creativity, independence, and positive relationships with others.",
+      description2: "Through Little Light Montessori, we aim to create an environment where young children can learn through exploration, guided activities, play, and meaningful interaction."
+    },
+
+    approach: {
+      badge: "OUR APPROACH TO LEARNING",
+      items: [
+        {
+          number: "01",
+          title: "Child-Centred Learning",
+          description: "We aim to encourage children to learn at their own pace through age-appropriate activities that support curiosity, discovery, and understanding.",
+          icon: "sparkles"
+        },
+        {
+          number: "02",
+          title: "Learning Through Play",
+          description: "We envision learning experiences that encourage creativity, imagination, problem-solving, and active participation.",
+          icon: "palette"
+        },
+        {
+          number: "03",
+          title: "Social and Emotional Development",
+          description: "We aim to nurture kindness, confidence, cooperation, independence, and respect for others in a caring environment.",
+          icon: "heart"
+        },
+        {
+          number: "04",
+          title: "Foundational Skills",
+          description: "Our planned approach aims to support early language, numeracy, communication, motor skills, and readiness for the next stage of education.",
+          icon: "book-open"
+        },
+        {
+          number: "05",
+          title: "Christian Values and Care",
+          description: "Inspired by our Christian faith, we seek to promote love, kindness, honesty, respect, and compassion while caring for each child’s dignity and wellbeing.",
+          icon: "sun"
+        }
+      ]
+    },
+
+    developmentPlan: {
+      badge: "OUR DEVELOPMENT PLAN",
+      title: "A Vision for Little Light Montessori in Kandana",
+      subtitle: "Our plan is to progressively develop an early childhood education centre that can serve children and families in the surrounding community.",
+      phases: [
+        {
+          phase: "Phase 1",
+          title: "Establishment",
+          capacity: "~60 Children",
+          description: "Our initial target is to develop the centre with the capacity to serve approximately 60 children, subject to facilities, resources, and the required approvals."
+        },
+        {
+          phase: "Phase 2",
+          title: "Growth",
+          capacity: "~150 Children",
+          description: "As the centre develops, we aim to expand its capacity to approximately 150 children."
+        },
+        {
+          phase: "Phase 3",
+          title: "Long-Term Development",
+          capacity: "~200 Children",
+          description: "Our longer-term target is to work towards a capacity of approximately 200 children, depending on demand, staffing, facilities, and sustainable funding."
+        }
+      ],
+      note: "These figures represent development targets, not current enrolment numbers."
+    },
+
+    howYouCanSupport: {
+      badge: "HOW YOU CAN SUPPORT LITTLE LIGHT MONTESSORI",
+      actions: [
+        {
+          id: "materials",
+          title: "Learning Materials",
+          description: "Help us work towards providing age-appropriate books, educational toys, creative materials, and classroom resources.",
+          actionText: "Support Materials",
+          type: "donate"
+        },
+        {
+          id: "classroom",
+          title: "Classroom Development",
+          description: "Support our plans to develop a safe, welcoming, and child-friendly learning environment.",
+          actionText: "Support Classroom",
+          type: "donate"
+        },
+        {
+          id: "partnerships",
+          title: "Educational Partnerships",
+          description: "Partner with us through early childhood education expertise, training, resources, or professional guidance.",
+          actionText: "Partner With Us",
+          type: "partner"
+        },
+        {
+          id: "sponsorship",
+          title: "Project Sponsorship",
+          description: "Help us work towards establishing and developing Little Light Montessori through financial contributions and long-term partnerships.",
+          actionText: "Sponsor Project",
+          type: "donate"
+        }
+      ]
+    },
+
+    safeguarding: {
+      badge: "CHILD SAFEGUARDING AND WELLBEING",
+      point1: "We recognise that young children need special care, protection, and supervision.",
+      point2: "Our aim is to develop appropriate safeguarding practices, safe learning spaces, responsible staff and volunteer engagement, and respectful communication with parents and guardians as the project progresses.",
+      point3: "The centre’s operations will be developed in line with applicable requirements and the necessary approvals."
+    },
+
+    commitment: {
+      badge: "OUR COMMITMENT",
+      point1: "We aim to develop Little Light Montessori responsibly, with a focus on children’s wellbeing, educational quality, transparency, and long-term sustainability.",
+      point2: "As the project progresses, we intend to communicate relevant development updates and opportunities for supporters and partners to contribute."
+    },
+
+    closingCta: {
+      title: "HELP BUILD A BRIGHTER BEGINNING",
+      subtitle1: "Together, we can work towards creating a caring learning environment where young children can explore, grow, and take their first steps towards a brighter future.",
+      primaryBtn: "Support Little Light Montessori",
+      secondaryBtn: "Contact Us",
+      footerNote: "Little Light Montessori — A planned early childhood education initiative of Love In Fellowship & Truth Foundation.",
+      tagline: "Love. Fellowship. Truth."
+    }
+  },
+
   footer: {
     brandName: "LIFT Foundation",
     brandSubtitle: "LOVE IN FELLOWSHIP & TRUTH",
