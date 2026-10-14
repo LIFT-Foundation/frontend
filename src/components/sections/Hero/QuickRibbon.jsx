@@ -37,6 +37,10 @@ export default function QuickRibbon({ onSelectProgram }) {
       onSelectProgram('youth');
       return;
     }
+    if (item.id === 'nourish' && onSelectProgram) {
+      onSelectProgram('nourish');
+      return;
+    }
     scrollToPrograms();
   };
 

@@ -4,7 +4,12 @@ import CauseCard from './CauseCard';
 import { siteData } from '../../../data/content';
 import ScrollReveal from '../../effects/ScrollReveal';
 
-export default function MissionCauses({ onLearnMoreEducation, onLearnMoreYouth, onLearnMoreCause }) {
+export default function MissionCauses({
+  onLearnMoreEducation,
+  onLearnMoreYouth,
+  onLearnMoreNourish,
+  onLearnMoreCause
+}) {
   const { areasOfImpact } = siteData;
 
   const handleLearnMore = (cause) => {
@@ -12,6 +17,8 @@ export default function MissionCauses({ onLearnMoreEducation, onLearnMoreYouth, 
       onLearnMoreEducation();
     } else if (cause.id === 'children-youth' && onLearnMoreYouth) {
       onLearnMoreYouth();
+    } else if (cause.id === 'nourish' && onLearnMoreNourish) {
+      onLearnMoreNourish();
     } else if (onLearnMoreCause) {
       onLearnMoreCause(cause);
     } else {

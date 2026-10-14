@@ -555,6 +555,110 @@ export const siteData = {
     }
   },
 
+  nourishProgram: {
+    badge: "NOURISH WITH LOVE",
+    title: "Nourishing Children. Nurturing Brighter Futures.",
+    lead1: "Every child deserves access to nutritious food and the opportunity to grow, learn, and thrive. Through Nourish with Love, Love In Fellowship & Truth Foundation aims to improve access to nutritious meals for children and young people from underserved communities across Sri Lanka.",
+    lead2: "We believe that supporting children’s nutritional needs can contribute to their wellbeing, learning, and development. Through community-based meal initiatives and partnerships, we aim to help children access the nourishment they need to pursue a brighter future.",
+    primaryCta: "Support Nourish with Love",
+    secondaryCta: "Partner With Us",
+    image: "/images/card-nourish.jpg",
+
+    whyMatters: {
+      badge: "WHY NUTRITION MATTERS",
+      description1: "Good nutrition plays an important role in children’s growth, wellbeing, and ability to learn. However, some families face financial difficulties that can make it challenging to provide nutritious food consistently.",
+      description2: "Nourish with Love aims to respond to this need by working towards better access to nutritious meals for children in underserved communities."
+    },
+
+    aims: {
+      badge: "WHAT WE AIM TO DO",
+      items: [
+        {
+          number: "01",
+          title: "Nutritious Meal Support",
+          description: "We aim to provide nutritious meals to children through community-based meal initiatives, depending on available funding and programme arrangements.",
+          icon: "utensils"
+        },
+        {
+          number: "02",
+          title: "Community Meal Initiatives",
+          description: "We seek to work with local communities, volunteers, and partners to organise meal-support activities that respond to children’s needs.",
+          icon: "users"
+        },
+        {
+          number: "03",
+          title: "Supporting Children’s Wellbeing",
+          description: "Our goal is to contribute to children’s wellbeing by helping improve access to food and supporting their ability to participate in learning and development activities.",
+          icon: "heart"
+        },
+        {
+          number: "04",
+          title: "Partnerships for Greater Impact",
+          description: "We aim to collaborate with donors, churches, community groups, and other organisations to develop sustainable food-support initiatives.",
+          icon: "handshake"
+        }
+      ]
+    },
+
+    vision: {
+      badge: "OUR VISION FOR NOURISH WITH LOVE",
+      title: "Working Towards One Million Meals by 2030",
+      description1: "Our long-term vision is to expand access to nutritious food for children and underserved communities through sustainable, community-based initiatives.",
+      goalHighlight: "Our long-term goal is to work towards providing one million meals by 2030.",
+      description2: "We aim to pursue this goal progressively through local partnerships, responsible fundraising, community participation, and the development of meal-support programmes.",
+      note: "This is a long-term target, and the scale of our activities will depend on available resources and successful partnerships."
+    },
+
+    howYouCanHelp: {
+      badge: "HOW YOUR SUPPORT CAN HELP",
+      actions: [
+        {
+          id: "support-meal",
+          title: "Support a Meal",
+          description: "Your contribution can help us work towards providing nutritious meals for children through our meal-support initiatives.",
+          actionText: "Support a Meal",
+          type: "donate"
+        },
+        {
+          id: "support-program",
+          title: "Support a Community Meal Programme",
+          description: "Help us develop meal initiatives that respond to the needs of children in underserved communities.",
+          actionText: "Support a Programme",
+          type: "donate"
+        },
+        {
+          id: "partner",
+          title: "Become a Programme Partner",
+          description: "Partner with Love In Fellowship & Truth Foundation to help develop sustainable approaches to children’s nutrition and food support.",
+          actionText: "Become a Partner",
+          type: "partner"
+        },
+        {
+          id: "volunteer",
+          title: "Volunteer With Us",
+          description: "Contribute your time and skills to suitable food-support activities and community initiatives.",
+          actionText: "Volunteer With Us",
+          type: "volunteer"
+        }
+      ]
+    },
+
+    commitment: {
+      badge: "OUR COMMITMENT",
+      point1: "We are committed to responsible use of donations, careful planning, and honest communication with our supporters.",
+      point2: "We aim to provide appropriate updates on meal-support activities, programme progress, and the use of funds as our initiatives develop."
+    },
+
+    closingCta: {
+      title: "SHARE LOVE THROUGH NOURISHMENT",
+      subtitle1: "A meal can be more than food. It can be an expression of care, dignity, and hope.",
+      subtitle2: "Together, we can work towards a future where more children have access to nutritious food and better opportunities to grow and learn.",
+      primaryBtn: "Support Nourish with Love",
+      secondaryBtn: "Contact Us",
+      footerNote: "Love In Fellowship & Truth Foundation — Love. Fellowship. Truth."
+    }
+  },
+
   footer: {
     brandName: "LIFT Foundation",
     brandSubtitle: "LOVE IN FELLOWSHIP & TRUTH",
