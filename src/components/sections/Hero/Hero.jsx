@@ -14,13 +14,7 @@ const EDGE =
 export default function Hero({ onExplorePrograms, onDonateClick }) {
   const { hero } = siteData;
 
-  const dynamicWords = [
-    hero.titleLine2,
-    "Nourishing Families.",
-    "Educating Youth.",
-    "Igniting Hope.",
-    "Transforming Lives.",
-  ];
+
 
   return (
     <section className="relative isolate overflow-hidden bg-[#07362a] text-white min-h-[580px] lg:min-h-[640px] flex items-center">
@@ -110,7 +104,7 @@ export default function Hero({ onExplorePrograms, onDonateClick }) {
             <h1 className="text-3xl sm:text-5xl lg:text-[3.25rem] xl:text-[3.65rem] font-extrabold tracking-tight leading-[1.08] text-white flex flex-col gap-1.5 sm:gap-2.5 drop-shadow-md">
               <span className="block whitespace-nowrap">{hero.titleLine1}</span>
               <span className="block whitespace-nowrap text-[#f28e63] min-h-[1.15em]">
-                <Typewriter words={dynamicWords} typingSpeed={85} deletingSpeed={45} delayBetweenWords={2400} />
+                <Typewriter words={[hero.titleLine2]} typingSpeed={85} deletingSpeed={45} delayBetweenWords={2800} />
               </span>
               <span className="block whitespace-nowrap">{hero.titleLine3}</span>
             </h1>

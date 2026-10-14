@@ -21,7 +21,7 @@ export const siteData = {
     titleLine1: "Sharing God's Love.",
     titleLine2: "Empowering Children.",
     titleLine3: "Transforming Communities.",
-    subtitle: "A Christian foundation serving children, youth, families, the elderly and communities across Sri Lanka.",
+    subtitle: "A Christian foundation in Sri Lanka empowering children and young people through education, nutrition, and community-based support.",
     primaryCta: "Donate Now",
     secondaryCta: "Our Programs",
     image: "/images/hero-children.jpg"
@@ -57,7 +57,7 @@ export const siteData = {
   mission: {
     badge: "OUR MISSION",
     title: "Be the Hope Someone Needs Today",
-    description: "We believe every child deserves the opportunity to learn, grow and thrive. Through education, nutrition and community-based support, LIFT Foundation works alongside underserved communities to create brighter futures for children and young people across Sri Lanka.",
+    description: "We believe every child deserves the opportunity to learn, grow, and thrive. Through education, nutrition, and community-based support, Love In Fellowship & Truth Foundation works to empower children and young people and help build brighter futures across Sri Lanka.",
     cta: "Learn More About Us",
     scriptureQuote: "Let your light shine before others, that they may see your good deeds and glorify your Father in heaven.",
     scriptureRef: "Matthew 5:16",

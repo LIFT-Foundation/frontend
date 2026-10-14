@@ -8,6 +8,7 @@ export default function Typewriter({
   typingSpeed = 85,
   deletingSpeed = 45,
   delayBetweenWords = 2200,
+  loop = true,
   className = '',
   cursorClassName = 'text-[#f28e63]',
 }) {
@@ -20,12 +21,17 @@ export default function Typewriter({
 
     const fullWord = words[currentWordIndex % words.length];
 
+    if (!loop && currentText === fullWord) {
+      return;
+    }
+
     const timer = setTimeout(() => {
       if (!isDeleting) {
         // Typing forward
         const nextText = fullWord.substring(0, currentText.length + 1);
         setCurrentText(nextText);
         if (nextText === fullWord) {
+          if (!loop) return;
           // Pause at end of word before backspacing
           setTimeout(() => setIsDeleting(true), delayBetweenWords);
         }
@@ -41,7 +47,7 @@ export default function Typewriter({
     }, isDeleting ? deletingSpeed : typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [currentText, isDeleting, currentWordIndex, words, typingSpeed, deletingSpeed, delayBetweenWords]);
+  }, [currentText, isDeleting, currentWordIndex, words, typingSpeed, deletingSpeed, delayBetweenWords, loop]);
 
   return (
     <span className={`inline-flex items-baseline ${className}`}>
