@@ -5,7 +5,6 @@ import ParticleBackground from '../../effects/ParticleBackground';
 import Typewriter from '../../effects/Typewriter';
 import RippleButton from '../../effects/RippleButton';
 import ScrollReveal from '../../effects/ScrollReveal';
-import ParallaxLayer from '../../effects/ParallaxLayer';
 
 // organic left edge of the photo shifted left (viewBox 1440 x 640)
 const EDGE =
@@ -145,20 +144,7 @@ export default function Hero({ onExplorePrograms, onDonateClick }) {
             </div>
           </ScrollReveal>
 
-          {/* Frosted Glass Floating Badge with Parallax depth */}
-          <ScrollReveal direction="fade" delay={550}>
-            <ParallaxLayer speed={-0.08} className="mt-8 pt-1">
-              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-2xl glass-badge shadow-xl backdrop-blur-md animate-float-slow">
-                <div className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500" />
-                </div>
-                <span className="text-xs text-teal-100 font-medium tracking-wide">
-                  Active across <strong className="text-white">Sri Lanka</strong> · 10,000+ Children & Families Reached
-                </span>
-              </div>
-            </ParallaxLayer>
-          </ScrollReveal>
+
         </div>
       </div>
     </section>
