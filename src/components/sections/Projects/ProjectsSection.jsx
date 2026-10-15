@@ -4,7 +4,7 @@ import { siteData } from '../../../data/content';
 import ScrollReveal from '../../effects/ScrollReveal';
 import TiltCard from '../../effects/TiltCard';
 
-export default function ProjectsSection() {
+export default function ProjectsSection({ onExploreMontessori, onExploreEducation, onExploreNourish }) {
   const { ourProjects } = siteData;
 
   return (
@@ -77,14 +77,43 @@ export default function ProjectsSection() {
                     </div>
 
                     <div className="pt-2 border-t border-gray-200/60">
-                      <a
-                        href="#how-to-help"
-                        className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0c3930] hover:text-[#ea580c] transition-colors group/link"
-                      >
-                        <HeartHandshake className="w-3.5 h-3.5 text-[#ea580c] group-hover/link:scale-110 transition-transform duration-200" />
-                        <span>Support This Project</span>
-                        <ArrowRight className="w-3 h-3 ml-0.5 group-hover/link:translate-x-1 transition-transform duration-200" />
-                      </a>
+                      {project.id === 'montessori' && onExploreMontessori ? (
+                        <button
+                          type="button"
+                          onClick={onExploreMontessori}
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0c3930] hover:text-[#ea580c] transition-colors group/link cursor-pointer"
+                        >
+                          <HeartHandshake className="w-3.5 h-3.5 text-[#ea580c] group-hover/link:scale-110 transition-transform duration-200" />
+                          <span>{project.buttonText || 'Explore This Project →'}</span>
+                        </button>
+                      ) : project.id === 'education-centers' && onExploreEducation ? (
+                        <button
+                          type="button"
+                          onClick={onExploreEducation}
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0c3930] hover:text-[#ea580c] transition-colors group/link cursor-pointer"
+                        >
+                          <HeartHandshake className="w-3.5 h-3.5 text-[#ea580c] group-hover/link:scale-110 transition-transform duration-200" />
+                          <span>{project.buttonText || 'Explore This Project →'}</span>
+                        </button>
+                      ) : project.id === 'nourish-drives' && onExploreNourish ? (
+                        <button
+                          type="button"
+                          onClick={onExploreNourish}
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0c3930] hover:text-[#ea580c] transition-colors group/link cursor-pointer"
+                        >
+                          <HeartHandshake className="w-3.5 h-3.5 text-[#ea580c] group-hover/link:scale-110 transition-transform duration-200" />
+                          <span>{project.buttonText || 'Explore This Project →'}</span>
+                        </button>
+                      ) : (
+                        <a
+                          href="#how-to-help"
+                          className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0c3930] hover:text-[#ea580c] transition-colors group/link"
+                        >
+                          <HeartHandshake className="w-3.5 h-3.5 text-[#ea580c] group-hover/link:scale-110 transition-transform duration-200" />
+                          <span>{project.buttonText || 'Support This Project'}</span>
+                          {!project.buttonText && <ArrowRight className="w-3 h-3 ml-0.5 group-hover/link:translate-x-1 transition-transform duration-200" />}
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

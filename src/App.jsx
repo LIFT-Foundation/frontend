@@ -347,7 +347,11 @@ export default function App() {
         />
 
         {/* 4. Our Projects (Key Operational Projects: Little Light Montessori, Education Centres, Meal Drives) */}
-        <ProjectsSection />
+        <ProjectsSection
+          onExploreMontessori={navigateToMontessori}
+          onExploreEducation={navigateToEducation}
+          onExploreNourish={navigateToNourish}
+        />
 
         {/* 5. Our Vision for Sri Lanka (9 Provinces -> 25 Districts -> 331 Divisional Centres) */}
         <VisionSection onSponsorClick={navigateToDonate} />
