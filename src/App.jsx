@@ -17,7 +17,9 @@ import AboutUsPage from './components/pages/AboutUsPage';
 import EducationProgramPage from './components/pages/EducationProgramPage';
 import YouthProgramPage from './components/pages/YouthProgramPage';
 import NourishProgramPage from './components/pages/NourishProgramPage';
+import NourishMealDrivesPage from './components/pages/NourishMealDrivesPage';
 import MontessoriProgramPage from './components/pages/MontessoriProgramPage';
+import MontessoriProjectPage from './components/pages/MontessoriProjectPage';
 import { X, Check } from 'lucide-react';
 import RippleButton from './components/effects/RippleButton';
 
@@ -27,7 +29,9 @@ export default function App() {
   const [showEducationPage, setShowEducationPage] = useState(false);
   const [showYouthPage, setShowYouthPage] = useState(false);
   const [showNourishPage, setShowNourishPage] = useState(false);
+  const [showNourishProjectPage, setShowNourishProjectPage] = useState(false);
   const [showMontessoriPage, setShowMontessoriPage] = useState(false);
+  const [showMontessoriProjectPage, setShowMontessoriProjectPage] = useState(false);
   const [showVolunteerModal, setShowVolunteerModal] = useState(false);
   const [volunteerSubmitted, setVolunteerSubmitted] = useState(false);
 
@@ -59,7 +63,9 @@ export default function App() {
     setShowEducationPage(false);
     setShowYouthPage(false);
     setShowNourishPage(false);
+    setShowNourishProjectPage(false);
     setShowMontessoriPage(false);
+    setShowMontessoriProjectPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -69,7 +75,9 @@ export default function App() {
     setShowEducationPage(false);
     setShowYouthPage(false);
     setShowNourishPage(false);
+    setShowNourishProjectPage(false);
     setShowMontessoriPage(false);
+    setShowMontessoriProjectPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -79,7 +87,9 @@ export default function App() {
     setShowAboutPage(false);
     setShowYouthPage(false);
     setShowNourishPage(false);
+    setShowNourishProjectPage(false);
     setShowMontessoriPage(false);
+    setShowMontessoriProjectPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -89,22 +99,52 @@ export default function App() {
     setShowDonatePage(false);
     setShowAboutPage(false);
     setShowNourishPage(false);
+    setShowNourishProjectPage(false);
     setShowMontessoriPage(false);
+    setShowMontessoriProjectPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const navigateToNourish = () => {
     setShowNourishPage(true);
+    setShowNourishProjectPage(false);
     setShowYouthPage(false);
     setShowEducationPage(false);
     setShowDonatePage(false);
     setShowAboutPage(false);
     setShowMontessoriPage(false);
+    setShowMontessoriProjectPage(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navigateToNourishProject = () => {
+    setShowNourishProjectPage(true);
+    setShowNourishPage(false);
+    setShowYouthPage(false);
+    setShowEducationPage(false);
+    setShowDonatePage(false);
+    setShowAboutPage(false);
+    setShowMontessoriPage(false);
+    setShowMontessoriProjectPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const navigateToMontessori = () => {
     setShowMontessoriPage(true);
+    setShowMontessoriProjectPage(false);
+    setShowNourishProjectPage(false);
+    setShowNourishPage(false);
+    setShowYouthPage(false);
+    setShowEducationPage(false);
+    setShowDonatePage(false);
+    setShowAboutPage(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navigateToMontessoriProject = () => {
+    setShowMontessoriProjectPage(true);
+    setShowMontessoriPage(false);
+    setShowNourishProjectPage(false);
     setShowNourishPage(false);
     setShowYouthPage(false);
     setShowEducationPage(false);
@@ -286,6 +326,22 @@ export default function App() {
     );
   }
 
+  if (showNourishProjectPage) {
+    return (
+      <>
+        <NourishMealDrivesPage
+          onBackToHome={() => {
+            setShowNourishProjectPage(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onDonateClick={navigateToDonate}
+          onPartnerClick={() => setShowVolunteerModal(true)}
+        />
+        {renderVolunteerModal()}
+      </>
+    );
+  }
+
   if (showMontessoriPage) {
     return (
       <>
@@ -303,6 +359,22 @@ export default function App() {
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }, 100);
           }}
+        />
+        {renderVolunteerModal()}
+      </>
+    );
+  }
+
+  if (showMontessoriProjectPage) {
+    return (
+      <>
+        <MontessoriProjectPage
+          onBackToHome={() => {
+            setShowMontessoriProjectPage(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onDonateClick={navigateToDonate}
+          onPartnerClick={() => setShowVolunteerModal(true)}
         />
         {renderVolunteerModal()}
       </>
@@ -348,9 +420,9 @@ export default function App() {
 
         {/* 4. Our Projects (Key Operational Projects: Little Light Montessori, Education Centres, Meal Drives) */}
         <ProjectsSection
-          onExploreMontessori={navigateToMontessori}
+          onExploreMontessori={navigateToMontessoriProject}
           onExploreEducation={navigateToEducation}
-          onExploreNourish={navigateToNourish}
+          onExploreNourish={navigateToNourishProject}
         />
 
         {/* 5. Our Vision for Sri Lanka (9 Provinces -> 25 Districts -> 331 Divisional Centres) */}

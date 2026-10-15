@@ -296,126 +296,124 @@ export const siteData = {
   },
 
   educationProgram: {
-    badge: "EDUCATION PROGRAM",
-    title: "Building Brighter Futures Through Education",
-    lead1: "Every child deserves the opportunity to learn, grow, and build a brighter future. Love In Fellowship & Truth Foundation is committed to improving access to educational support for children from underserved communities across Sri Lanka.",
-    lead2: "Through community-based learning initiatives, educational resources, and partnerships, we aim to help children overcome barriers to learning and reach their potential.",
-    primaryCta: "Support Education",
+    badge: "EXPANSION PROJECT",
+    title: "Divisional Free Education Centres Plan",
+    tagline: "Making Quality Education Accessible to Every Child",
+    subtitle: "A Vision to Empower Children Through Education Across Sri Lanka",
+    about: {
+      lead1: "The Divisional Free Education Centres Plan is a long-term educational initiative by Love In Fellowship & Truth Foundation, designed to help children from underserved communities access additional educational support and learning opportunities.",
+      lead2: "We believe every child deserves the opportunity to learn, grow, and build a brighter future, regardless of their family’s financial circumstances.",
+      lead3: "Through this initiative, we aim to develop community-based learning centres that provide educational assistance, essential learning resources, and a supportive environment for children."
+    },
+    primaryCta: "Support This Project",
     secondaryCta: "Partner With Us",
-    image: "/images/card-education.jpg",
+    image: "/images/card-education-centres.jpg",
 
-    whyEducationMatters: {
-      badge: "WHY EDUCATION MATTERS",
-      title: "Overcoming Barriers to Learning",
-      description1: "Access to quality educational support can help children develop essential knowledge, skills, and confidence. However, some children face barriers such as limited learning resources, financial difficulties, and a lack of additional educational support.",
-      description2: "Our education initiative aims to respond to these needs by working with communities and partners to create better learning opportunities for children."
+    purpose: {
+      badge: "OUR PURPOSE",
+      p1: "Our goal is to help children overcome educational barriers by providing additional learning support, educational materials, and opportunities to strengthen their knowledge and confidence.",
+      p2: "Inspired by Christian love and compassion, we aim to serve children with dignity, care, and respect."
     },
 
-    aims: {
-      badge: "WHAT WE AIM TO PROVIDE",
-      title: "Four Core Pillars of Educational Support",
-      items: [
-        {
-          number: "01",
-          title: "Free Education Support",
-          description: "We aim to develop community-based educational programmes that help children strengthen their learning outside regular school hours.",
-          icon: "book-open"
-        },
-        {
-          number: "02",
-          title: "Learning Resources",
-          description: "We seek to provide essential educational materials, including books, stationery, and learning kits, according to children’s needs and available resources.",
-          icon: "package"
-        },
-        {
-          number: "03",
-          title: "Tuition and Learning Assistance",
-          description: "Where funding and programme arrangements allow, we aim to support children who need additional help with their school subjects.",
-          icon: "graduation-cap"
-        },
-        {
-          number: "04",
-          title: "Safe and Supportive Learning Environments",
-          description: "We aim to work with local communities, educators, and other partners to create supportive environments where children can learn, develop confidence, and pursue their educational goals.",
-          icon: "shield-check"
-        }
+    developmentPlan: {
+      badge: "OUR DEVELOPMENT PLAN",
+      title: "Phased National Roadmap",
+      points: [
+        { label: "Initial Phase", desc: "Work towards supporting 9 education centres.", icon: "school" },
+        { label: "Expansion Goal", desc: "Gradually expand educational support across 25 districts in Sri Lanka.", icon: "map-pin" },
+        { label: "Long-Term Vision", desc: "Work towards establishing education and development centres across all 331 Divisional Secretariat divisions by 2030, subject to funding, partnerships, and implementation capacity.", icon: "building-2" }
       ]
     },
 
-    vision2030: {
-      badge: "OUR VISION 2030",
-      title: "Expanding Educational Opportunities Across Sri Lanka",
-      subtitle: "Our long-term vision is to progressively expand access to free educational support through a network of community-based education and development centres.",
-      expansionGoalTitle: "Our long-term expansion goal:",
-      milestones: [
-        {
-          count: "9",
-          label: "Provinces",
-          detail: "Build a foundation for wider educational outreach across Sri Lanka."
-        },
-        {
-          count: "25",
-          label: "Districts",
-          detail: "Expand educational support through district-level initiatives."
-        },
-        {
-          count: "331",
-          label: "Divisional-Level Centres",
-          detail: "Work towards establishing education and development centres across Sri Lanka by 2030."
-        }
+    monthlySupportPlan: {
+      badge: "OUR MONTHLY SUPPORT PLAN",
+      intro: "We propose allocating LKR 25,000 (approximately USD 83.33) per education centre each month to support children’s educational needs and provide additional assistance throughout the year.",
+      perCentreTable: [
+        { category: "Educational Support", lkr: "15,000", usd: "$50.00" },
+        { category: "Children’s Care & Joy Fund", lkr: "10,000", usd: "$33.33" }
       ],
-      note: "This is a long-term goal that will depend on sustainable funding, local partnerships, community participation, and the successful development of each phase."
-    },
-
-    makeDifference: {
-      badge: "HOW YOU CAN MAKE A DIFFERENCE",
-      title: "Be Part of Transforming a Life",
-      subtitle: "Your support can help us work towards creating better educational opportunities for children in underserved communities.",
-      actions: [
+      perCentreTotal: { lkr: "25,000", usd: "$83.33" },
+      allocations: [
         {
-          id: "materials",
-          title: "Support Learning Materials",
-          description: "Help us work towards providing books, stationery, and other essential educational resources.",
-          actionText: "Support Materials",
-          type: "donate"
+          num: "1",
+          title: "Educational Support",
+          amount: "LKR 15,000 | USD 50 per month",
+          desc: "This allocation is intended to help meet educational needs, including books, stationery, learning materials, supplementary learning activities, and other essential educational expenses, depending on the needs of each centre."
         },
         {
-          id: "programmes",
-          title: "Support Educational Programmes",
-          description: "Contribute towards the development of community-based learning opportunities for children.",
-          actionText: "Support Programmes",
-          type: "donate"
-        },
-        {
-          id: "partner",
-          title: "Become a Partner",
-          description: "Partner with Love In Fellowship & Truth Foundation to help develop and expand educational initiatives in Sri Lanka.",
-          actionText: "Partner With Us",
-          type: "partner"
-        },
-        {
-          id: "volunteer",
-          title: "Volunteer Your Skills",
-          description: "Support our educational mission through teaching, mentoring, professional skills, or community engagement.",
-          actionText: "Volunteer Your Skills",
-          type: "volunteer"
+          num: "2",
+          title: "Children’s Care & Joy Fund",
+          amount: "LKR 10,000 | Approximately USD 33.33 per month",
+          desc: "This allocation will be set aside each month to create a fund for additional support for children. It may be used for educational supplies, clothing, special care packages, gifts, or other suitable items based on children’s needs and available resources. By saving this allocation throughout the year, each centre can build a dedicated fund to provide additional support to children at an appropriate time."
         }
       ]
     },
 
-    commitment: {
-      badge: "OUR COMMITMENT",
-      title: "Responsible Stewardship & Clear Communication",
-      point1: "We are committed to responsible use of donations, clear communication with supporters, and the gradual development of sustainable educational initiatives.",
-      point2: "We aim to provide appropriate updates on programme activities, progress, and the use of funds."
+    annualSupportPlan: {
+      badge: "ANNUAL SUPPORT PLAN — PER CENTRE",
+      intro: "Each education centre will receive a proposed annual allocation of LKR 300,000 (approximately USD 1,000).",
+      table: [
+        { category: "Educational Support", lkr: "180,000", usd: "$600" },
+        { category: "Children’s Care & Joy Fund", lkr: "120,000", usd: "$400" }
+      ],
+      total: { lkr: "300,000", usd: "$1,000" }
     },
 
-    closingCta: {
-      title: "Help a Child Build a Brighter Future",
-      subtitle: "Together, we can work towards a future where more children have access to educational support and the opportunity to fulfil their potential.",
-      primaryBtn: "Support Education",
-      secondaryBtn: "Contact Us",
-      footerNote: "Love In Fellowship & Truth Foundation — Love. Fellowship. Truth."
+    nineCentresFunding: {
+      badge: "FUNDING REQUIREMENTS FOR 9 EDUCATION CENTRES",
+      intro: "Our initial proposed phase aims to support 9 education centres through this monthly assistance programme.",
+      table: [
+        { category: "Educational Support", monthlyLkr: "135,000", monthlyUsd: "$450", annualLkr: "1,620,000", annualUsd: "$5,400" },
+        { category: "Children’s Care & Joy Fund", monthlyLkr: "90,000", monthlyUsd: "$300", annualLkr: "1,080,000", annualUsd: "$3,600" }
+      ],
+      total: { monthlyLkr: "225,000", monthlyUsd: "$750", annualLkr: "2,700,000", annualUsd: "$9,000" }
+    },
+
+    fundingGoal: {
+      badge: "OUR PROPOSED FUNDING GOAL",
+      monthlyUsd: "USD 750 per month",
+      annualUsd: "USD 9,000 per year",
+      equivalent: "Equivalent to LKR 225,000 per month and LKR 2,700,000 per year.",
+      desc: "This proposed funding goal covers the direct monthly support allocations for all 9 education centres. Additional administrative or programme coordination costs, if required, should be budgeted separately."
+    },
+
+    howSupportMatters: {
+      badge: "HOW YOUR SUPPORT MAKES A DIFFERENCE",
+      points: [
+        "USD 50 per month helps provide educational support for one centre.",
+        "USD 33.33 per month contributes to the Children’s Care & Joy Fund for one centre.",
+        "USD 83.33 per month covers both proposed allocations for one centre.",
+        "USD 1,000 per year covers the proposed annual allocation for one centre.",
+        "USD 9,000 per year supports the proposed allocations for all 9 centres."
+      ]
+    },
+
+    whatSupportAchieves: {
+      badge: "WHAT YOUR SUPPORT CAN ACHIEVE",
+      title: "Your partnership can help us work towards providing:",
+      items: [
+        "Regular educational assistance for children.",
+        "Books, stationery, and essential learning resources.",
+        "Additional learning opportunities and academic support.",
+        "A dedicated fund for children’s additional needs and special support.",
+        "Greater access to educational opportunities in underserved communities."
+      ]
+    },
+
+    transparency: {
+      badge: "OUR COMMITMENT TO TRANSPARENCY",
+      title: "Responsible Stewardship & Honest Communication",
+      p1: "Love In Fellowship & Truth Foundation aims to maintain clear records of the support allocated to each centre, including monthly assistance, annual totals, and the use of the Children’s Care & Joy Fund.",
+      p2: "We are committed to responsible stewardship and honest communication with our supporters."
+    },
+
+    partnerWithUs: {
+      title: "Partner With Us",
+      p1: "We welcome churches, Christian organisations, charitable foundations, businesses, and individuals who share our vision of making educational support more accessible to children in Sri Lanka.",
+      p2: "Your partnership can help us provide consistent educational assistance and additional care for children who need it.",
+      primaryBtn: "Support This Project",
+      secondaryBtn: "Partner With Us",
+      footerNote: "Love In Fellowship & Truth Foundation — Empowering Children Through Education."
     }
   },
 
@@ -662,7 +660,289 @@ export const siteData = {
     }
   },
 
+  nourishMealDrivesProject: {
+    badge: "NUTRITION PROJECT",
+    title: "Nourish with Love Meal Drives",
+    tagline: "Nourishing Children. Sharing Love. Bringing Hope.",
+    subtitle: "A Monthly Meal Support Initiative by Love In Fellowship & Truth Foundation",
+    lead1: "Nourish with Love Meal Drives is a community outreach initiative of Love In Fellowship & Truth Foundation, established with the aim of supporting children in underserved and low-income communities across Sri Lanka by providing nutritious meals and sharing the love and compassion of Christ.",
+    lead2: "We believe every child deserves access to nourishing food, care, and kindness. Through this initiative, we aim to help children experiencing food insecurity while bringing encouragement, dignity, and joy into their lives. Our vision is not simply to provide a meal, but also to remind every child that they are valued, loved, and not forgotten.",
+    primaryCta: "Support This Project",
+    secondaryCta: "Become a Monthly Partner",
+    helpFeedCta: "Help Feed a Child",
+    image: "/images/card-nourish-love.jpg",
+
+    purpose: {
+      badge: "OUR PURPOSE",
+      title: "Responding to Childhood Food Insecurity",
+      description1: "Many children from financially disadvantaged families face challenges in accessing nutritious food. Nourish with Love seeks to respond to this need through regular meal distribution activities organized according to available funding and identified community needs.",
+      description2: "With the support of donors, churches, volunteers, and community partners, we aim to provide children with a complete meal package and create opportunities for communities to work together in caring for children in need."
+    },
+
+    whatWeProvide: {
+      badge: "WHAT WE AIM TO PROVIDE",
+      title: "Holistic Care & Nutrition in Every Outreach",
+      items: [
+        {
+          title: "A Nutritious Meal",
+          desc: "A freshly prepared meal to help meet children’s nutritional needs.",
+          icon: "utensils"
+        },
+        {
+          title: "Drinking Water",
+          desc: "A bottle of drinking water for each child.",
+          icon: "droplet"
+        },
+        {
+          title: "A Little Extra Joy",
+          desc: "An ice cream or another small treat to bring a smile to each child’s face.",
+          icon: "sparkles"
+        },
+        {
+          title: "Monthly Community Outreach",
+          desc: "Regular meal distribution activities in communities where support is needed.",
+          icon: "calendar"
+        },
+        {
+          title: "Care and Compassion",
+          desc: "Practical assistance that demonstrates kindness and the love of Christ.",
+          icon: "heart"
+        }
+      ]
+    },
+
+    mealPackage: {
+      badge: "OUR MEAL PACKAGE",
+      costPerChild: "USD 3",
+      costSubtitle: "per child for one complete meal package",
+      items: [
+        "One nutritious meal",
+        "One bottle of drinking water",
+        "One ice cream or another small treat"
+      ],
+      note: "The estimated cost may vary depending on food prices, suppliers, location, and distribution arrangements. Actual costs will be confirmed before each meal drive."
+    },
+
+    growthPlan: {
+      badge: "OUR GROWTH PLAN",
+      title: "Phased Outreach Milestones",
+      intro: "Our goal is to begin with a manageable number of children and gradually expand the initiative as funding, partnerships, and operational capacity grow.",
+      phases: [
+        {
+          phase: "Phase 1",
+          target: "100 Children per Month",
+          desc: "We aim to begin by providing meal packages for 100 children each month.",
+          monthly: "$300",
+          annual: "$3,600"
+        },
+        {
+          phase: "Phase 2",
+          target: "250 Children per Month",
+          desc: "As additional funding and partnerships become available, we aim to extend meal support to 250 children each month.",
+          monthly: "$750",
+          annual: "$9,000"
+        },
+        {
+          phase: "Phase 3",
+          target: "500 Children per Month",
+          desc: "Our next goal is to reach 500 children monthly through expanded community outreach and donor partnerships.",
+          monthly: "$1,500",
+          annual: "$18,000"
+        },
+        {
+          phase: "Phase 4",
+          target: "1,000 Children per Month",
+          desc: "Our long-term vision is to provide meal packages for up to 1,000 children each month, subject to available funding, partnerships, and implementation capacity.",
+          monthly: "$3,000",
+          annual: "$36,000"
+        }
+      ],
+      note: "These phases represent proposed growth targets. Expansion will depend on funding and operational readiness."
+    },
+
+    givingOpportunities: {
+      badge: "FUNDING & GIVING OPPORTUNITIES",
+      title: "Your Generosity in Action",
+      intro: "Your generosity can help provide meals and encouragement to children in need.",
+      tiers: [
+        { amount: "USD 3", meals: "1 child" },
+        { amount: "USD 30", meals: "10 children" },
+        { amount: "USD 75", meals: "25 children" },
+        { amount: "USD 150", meals: "50 children" },
+        { amount: "USD 300", meals: "100 children" },
+        { amount: "USD 750", meals: "250 children" },
+        { amount: "USD 1,500", meals: "500 children" },
+        { amount: "USD 3,000", meals: "1,000 children" }
+      ],
+      footerText: "Donations can help support individual meal packages, monthly meal drives, or the gradual expansion of this initiative. You can make a one-time contribution or become a monthly partner to help sustain the project throughout the year."
+    },
+
+    makeDifference: {
+      badge: "HOW YOU CAN MAKE A DIFFERENCE",
+      title: "Ways to Get Involved",
+      points: [
+        { title: "Donate", desc: "Help provide a meal package for a child." },
+        { title: "Become a Monthly Partner", desc: "Contribute regularly to support ongoing meal drives." },
+        { title: "Sponsor a Meal Drive", desc: "Help fund a meal distribution activity in a community." },
+        { title: "Partner With Us", desc: "Work alongside Love In Fellowship & Truth Foundation to reach more children." }
+      ],
+      closing: "Every contribution, large or small, can help us extend care and compassion to children in need."
+    },
+
+    commitment: {
+      badge: "OUR COMMITMENT TO RESPONSIBLE GIVING",
+      title: "Responsible Stewardship & Transparency",
+      p1: "Love In Fellowship & Truth Foundation is committed to using donated funds responsibly and maintaining clear records of project income and expenses.",
+      p2: "Meal drives will be planned according to available funding, identified community needs, and practical arrangements. We aim to provide appropriate updates on activities and use resources responsibly as the initiative develops.",
+      note: "The stated funding goals are preliminary estimates based on USD 3 per child. Transportation, special event expenses, and other additional costs may require separate funding."
+    },
+
+    closingCta: {
+      title: "Join Us in Sharing Love",
+      lead: "Together, we can do more than provide food. We can bring smiles to children, strengthen communities, and demonstrate Christ’s love through practical acts of kindness.",
+      tagline: "One child. One meal. One act of love at a time.",
+      primaryBtn: "Support This Project",
+      secondaryBtn: "Become a Monthly Partner",
+      tertiaryBtn: "Help Feed a Child"
+    }
+  },
+
   montessoriProgram: {
+    badge: "LITTLE LIGHT MONTESSORI",
+    title: "Nurturing Little Minds. Building Bright Beginnings.",
+    lead1: "Every child deserves a caring environment where they can learn, explore, develop confidence, and discover their potential. Little Light Montessori is a planned early childhood education initiative of Love In Fellowship & Truth Foundation, envisioned to provide young children with a nurturing, child-centred, and values-based learning environment in Kandana, Sri Lanka.",
+    lead2: "Our vision is to lay a strong foundation for lifelong learning by encouraging curiosity, creativity, social development, and a love of learning from an early age.",
+    primaryCta: "Support Little Light Montessori",
+    secondaryCta: "Partner With Us",
+    image: "/images/card-montessori.jpg",
+
+    vision: {
+      badge: "OUR VISION FOR EARLY CHILDHOOD EDUCATION",
+      description1: "The early years of childhood are an important stage in a child’s development. A supportive learning environment can help children develop communication, creativity, independence, and positive relationships with others.",
+      description2: "Through Little Light Montessori, we aim to create an environment where young children can learn through exploration, guided activities, play, and meaningful interaction."
+    },
+
+    approach: {
+      badge: "OUR APPROACH TO LEARNING",
+      items: [
+        {
+          number: "01",
+          title: "Child-Centred Learning",
+          description: "We aim to encourage children to learn at their own pace through age-appropriate activities that support curiosity, discovery, and understanding.",
+          icon: "sparkles"
+        },
+        {
+          number: "02",
+          title: "Learning Through Play",
+          description: "We envision learning experiences that encourage creativity, imagination, problem-solving, and active participation.",
+          icon: "palette"
+        },
+        {
+          number: "03",
+          title: "Social and Emotional Development",
+          description: "We aim to nurture kindness, confidence, cooperation, independence, and respect for others in a caring environment.",
+          icon: "heart"
+        },
+        {
+          number: "04",
+          title: "Foundational Skills",
+          description: "Our planned approach aims to support early language, numeracy, communication, motor skills, and readiness for the next stage of education.",
+          icon: "book-open"
+        },
+        {
+          number: "05",
+          title: "Christian Values and Care",
+          description: "Inspired by our Christian faith, we seek to promote love, kindness, honesty, respect, and compassion while caring for each child’s dignity and wellbeing.",
+          icon: "sun"
+        }
+      ]
+    },
+
+    developmentPlan: {
+      badge: "OUR DEVELOPMENT PLAN",
+      title: "A Vision for Little Light Montessori in Kandana",
+      subtitle: "Our plan is to progressively develop an early childhood education centre that can serve children and families in the surrounding community.",
+      phases: [
+        {
+          phase: "Phase 1",
+          title: "Establishment",
+          capacity: "~60 Children",
+          description: "Our initial target is to develop the centre with the capacity to serve approximately 60 children, subject to facilities, resources, and the required approvals."
+        },
+        {
+          phase: "Phase 2",
+          title: "Growth",
+          capacity: "~150 Children",
+          description: "As the centre develops, we aim to expand its capacity to approximately 150 children."
+        },
+        {
+          phase: "Phase 3",
+          title: "Long-Term Development",
+          capacity: "~200 Children",
+          description: "Our longer-term target is to work towards a capacity of approximately 200 children, depending on demand, staffing, facilities, and sustainable funding."
+        }
+      ],
+      note: "These figures represent development targets, not current enrolment numbers."
+    },
+
+    howYouCanSupport: {
+      badge: "HOW YOU CAN SUPPORT LITTLE LIGHT MONTESSORI",
+      actions: [
+        {
+          id: "materials",
+          title: "Learning Materials",
+          description: "Help us work towards providing age-appropriate books, educational toys, creative materials, and classroom resources.",
+          actionText: "Support Materials",
+          type: "donate"
+        },
+        {
+          id: "classroom",
+          title: "Classroom Development",
+          description: "Support our plans to develop a safe, welcoming, and child-friendly learning environment.",
+          actionText: "Support Classroom",
+          type: "donate"
+        },
+        {
+          id: "partnerships",
+          title: "Educational Partnerships",
+          description: "Partner with us through early childhood education expertise, training, resources, or professional guidance.",
+          actionText: "Partner With Us",
+          type: "partner"
+        },
+        {
+          id: "sponsorship",
+          title: "Project Sponsorship",
+          description: "Help us work towards establishing and developing Little Light Montessori through financial contributions and long-term partnerships.",
+          actionText: "Sponsor Project",
+          type: "donate"
+        }
+      ]
+    },
+
+    safeguarding: {
+      badge: "CHILD SAFEGUARDING AND WELLBEING",
+      point1: "We recognise that young children need special care, protection, and supervision.",
+      point2: "Our aim is to develop appropriate safeguarding practices, safe learning spaces, responsible staff and volunteer engagement, and respectful communication with parents and guardians as the project progresses.",
+      point3: "The centre’s operations will be developed in line with applicable requirements and the necessary approvals."
+    },
+
+    commitment: {
+      badge: "OUR COMMITMENT",
+      point1: "We aim to develop Little Light Montessori responsibly, with a focus on children’s wellbeing, educational quality, transparency, and long-term sustainability.",
+      point2: "As the project progresses, we intend to communicate relevant development updates and opportunities for supporters and partners to contribute."
+    },
+
+    closingCta: {
+      title: "HELP BUILD A BRIGHTER BEGINNING",
+      subtitle1: "Together, we can work towards creating a caring learning environment where young children can explore, grow, and take their first steps towards a brighter future.",
+      primaryBtn: "Support Little Light Montessori",
+      secondaryBtn: "Contact Us",
+      footerNote: "Little Light Montessori — A planned early childhood education initiative of Love In Fellowship & Truth Foundation.",
+      tagline: "Love. Fellowship. Truth."
+    }
+  },
+
+  montessoriProject: {
     badge: "FEATURED PROJECT",
     title: "Little Light Montessori",
     tagline: "Nurturing Young Minds. Building Bright Futures.",
