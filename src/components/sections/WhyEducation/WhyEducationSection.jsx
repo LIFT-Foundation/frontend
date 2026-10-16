@@ -27,9 +27,10 @@ export default function WhyEducationSection() {
                   alt="Children studying in a classroom in Sri Lanka"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0c3930]/90 via-transparent to-transparent flex flex-col justify-end p-6 text-white">
-                  <span className="text-xs font-bold text-[#f28e63] uppercase tracking-wider">LIFT Impact Promise</span>
-                  <p className="text-sm font-semibold mt-1">"Education creates options, dignity, and a future beyond poverty."</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c3930]/95 via-[#0c3930]/40 to-transparent flex flex-col justify-end p-6 sm:p-7 text-white">
+                  <span className="text-[11px] font-bold text-[#f28e63] uppercase tracking-wider">{whyEducation.commitment?.badge || 'OUR COMMITMENT'}</span>
+                  <p className="text-sm sm:text-base font-bold mt-1 text-white">{whyEducation.commitment?.title || 'Making Education More Accessible'}</p>
+                  <p className="text-[11px] text-teal-100/80 mt-1 leading-relaxed max-w-sm">{whyEducation.commitment?.description || 'Planned educational support through learning resources and academic guidance, subject to available funding and resources.'}</p>
                 </div>
               </div>
             </ScrollReveal>

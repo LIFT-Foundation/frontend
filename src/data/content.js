@@ -201,21 +201,26 @@ export const siteData = {
   whyEducation: {
     badge: "WHY EDUCATION MATTERS",
     title: "Breaking Poverty Through Learning",
-    subtitle: "Education is the single most powerful tool to break generational poverty and unlock a child's God-given potential.",
+    subtitle: "Education can help break the cycle of poverty and unlock a child's potential. Through accessible learning support, we aim to create better educational opportunities for children in underserved communities across Sri Lanka.",
     points: [
       {
-        title: "The Crisis in Rural Learning",
-        description: "Thousands of children in remote Sri Lankan communities lack access to quality supplementary education, learning materials, and mentorship."
+        title: "The Challenge of Rural Education",
+        description: "Children in underserved communities may have limited access to supplementary education, learning materials, and academic guidance."
       },
       {
-        title: "Nutritional & Educational Synergy",
-        description: "A hungry child cannot focus on learning. By combining daily nutritious meals with after-school education, we achieve higher retention and progress."
+        title: "Accessible Learning Support",
+        description: "Our planned education centres aim to provide educational assistance, learning resources, and guidance to help children strengthen their knowledge and skills."
       },
       {
-        title: "Sustainable Community Transformation",
-        description: "Educated youth grow up to uplift their families, lead ethical businesses, and serve as beacons of hope in their local communities."
+        title: "Stronger Communities Through Education",
+        description: "By supporting children's education, we aim to help young people build brighter futures and contribute positively to their families and communities."
       }
-    ]
+    ],
+    commitment: {
+      badge: "OUR COMMITMENT",
+      title: "Making Education More Accessible",
+      description: "Planned educational support through learning resources and academic guidance, subject to available funding and resources."
+    }
   },
 
   howToHelp: {
