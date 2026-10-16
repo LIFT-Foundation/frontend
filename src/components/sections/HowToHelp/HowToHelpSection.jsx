@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, BookOpen, Utensils, Building, ArrowRight } from 'lucide-react';
+import { Heart, BookOpen, Utensils, Building, Gift, ArrowRight } from 'lucide-react';
 import { siteData } from '../../../data/content';
 import ScrollReveal from '../../effects/ScrollReveal';
 import TiltCard from '../../effects/TiltCard';
@@ -19,8 +19,35 @@ export default function HowToHelpSection({ onDonateClick }) {
         return <Utensils {...props} />;
       case 'support-centre':
         return <Building {...props} />;
+      case 'support-campaign':
+        return <Gift {...props} />;
       default:
         return <Heart {...props} />;
+    }
+  };
+
+  const getIconColor = (id, idx) => {
+    switch (id) {
+      case 'sponsor-child':
+        return 'bg-[#ea580c]';
+      case 'support-edu':
+        return 'bg-[#0d7a64]';
+      case 'provide-meal':
+        return 'bg-[#b81d68]';
+      case 'support-centre':
+        return 'bg-[#6d44b8]';
+      case 'support-campaign':
+        return 'bg-[#c2410c]';
+      default:
+        return idx === 0
+          ? 'bg-[#ea580c]'
+          : idx === 1
+          ? 'bg-[#0d7a64]'
+          : idx === 2
+          ? 'bg-[#b81d68]'
+          : idx === 3
+          ? 'bg-[#6d44b8]'
+          : 'bg-[#c2410c]';
     }
   };
 
@@ -47,41 +74,50 @@ export default function HowToHelpSection({ onDonateClick }) {
           </div>
         </ScrollReveal>
 
-        {/* 4 Cards Grid with 3D Tilt & Staggered ScrollReveal */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 5 Cards in a Single Horizontal Row on Desktop, Smooth Horizontal Scroll on Mobile/Tablet */}
+        <div className="flex lg:grid lg:grid-cols-5 gap-4 lg:gap-3.5 xl:gap-5 overflow-x-auto lg:overflow-visible pb-6 lg:pb-0 pt-2 px-1 snap-x snap-mandatory no-scrollbar">
           {howToHelp.ways.map((way, idx) => (
-            <ScrollReveal key={way.id} direction="up" delay={150 + idx * 100} className="h-full">
-              <TiltCard maxTilt={6} scale={1.02} className="h-full">
-                <div className="bg-white rounded-3xl p-6 border border-gray-100/90 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-2xl hover:border-gray-200 transition-all duration-300 flex flex-col justify-between h-full group">
-                  <div>
-                    <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-5 shadow-md group-hover:scale-115 group-hover:rotate-6 transition-all duration-300 ${
-                      idx === 0 ? 'bg-[#ea580c]' : idx === 1 ? 'bg-[#0d7a64]' : idx === 2 ? 'bg-[#b81d68]' : 'bg-[#6d44b8]'
-                    }`}>
-                      {renderIcon(way.id)}
+            <div
+              key={way.id}
+              className="w-[280px] sm:w-[320px] lg:w-auto shrink-0 lg:shrink snap-start h-full flex flex-col"
+            >
+              <ScrollReveal direction="up" delay={150 + idx * 80} className="h-full flex flex-col">
+                <TiltCard maxTilt={5} scale={1.02} className="h-full flex flex-col">
+                  <div className="bg-white rounded-3xl p-5 sm:p-6 border border-gray-100/90 shadow-[0_4px_20px_rgba(0,0,0,0.04)] hover:shadow-2xl hover:border-gray-200 transition-all duration-300 flex flex-col justify-between h-full group">
+                    <div>
+                      <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-5 shadow-md group-hover:scale-115 group-hover:rotate-6 transition-all duration-300 ${getIconColor(way.id, idx)}`}>
+                        {renderIcon(way.id)}
+                      </div>
+
+                      <h3 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-teal-900 transition-colors mb-2 leading-snug">
+                        {way.title}
+                      </h3>
+
+                      <p className="text-xs text-gray-500 leading-relaxed mb-6">
+                        {way.description}
+                      </p>
                     </div>
 
-                    <h3 className="text-base font-bold text-gray-900 group-hover:text-teal-900 transition-colors mb-2">
-                      {way.title}
-                    </h3>
-
-                    <p className="text-xs text-gray-500 leading-relaxed mb-6">
-                      {way.description}
-                    </p>
+                    <div>
+                      <RippleButton
+                        onClick={onDonateClick}
+                        className="w-full py-2.5 px-3 rounded-xl bg-gray-900 hover:bg-[#0c3930] text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-sm hover:shadow group/btn cursor-pointer"
+                      >
+                        <span className="truncate">{way.cta}</span>
+                        <ArrowRight className="w-3.5 h-3.5 shrink-0 group-hover/btn:translate-x-1 transition-transform duration-200" />
+                      </RippleButton>
+                    </div>
                   </div>
-
-                  <div>
-                    <RippleButton
-                      onClick={onDonateClick}
-                      className="w-full py-2.5 rounded-xl bg-gray-900 hover:bg-[#0c3930] text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-sm hover:shadow group/btn"
-                    >
-                      <span>{way.cta}</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform duration-200" />
-                    </RippleButton>
-                  </div>
-                </div>
-              </TiltCard>
-            </ScrollReveal>
+                </TiltCard>
+              </ScrollReveal>
+            </div>
           ))}
+        </div>
+
+        {/* Mobile / Tablet Horizontal Scroll Hint */}
+        <div className="lg:hidden flex items-center justify-center gap-1.5 text-[11px] font-medium text-gray-400 mt-3">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#ea580c] animate-pulse"></span>
+          <span>Swipe horizontally to view all {howToHelp.ways.length} ways to help</span>
         </div>
 
       </div>

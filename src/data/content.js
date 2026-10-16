@@ -231,26 +231,32 @@ export const siteData = {
       {
         id: "sponsor-child",
         title: "Sponsor a Child",
-        description: "Provide monthly support for a child's education kit, books, and daily nutritious meals.",
-        cta: "Sponsor Now"
+        description: "Support a child’s educational needs and learning opportunities through our planned sponsorship initiative.",
+        cta: "Sponsor a Child"
       },
       {
         id: "support-edu",
         title: "Support Education",
-        description: "Fund learning materials, desks, computers, and teacher stipends for our rural centres.",
+        description: "Help provide educational resources and academic support for children in underserved communities.",
         cta: "Support Education"
       },
       {
         id: "provide-meal",
-        title: "Provide a Meal",
-        description: "Fund single or recurring meal drives for children participating in our after-school programs.",
+        title: "Nourish with Love",
+        description: "Help provide a meal, drinking water, and a small treat for children through monthly meal drives.",
         cta: "Provide Meals"
       },
       {
         id: "support-centre",
         title: "Support a Divisional Centre",
-        description: "Partner as an individual or organization to sponsor the creation of an entire learning centre.",
+        description: "Partner with us to support the planned expansion of free education centres across Sri Lanka.",
         cta: "Sponsor a Centre"
+      },
+      {
+        id: "support-campaign",
+        title: "Christmas Outreach 2026",
+        description: "Share love and bring hope to children and vulnerable communities through our planned Christmas outreach activities.",
+        cta: "Support This Campaign"
       }
     ]
   },
