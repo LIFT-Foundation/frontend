@@ -1,5 +1,5 @@
 import React from 'react';
-import { Plus, Users, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Plus, Users, ShieldCheck, Heart, ArrowRight } from 'lucide-react';
 import { siteData } from '../../../data/content';
 import ScrollReveal from '../../effects/ScrollReveal';
 import TiltCard from '../../effects/TiltCard';
@@ -11,14 +11,16 @@ export default function CommitmentSection({ onGetInvolved }) {
 
   const renderIcon = (type) => {
     switch (type) {
+      case 'heart':
+        return <Heart className="w-4 h-4 text-[#f28e63] stroke-[2.2]" />;
       case 'plus':
-        return <Plus className="w-4 h-4 text-white stroke-[2.5]" />;
+        return <Plus className="w-4 h-4 text-[#f28e63] stroke-[2.5]" />;
       case 'users':
-        return <Users className="w-4 h-4 text-white stroke-[2]" />;
+        return <Users className="w-4 h-4 text-[#f28e63] stroke-[2]" />;
       case 'shield-check':
-        return <ShieldCheck className="w-4 h-4 text-white stroke-[2]" />;
+        return <ShieldCheck className="w-4 h-4 text-[#f28e63] stroke-[2]" />;
       default:
-        return <ShieldCheck className="w-4 h-4 text-white stroke-[2]" />;
+        return <ShieldCheck className="w-4 h-4 text-[#f28e63] stroke-[2]" />;
     }
   };
 

@@ -262,29 +262,29 @@ export const siteData = {
   },
 
   commitment: {
-    badge: "Our Commitment",
+    badge: "OUR COMMITMENT",
     titleStart: "Building a Brighter Future ",
     titleHighlight: "Together",
-    subtitle: "Rooted in faith and driven by love, we are committed to transforming lives across Sri Lanka through education, nourishment, and community care.",
+    subtitle: "Rooted in faith and driven by love, Love In Fellowship & Truth Foundation is committed to supporting children and vulnerable communities across Sri Lanka through education, nutrition, and practical care.",
     cta: "Partner With Us",
     pillars: [
       {
         id: "faith",
         title: "Faith-Driven",
-        icon: "plus",
-        description: "Everything we do is grounded in God's love and Christian truth."
+        icon: "heart",
+        description: "Guided by Christian faith, love, and compassion."
       },
       {
         id: "community",
         title: "Community-Focused",
         icon: "users",
-        description: "Focused on empowering children, youth, and their surrounding families."
+        description: "Working to empower children and strengthen communities."
       },
       {
         id: "transparent",
         title: "Transparent & Accountable",
         icon: "shield-check",
-        description: "100% accountable to our donors, international partners, and the children we serve."
+        description: "Committed to responsible stewardship of donations."
       }
     ]
   },
@@ -292,18 +292,18 @@ export const siteData = {
   storiesAndMission: {
     stories: {
       title: "Stories of Hope",
-      subtitle: "Real lives transformed through God's love and dedicated donor support.",
-      cta: "Read Their Stories",
+      subtitle: "Discover how educational support and community care can help children build brighter futures.",
+      cta: "Discover Our Impact",
       testimonial: {
-        quote: "Thanks to LIFT's free education centre, I can now continue my studies and dream of becoming a teacher.",
-        author: "Dinuthi",
-        location: "Student, Free Education Centre",
-        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop"
+        quote: "Through accessible educational support and community care, children in underserved areas are empowered to learn, grow, and build brighter futures.",
+        author: "Community Impact",
+        location: "LIFT Foundation Sri Lanka",
+        avatar: "/images/card-education-centres.jpg"
       }
     },
     joinMission: {
       title: "Join Our Mission",
-      subtitle: "Be part of something greater. Together, we can share God's love and transform children's lives across Sri Lanka.",
+      subtitle: "Partner with Love In Fellowship & Truth Foundation to support children and vulnerable communities across Sri Lanka.",
       volunteerBtn: "Become a Partner / Volunteer",
       donateBtn: "Donate & Support"
     }
