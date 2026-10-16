@@ -20,6 +20,7 @@ import NourishProgramPage from './components/pages/NourishProgramPage';
 import NourishMealDrivesPage from './components/pages/NourishMealDrivesPage';
 import MontessoriProgramPage from './components/pages/MontessoriProgramPage';
 import MontessoriProjectPage from './components/pages/MontessoriProjectPage';
+import ChristmasOutreachPage from './components/pages/ChristmasOutreachPage';
 import { X, Check } from 'lucide-react';
 import RippleButton from './components/effects/RippleButton';
 
@@ -32,6 +33,7 @@ export default function App() {
   const [showNourishProjectPage, setShowNourishProjectPage] = useState(false);
   const [showMontessoriPage, setShowMontessoriPage] = useState(false);
   const [showMontessoriProjectPage, setShowMontessoriProjectPage] = useState(false);
+  const [showChristmasProjectPage, setShowChristmasProjectPage] = useState(false);
   const [showVolunteerModal, setShowVolunteerModal] = useState(false);
   const [volunteerSubmitted, setVolunteerSubmitted] = useState(false);
 
@@ -66,6 +68,7 @@ export default function App() {
     setShowNourishProjectPage(false);
     setShowMontessoriPage(false);
     setShowMontessoriProjectPage(false);
+    setShowChristmasProjectPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -78,6 +81,7 @@ export default function App() {
     setShowNourishProjectPage(false);
     setShowMontessoriPage(false);
     setShowMontessoriProjectPage(false);
+    setShowChristmasProjectPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -90,6 +94,7 @@ export default function App() {
     setShowNourishProjectPage(false);
     setShowMontessoriPage(false);
     setShowMontessoriProjectPage(false);
+    setShowChristmasProjectPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -102,6 +107,7 @@ export default function App() {
     setShowNourishProjectPage(false);
     setShowMontessoriPage(false);
     setShowMontessoriProjectPage(false);
+    setShowChristmasProjectPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -114,6 +120,7 @@ export default function App() {
     setShowAboutPage(false);
     setShowMontessoriPage(false);
     setShowMontessoriProjectPage(false);
+    setShowChristmasProjectPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -126,6 +133,7 @@ export default function App() {
     setShowAboutPage(false);
     setShowMontessoriPage(false);
     setShowMontessoriProjectPage(false);
+    setShowChristmasProjectPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -138,11 +146,26 @@ export default function App() {
     setShowEducationPage(false);
     setShowDonatePage(false);
     setShowAboutPage(false);
+    setShowChristmasProjectPage(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const navigateToMontessoriProject = () => {
     setShowMontessoriProjectPage(true);
+    setShowMontessoriPage(false);
+    setShowNourishProjectPage(false);
+    setShowNourishPage(false);
+    setShowYouthPage(false);
+    setShowEducationPage(false);
+    setShowDonatePage(false);
+    setShowAboutPage(false);
+    setShowChristmasProjectPage(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navigateToChristmasProject = () => {
+    setShowChristmasProjectPage(true);
+    setShowMontessoriProjectPage(false);
     setShowMontessoriPage(false);
     setShowNourishProjectPage(false);
     setShowNourishPage(false);
@@ -382,6 +405,22 @@ export default function App() {
     );
   }
 
+  if (showChristmasProjectPage) {
+    return (
+      <>
+        <ChristmasOutreachPage
+          onBackToHome={() => {
+            setShowChristmasProjectPage(false);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          onDonateClick={navigateToDonate}
+          onPartnerClick={() => setShowVolunteerModal(true)}
+        />
+        {renderVolunteerModal()}
+      </>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-[#faf9f6] flex flex-col selection:bg-peach-200 selection:text-teal-950 font-sans">
       {/* 1. Header & Hero Section (Updated Positioning: Child & Youth Focus) */}
@@ -424,7 +463,7 @@ export default function App() {
           onExploreMontessori={navigateToMontessoriProject}
           onExploreEducation={navigateToEducation}
           onExploreNourish={navigateToNourishProject}
-          onSupportChristmas={navigateToDonate}
+          onSupportChristmas={navigateToChristmasProject}
         />
 
         {/* 5. Our Vision for Sri Lanka (9 Provinces -> 25 Districts -> 331 Divisional Centres) */}
@@ -434,7 +473,10 @@ export default function App() {
         <WhyEducationSection />
 
         {/* 7. How You Can Help (Sponsor a child, Support education, Provide a meal, Support a centre) */}
-        <HowToHelpSection onDonateClick={navigateToDonate} />
+        <HowToHelpSection
+          onDonateClick={navigateToDonate}
+          onSupportCampaign={navigateToChristmasProject}
+        />
 
         {/* 8. Our Commitment (Faith-driven • Community-focused • Transparent) */}
         <CommitmentSection onGetInvolved={() => setShowVolunteerModal(true)} />

@@ -5,7 +5,7 @@ import ScrollReveal from '../../effects/ScrollReveal';
 import TiltCard from '../../effects/TiltCard';
 import RippleButton from '../../effects/RippleButton';
 
-export default function HowToHelpSection({ onDonateClick }) {
+export default function HowToHelpSection({ onDonateClick, onSupportCampaign }) {
   const { howToHelp } = siteData;
 
   const renderIcon = (id) => {
@@ -100,7 +100,13 @@ export default function HowToHelpSection({ onDonateClick }) {
 
                     <div>
                       <RippleButton
-                        onClick={onDonateClick}
+                        onClick={() => {
+                          if (way.id === 'support-campaign' && onSupportCampaign) {
+                            onSupportCampaign();
+                          } else if (onDonateClick) {
+                            onDonateClick();
+                          }
+                        }}
                         className="w-full py-2.5 px-3 rounded-xl bg-gray-900 hover:bg-[#0c3930] text-white font-semibold text-xs transition-colors flex items-center justify-center gap-1.5 shadow-sm hover:shadow group/btn cursor-pointer"
                       >
                         <span className="truncate">{way.cta}</span>
