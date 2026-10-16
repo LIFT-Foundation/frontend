@@ -23,9 +23,9 @@ export default function WhyEducationSection() {
             <ScrollReveal direction="left" delay={150}>
               <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/5] group">
                 <img
-                  src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop"
-                  alt="Children studying in a classroom in Sri Lanka"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  src="/images/why-education-classroom.jpg"
+                  alt="Teacher guiding students in a classroom in Sri Lanka"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0c3930]/95 via-[#0c3930]/40 to-transparent flex flex-col justify-end p-6 sm:p-7 text-white">
                   <span className="text-[11px] font-bold text-[#f28e63] uppercase tracking-wider">{whyEducation.commitment?.badge || 'OUR COMMITMENT'}</span>
