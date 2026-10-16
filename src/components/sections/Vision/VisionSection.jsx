@@ -67,7 +67,7 @@ export default function VisionSection({ onSponsorClick }) {
               {/* Systematic Rollout Tagline */}
               <div className="flex items-center gap-2 text-[11px] text-teal-200/70 pt-1">
                 <CheckCircle2 className="w-3.5 h-3.5 text-[#f28e63] flex-shrink-0" />
-                <span>Systematic Phase 1 Rollout across all 25 Districts</span>
+                <span>Our planned expansion will depend on funding, partnerships, and implementation capacity.</span>
               </div>
             </div>
 

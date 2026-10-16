@@ -149,6 +149,16 @@ export const siteData = {
         description: "A community-focused initiative that aims to improve children’s access to nutritious meals and support their health, wellbeing, and participation in education. We aim to develop meal-support activities in collaboration with local communities and partners as funding and resources become available.",
         buttonText: "Explore This Project →",
         image: "/images/card-nourish-love.jpg"
+      },
+      {
+        id: "christmas-outreach",
+        title: "Christmas Outreach 2026",
+        tag: "Featured Campaign",
+        location: "Sri Lanka — Children & Vulnerable Communities",
+        status: "December 2026",
+        description: "Share love, bring hope, and spread the joy of Christmas through planned outreach activities providing practical support, gifts, meals, and encouragement to children and vulnerable communities across Sri Lanka.",
+        buttonText: "Support This Campaign →",
+        image: "/images/card-christmas-outreach.jpg"
       }
     ]
   },
@@ -180,11 +190,11 @@ export const siteData = {
   vision2030: {
     badge: "NATIONAL EXPANSION VISION",
     title: "Our Vision for Sri Lanka",
-    subtitle: "A systematic rollout strategy ensuring every child in every corner of Sri Lanka has access to free quality education.",
+    subtitle: "A phased expansion plan to help children across Sri Lanka access free, quality education.",
     stats: [
-      { value: "9", label: "Provinces Reached", desc: "Island-wide coverage" },
-      { value: "25", label: "Districts Active", desc: "District hub coordination" },
-      { value: "331", label: "Divisional Centres", desc: "Community-level impact by 2030" }
+      { value: "9", label: "Provinces", desc: "Long-term coverage vision" },
+      { value: "25", label: "Districts", desc: "Planned expansionphase" },
+      { value: "331", label: "Divisional Centres", desc: "Long-term vision by 2030" }
     ]
   },
 

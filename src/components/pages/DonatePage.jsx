@@ -208,6 +208,7 @@ export default function DonatePage({ onBackToHome }) {
                         onChange={(e) => setFormData({ ...formData, program: e.target.value })}
                         className="w-full px-4 py-3 text-xs font-semibold rounded-xl border border-gray-200 focus:border-teal-700 outline-none bg-white text-gray-800 transition-all"
                       >
+                        <option>Christmas Outreach 2026</option>
                         <option>Free Education Centres (331 Target)</option>
                         <option>Nourish with Love (Child Meal Drives)</option>
                         <option>Little Light Montessori (Early Childhood)</option>

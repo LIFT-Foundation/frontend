@@ -222,6 +222,7 @@ export default function App() {
                     onChange={(e) => setVolunteerForm({ ...volunteerForm, interest: e.target.value })}
                     className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-gray-200 focus:border-teal-700 focus:ring-2 focus:ring-teal-100 outline-none bg-white text-gray-700 transition-all"
                   >
+                    <option>Christmas Outreach 2026 (Festive Support & Gifts)</option>
                     <option>Free Education Centres (Tutoring & Books)</option>
                     <option>Nourish with Love (Meal Drives)</option>
                     <option>Little Light Montessori Care</option>
@@ -418,11 +419,12 @@ export default function App() {
           onLearnMoreMontessori={navigateToMontessori}
         />
 
-        {/* 4. Our Projects (Key Operational Projects: Little Light Montessori, Education Centres, Meal Drives) */}
+        {/* 4. Our Projects (Key Operational Projects: Little Light Montessori, Education Centres, Meal Drives, Christmas Outreach) */}
         <ProjectsSection
           onExploreMontessori={navigateToMontessoriProject}
           onExploreEducation={navigateToEducation}
           onExploreNourish={navigateToNourishProject}
+          onSupportChristmas={navigateToDonate}
         />
 
         {/* 5. Our Vision for Sri Lanka (9 Provinces -> 25 Districts -> 331 Divisional Centres) */}
