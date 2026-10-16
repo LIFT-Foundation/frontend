@@ -64,6 +64,18 @@ export default function ProjectsSection({
     }
   };
 
+  const handleProjectClick = (projectId) => {
+    if (projectId === 'montessori' && onExploreMontessori) {
+      onExploreMontessori();
+    } else if (projectId === 'education-centers' && onExploreEducation) {
+      onExploreEducation();
+    } else if (projectId === 'nourish-drives' && onExploreNourish) {
+      onExploreNourish();
+    } else if (projectId === 'christmas-outreach' && onSupportChristmas) {
+      onSupportChristmas();
+    }
+  };
+
   return (
     <section id="projects" className="py-16 sm:py-24 bg-white border-t border-gray-100 relative overflow-hidden scroll-mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
@@ -155,7 +167,13 @@ export default function ProjectsSection({
                       }`}
                     >
                       {/* Image Header */}
-                      <div className="relative aspect-[16/10] overflow-hidden bg-gray-100">
+                      <div
+                        onClick={() => handleProjectClick(project.id)}
+                        className="relative aspect-[16/10] overflow-hidden bg-gray-100 cursor-pointer"
+                        role="button"
+                        tabIndex={0}
+                        onKeyDown={(e) => { if (e.key === 'Enter') handleProjectClick(project.id); }}
+                      >
                         <img
                           src={project.image}
                           alt={project.title}
@@ -191,7 +209,10 @@ export default function ProjectsSection({
                             <span className="truncate">{project.location}</span>
                           </div>
 
-                          <h3 className="text-base font-bold text-gray-900 group-hover:text-[#0c3930] transition-colors leading-snug">
+                          <h3
+                            onClick={() => handleProjectClick(project.id)}
+                            className="text-base font-bold text-gray-900 group-hover:text-[#0c3930] transition-colors leading-snug cursor-pointer"
+                          >
                             {project.title}
                           </h3>
 
@@ -205,7 +226,7 @@ export default function ProjectsSection({
                           {project.id === 'montessori' && onExploreMontessori ? (
                             <button
                               type="button"
-                              onClick={onExploreMontessori}
+                              onClick={() => handleProjectClick(project.id)}
                               className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0c3930] hover:text-[#ea580c] transition-colors group/link cursor-pointer"
                             >
                               <HeartHandshake className="w-3.5 h-3.5 text-[#ea580c] group-hover/link:scale-110 transition-transform duration-200" />
@@ -214,7 +235,7 @@ export default function ProjectsSection({
                           ) : project.id === 'education-centers' && onExploreEducation ? (
                             <button
                               type="button"
-                              onClick={onExploreEducation}
+                              onClick={() => handleProjectClick(project.id)}
                               className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0c3930] hover:text-[#ea580c] transition-colors group/link cursor-pointer"
                             >
                               <HeartHandshake className="w-3.5 h-3.5 text-[#ea580c] group-hover/link:scale-110 transition-transform duration-200" />
@@ -223,7 +244,7 @@ export default function ProjectsSection({
                           ) : project.id === 'nourish-drives' && onExploreNourish ? (
                             <button
                               type="button"
-                              onClick={onExploreNourish}
+                              onClick={() => handleProjectClick(project.id)}
                               className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0c3930] hover:text-[#ea580c] transition-colors group/link cursor-pointer"
                             >
                               <HeartHandshake className="w-3.5 h-3.5 text-[#ea580c] group-hover/link:scale-110 transition-transform duration-200" />
@@ -232,7 +253,7 @@ export default function ProjectsSection({
                           ) : project.id === 'christmas-outreach' && onSupportChristmas ? (
                             <button
                               type="button"
-                              onClick={onSupportChristmas}
+                              onClick={() => handleProjectClick(project.id)}
                               className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0c3930] hover:text-[#ea580c] transition-colors group/link cursor-pointer"
                             >
                               <HeartHandshake className="w-3.5 h-3.5 text-[#ea580c] group-hover/link:scale-110 transition-transform duration-200" />

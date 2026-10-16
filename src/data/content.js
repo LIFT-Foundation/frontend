@@ -1056,7 +1056,7 @@ export const siteData = {
 
     about: {
       badge: "ABOUT THE CAMPAIGN",
-      title: "Bringing Christmas Hope Across Sri Lanka",
+      title: "About the Campaign",
       description1: "Christmas Outreach 2026 is a special fundraising campaign by Love In Fellowship & Truth Foundation to support children and vulnerable communities across Sri Lanka during the Christmas season.",
       description2: "Through a series of planned outreach activities, we aim to share the love and hope of Christ by providing meals, gifts, care packages, encouragement, and practical assistance to those in need."
     },
@@ -1066,10 +1066,9 @@ export const siteData = {
       title: "Our Christmas Outreach Activities",
       lead: "We are planning 13 outreach activities to serve children and vulnerable communities this Christmas.",
       stats: [
-        { label: "Planned Reach", value: "1,950–2,200", unit: "People", icon: "users" },
-        { label: "Outreach Activities", value: "13", unit: "Planned Programs", icon: "calendar" },
-        { label: "Beneficiaries", value: "Children & Special Needs", unit: "Families & Communities", icon: "heart" },
-        { label: "Location", value: "Across Sri Lanka", unit: "Island-wide Reach", icon: "map-pin" }
+        { label: "Planned Reach", value: "1,950–2,200", unit: "Approximately 1,950–2,200 people", icon: "users" },
+        { label: "Beneficiaries", value: "Children & Vulnerable Groups", unit: "Children, individuals with special needs, families, and communities", icon: "heart" },
+        { label: "Location", value: "Across Sri Lanka", unit: "Island-wide communities", icon: "map-pin" }
       ],
       disclaimer: "The activities and beneficiary numbers above are planned targets and may change depending on funding, permissions, and local arrangements."
     },
@@ -1078,7 +1077,7 @@ export const siteData = {
       {
         id: "cancer-hospital",
         number: "01",
-        title: "Children at the Cancer Hospital",
+        title: "1. Children at the Cancer Hospital",
         description: "A special Christmas program for children receiving treatment.",
         plannedReach: "300–400 children",
         icon: "heart"
@@ -1086,7 +1085,7 @@ export const siteData = {
       {
         id: "preethipura-home",
         number: "02",
-        title: "Preethipura Special Needs Home",
+        title: "2. Preethipura Special Needs Home",
         description: "A Christmas outreach program for residents with special needs.",
         plannedReach: "150–200 individuals",
         icon: "users"
@@ -1094,7 +1093,7 @@ export const siteData = {
       {
         id: "children-villages",
         number: "03",
-        title: "Children in Villages",
+        title: "3. Children in Villages",
         description: "Christmas programs bringing joy, encouragement, and practical support to children in rural communities.",
         plannedReach: "500–600 children",
         icon: "gift"
@@ -1102,43 +1101,44 @@ export const siteData = {
       {
         id: "ten-rural-villages",
         number: "04",
-        title: "Special Children's Programs in 10 Rural Villages",
+        title: "4. Special Children’s Programs in 10 Rural Villages",
         description: "Outreach programs designed to share Christmas joy and provide practical assistance to children in rural communities.",
-        plannedReach: "Approximately 1,000 children (target of 100 children per program)",
+        plannedReach: "Approximately 1,000 children, with a target of 100 children per program.",
         icon: "sparkles"
       }
     ],
 
     fundingGoal: {
       badge: "OUR FUNDRAISING GOAL",
-      title: "Fundraising Goal & Budget",
-      totalGoalUsd: "$15,600",
+      title: "Our Fundraising Goal",
+      totalGoalUsd: "USD 15,600",
       description: "Our fundraising target includes the estimated budget for the Christmas outreach activities and the associated financial processing and fund-transfer costs.",
+      howUsedHeading: "How the Funds Will Be Used",
       breakdown: [
         {
-          component: "Christmas Outreach Activities",
+          component: "USD 15,000 — Christmas Outreach Activities",
           detail: "Supporting planned Christmas programs, meals, gifts, care packages, and practical assistance for children and vulnerable communities.",
-          amount: "$15,000"
+          amount: "USD 15,000"
         },
         {
-          component: "Estimated Financial Processing and Transfer Costs",
+          component: "USD 600 — Estimated Financial Processing and Transfer Costs",
           detail: "Allowing for estimated costs associated with receiving, converting, and transferring campaign funds.",
-          amount: "$600"
+          amount: "USD 600"
         }
       ],
-      totalAmount: "$15,600",
+      totalAmount: "USD 15,600",
       note: "The financial processing and transfer allocation is an estimate. Actual charges may vary, and funds will be managed responsibly in line with the campaign’s stated purpose."
     },
 
     provisions: {
       badge: "THIS CAMPAIGN WILL HELP PROVIDE",
-      title: "Essential Support & Joy We Deliver",
+      title: "This Campaign Will Help Provide",
       items: [
         "Nutritious Meals",
         "Christmas Gifts and Care Packages",
         "Special Outreach Programs",
         "Joy, Encouragement, and Hope",
-        "The Message of God's Love"
+        "The Message of God’s Love"
       ]
     },
 
@@ -1180,8 +1180,9 @@ export const siteData = {
 
     commitment: {
       badge: "OUR COMMITMENT",
-      title: "Together, we can share love, bring hope, and make a meaningful difference this Christmas.",
+      title: "Our Commitment",
       description: "Love In Fellowship & Truth Foundation is committed to responsible stewardship, compassionate service, and transparent communication with supporters. We aim to provide updates on campaign activities and the use of funds as information becomes available.",
+      closingCallout: "Together, we can share love, bring hope, and make a meaningful difference this Christmas.",
       primaryBtn: "Donate Now",
       secondaryBtn: "Partner With Us",
       footerNote: "All activities and beneficiary figures are planned targets and are subject to available funding and implementation arrangements."
