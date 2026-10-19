@@ -52,99 +52,89 @@ export default function MontessoriProjectPage({
         <Navbar onDonateClick={onDonateClick} />
       </div>
 
-      {/* Hero Banner */}
-      <div className="relative bg-gradient-to-b from-[#07362a] via-[#094036] to-[#0b332c] text-white py-14 sm:py-20 px-4 sm:px-8 overflow-hidden border-b border-teal-900/60">
-        <ParticleBackground particleCount={35} />
+      {/* Hero Banner with Full-Width Background Image (matching Christmas Outreach style) */}
+      <div className="relative min-h-[520px] sm:min-h-[580px] lg:min-h-[620px] bg-[#07241e] text-white overflow-hidden border-b border-teal-900/60 flex items-center">
+        {/* Full-bleed Background Image with Right Alignment */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={montessoriProject.image}
+            alt="Little Light Montessori - Kandana, Sri Lanka"
+            className="w-full h-full object-cover object-[70%_center] sm:object-[78%_center] lg:object-right filter brightness-[0.92]"
+          />
+          {/* Multi-stop smooth directional gradient for perfect text contrast on left */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#06211b] via-[#06211b]/85 to-[#06211b]/60 sm:bg-gradient-to-r sm:from-[#051c17] sm:via-[#051c17]/95 sm:via-55% lg:via-50% sm:to-transparent" />
+          <div className="absolute inset-0 bg-black/20 pointer-events-none" />
+        </div>
 
-        <div className="max-w-6xl mx-auto relative z-10">
+        <ParticleBackground particleCount={25} />
+
+        {/* Content Container */}
+        <div className="max-w-6xl mx-auto px-4 sm:px-8 py-12 sm:py-16 relative z-10 w-full">
           {/* Back Navigation Link */}
           <ScrollReveal direction="down" delay={100}>
             <button
               type="button"
               onClick={onBackToHome}
-              className="inline-flex items-center gap-2 text-xs font-semibold text-teal-200 hover:text-white transition-colors mb-7 group cursor-pointer bg-white/10 hover:bg-white/15 px-3.5 py-1.5 rounded-full backdrop-blur-sm"
+              className="inline-flex items-center gap-2 text-xs font-semibold text-teal-200 hover:text-white transition-colors mb-6 group cursor-pointer bg-black/40 hover:bg-black/60 px-4 py-1.5 rounded-full backdrop-blur-md border border-white/10"
             >
               <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-1 transition-transform duration-200" />
               <span>Back to Homepage</span>
             </button>
           </ScrollReveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Narrative Column */}
-            <div className="lg:col-span-7 space-y-4">
-              <ScrollReveal direction="up" delay={150}>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md text-[11px] font-bold tracking-widest text-[#38bdf8] uppercase">
-                  <span className="w-2 h-2 rounded-full bg-[#38bdf8] animate-pulse" />
-                  <span>{montessoriProject.badge}</span>
-                </div>
-              </ScrollReveal>
+          {/* Left Narrative Column */}
+          <div className="max-w-2xl space-y-4">
+            <ScrollReveal direction="up" delay={150}>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-[#0284c7]/90 backdrop-blur-md text-[11px] font-extrabold tracking-wider text-white uppercase shadow-md border border-sky-400/20">
+                <span className="w-2 h-2 rounded-full bg-[#38bdf8] animate-pulse" />
+                <span>{montessoriProject.badge}</span>
+              </div>
+            </ScrollReveal>
 
-              <ScrollReveal direction="up" delay={200}>
-                <h1 className="text-3xl sm:text-5xl lg:text-[3.25rem] font-extrabold tracking-tight text-white leading-[1.15]">
-                  {montessoriProject.title}
-                </h1>
-                <p className="text-lg sm:text-xl font-semibold text-[#38bdf8] mt-2">
-                  {montessoriProject.tagline}
-                </p>
-                <div className="flex items-center gap-2 text-xs sm:text-sm text-teal-200/90 font-medium mt-1">
-                  <MapPin className="w-4 h-4 text-[#ea580c] shrink-0" />
-                  <span>{montessoriProject.subtitle}</span>
-                </div>
-              </ScrollReveal>
+            <ScrollReveal direction="up" delay={200}>
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-bold tracking-tight text-white leading-[1.1] drop-shadow-sm">
+                {montessoriProject.title}
+              </h1>
+              <p className="text-lg sm:text-xl font-semibold text-[#38bdf8] mt-2 drop-shadow-sm">
+                {montessoriProject.tagline}
+              </p>
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-teal-200/90 font-medium mt-1">
+                <MapPin className="w-4 h-4 text-[#ea580c] shrink-0" />
+                <span>{montessoriProject.subtitle}</span>
+              </div>
+            </ScrollReveal>
 
-              <ScrollReveal direction="up" delay={250}>
-                <p className="text-sm sm:text-base text-teal-50/90 leading-relaxed font-normal pt-2">
-                  {montessoriProject.lead1}
-                </p>
-                <p className="text-xs sm:text-sm text-teal-100/80 leading-relaxed font-normal mt-2">
-                  {montessoriProject.lead2}
-                </p>
-              </ScrollReveal>
+            <ScrollReveal direction="up" delay={250}>
+              <p className="text-xs sm:text-sm text-teal-50/90 leading-relaxed font-normal pt-1 max-w-xl">
+                {montessoriProject.lead1}
+              </p>
+              <p className="text-xs sm:text-sm text-teal-100/80 leading-relaxed font-normal mt-2 max-w-xl">
+                {montessoriProject.lead2}
+              </p>
+            </ScrollReveal>
 
-              {/* Action Buttons */}
-              <ScrollReveal direction="up" delay={300}>
-                <div className="pt-4 flex flex-wrap items-center gap-4">
-                  <RippleButton
-                    onClick={onDonateClick}
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#0284c7] hover:bg-[#0369a1] text-white font-bold text-xs sm:text-sm shadow-lg shadow-black/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
-                  >
-                    <Heart className="w-4 h-4 fill-white text-white" />
-                    <span>{montessoriProject.primaryCta}</span>
-                    <ArrowRight className="w-4 h-4 ml-0.5" />
-                  </RippleButton>
+            {/* Action Buttons */}
+            <ScrollReveal direction="up" delay={300}>
+              <div className="pt-4 flex flex-wrap items-center gap-3.5">
+                <RippleButton
+                  onClick={onDonateClick}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#0284c7] hover:bg-[#0369a1] text-white font-bold text-xs sm:text-sm shadow-xl shadow-sky-950/40 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
+                >
+                  <Heart className="w-4 h-4 fill-white text-white" />
+                  <span>{montessoriProject.primaryCta}</span>
+                  <ArrowRight className="w-4 h-4 ml-0.5" />
+                </RippleButton>
 
-                  <button
-                    type="button"
-                    onClick={onPartnerClick}
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full border border-teal-300/40 hover:border-teal-200 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
-                  >
-                    <Users className="w-4 h-4 text-teal-200" />
-                    <span>{montessoriProject.secondaryCta}</span>
-                  </button>
-                </div>
-              </ScrollReveal>
-            </div>
-
-            {/* Right Photo Column */}
-            <div className="lg:col-span-5">
-              <ScrollReveal direction="right" delay={200}>
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20 aspect-[4/3] group">
-                  <img
-                    src={montessoriProject.image}
-                    alt="Little Light Montessori - Kandana"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#07362a]/90 via-transparent to-transparent flex flex-col justify-end p-5 text-white">
-                    <span className="text-[11px] font-bold text-[#38bdf8] tracking-wider uppercase">
-                      Early Childhood Education
-                    </span>
-                    <p className="text-xs sm:text-sm font-medium mt-0.5 text-teal-100">
-                      Kandana, Gampaha District, Sri Lanka
-                    </p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            </div>
+                <button
+                  type="button"
+                  onClick={onPartnerClick}
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-white/30 hover:border-white/60 bg-black/30 hover:bg-black/50 text-white font-semibold text-xs sm:text-sm backdrop-blur-md hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer shadow-md"
+                >
+                  <Users className="w-4 h-4 text-teal-200" />
+                  <span>{montessoriProject.secondaryCta}</span>
+                </button>
+              </div>
+            </ScrollReveal>
           </div>
         </div>
       </div>
