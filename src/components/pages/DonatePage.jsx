@@ -4,14 +4,16 @@ import Navbar from '../common/Navbar';
 import Footer from '../common/Footer';
 import ScrollReveal from '../effects/ScrollReveal';
 import RippleButton from '../effects/RippleButton';
+import { siteData } from '../../data/content';
 
 export default function DonatePage({ onBackToHome }) {
+  const { donationPage } = siteData;
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     frequency: 'Monthly',
     amount: '50',
     customAmount: '',
-    program: 'Free Education Centres',
+    program: donationPage.programs[0] || 'Divisional Free Education Centres Plan',
     paymentMethod: 'Credit / Debit Card',
     fullName: '',
     email: '',
@@ -59,13 +61,13 @@ export default function DonatePage({ onBackToHome }) {
                 <CheckCircle2 className="w-10 h-10 stroke-[2.2]" />
               </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-900">
-                Thank You for Empowering Sri Lanka's Children!
+                Thank You for Partnering with Love In Fellowship & Truth Foundation!
               </h2>
               <p className="text-xs sm:text-sm text-gray-600 max-w-lg mx-auto leading-relaxed">
-                Your contribution of <strong className="text-gray-900">${getEffectiveAmount()} ({formData.frequency})</strong> for <strong>{formData.program}</strong> will directly fund education, nutrition, and child development in high-need communities across Sri Lanka.
+                Your support commitment of <strong className="text-gray-900">${getEffectiveAmount()} ({formData.frequency})</strong> for <strong>{formData.program}</strong> helps us work towards a brighter future for children and vulnerable communities in Sri Lanka.
               </p>
-              <div className="p-4 bg-teal-50 border border-teal-100 rounded-2xl text-xs text-teal-800 font-medium">
-                A formal confirmation receipt and tax statement will be emailed to <strong>{formData.email}</strong>.
+              <div className="p-4 bg-teal-50 border border-teal-100 rounded-2xl text-xs text-teal-900 font-medium leading-relaxed">
+                Our donor coordination team will contact you at <strong>{formData.email}</strong> with verified payment channel details and regular project progress updates.
               </div>
               <div className="pt-4">
                 <RippleButton
@@ -86,13 +88,13 @@ export default function DonatePage({ onBackToHome }) {
                 <div>
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-peach-100 text-[11px] font-semibold text-[#ea580c] mb-3">
                     <Heart className="w-3.5 h-3.5 fill-[#ea580c] animate-heartbeat" />
-                    <span>DEDICATED DONATION PAGE</span>
+                    <span>{donationPage.badge}</span>
                   </div>
-                  <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
-                    Partner with LIFT Foundation
+                  <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight">
+                    {donationPage.title}
                   </h1>
                   <p className="text-xs sm:text-sm text-gray-600 mt-2.5 leading-relaxed">
-                    Every donation directly supports our Phase 1 focus on Free Education Centres, Child Nutrition, and Early Childhood Care in Sri Lanka.
+                    {donationPage.description}
                   </p>
                 </div>
               </ScrollReveal>
@@ -102,22 +104,16 @@ export default function DonatePage({ onBackToHome }) {
                 <div className="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm space-y-4 hover:shadow-md transition-shadow">
                   <h3 className="text-xs font-bold uppercase tracking-wider text-gray-900 flex items-center gap-2">
                     <ShieldCheck className="w-4 h-4 text-[#0d7a64]" />
-                    <span>Our Accountability Guarantees</span>
+                    <span>{donationPage.accountabilityTitle}</span>
                   </h3>
 
-                  <ul className="space-y-3 text-xs text-gray-600">
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-[#0d7a64] flex-shrink-0 mt-0.5" />
-                      <span><strong>100% Direct Impact:</strong> Funds are audited and dedicated to education hubs and meals.</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-[#0d7a64] flex-shrink-0 mt-0.5" />
-                      <span><strong>Regular Partner Reports:</strong> Receive quarterly progress updates from the centres you support.</span>
-                    </li>
-                    <li className="flex items-start gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-[#0d7a64] flex-shrink-0 mt-0.5" />
-                      <span><strong>Secure Processing:</strong> Encrypted payment handling for international donors & partners.</span>
-                    </li>
+                  <ul className="space-y-3.5 text-xs text-gray-600">
+                    {donationPage.accountabilityPoints.map((pt) => (
+                      <li key={pt.title} className="flex items-start gap-2.5">
+                        <CheckCircle2 className="w-4 h-4 text-[#0d7a64] flex-shrink-0 mt-0.5" />
+                        <span><strong>{pt.title}:</strong> {pt.desc}</span>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </ScrollReveal>
@@ -127,10 +123,13 @@ export default function DonatePage({ onBackToHome }) {
                 <div className="p-4 rounded-2xl bg-teal-900 text-white text-xs space-y-1 shadow-md">
                   <div className="font-bold flex items-center gap-1.5 text-peach-200">
                     <Globe className="w-4 h-4" />
-                    <span>International & Institutional Donors (GFC Partner Hub)</span>
+                    <span>{donationPage.internationalDonorNotice.title}</span>
                   </div>
-                  <p className="text-teal-100/80 text-[11px]">
-                    For wire transfers, corporate sponsorships, or custom grant partnerships, contact <a href="mailto:info@liftfoundationsl.org" className="underline font-semibold text-white">info@liftfoundationsl.org</a>.
+                  <p className="text-teal-100/80 text-[11px] leading-relaxed">
+                    {donationPage.internationalDonorNotice.description.replace('info@liftfoundationsl.org', '')}
+                    <a href="mailto:info@liftfoundationsl.org" className="underline font-semibold text-white ml-1">
+                      info@liftfoundationsl.org
+                    </a>.
                   </p>
                 </div>
               </ScrollReveal>
@@ -154,7 +153,7 @@ export default function DonatePage({ onBackToHome }) {
                             key={freq}
                             type="button"
                             onClick={() => setFormData({ ...formData, frequency: freq })}
-                            className={`py-3 rounded-xl text-xs font-bold transition-all ${
+                            className={`py-3 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                               formData.frequency === freq
                                 ? 'bg-white text-gray-900 shadow-md border border-gray-200 scale-[1.01]'
                                 : 'text-gray-500 hover:text-gray-900'
@@ -172,12 +171,12 @@ export default function DonatePage({ onBackToHome }) {
                         2. Select Amount (USD $)
                       </label>
                       <div className="grid grid-cols-4 gap-2.5 mb-3">
-                        {['25', '50', '100', '250'].map((amt) => (
+                        {donationPage.amounts.map((amt) => (
                           <button
                             key={amt}
                             type="button"
                             onClick={() => setFormData({ ...formData, amount: amt, customAmount: '' })}
-                            className={`py-3 text-xs font-bold rounded-xl border transition-all duration-200 hover:scale-105 active:scale-95 ${
+                            className={`py-3 text-xs font-bold rounded-xl border transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer ${
                               formData.amount === amt && !formData.customAmount
                                 ? 'bg-[#f28e63] text-white border-[#f28e63] shadow-md shadow-[#f28e63]/30'
                                 : 'border-gray-200 text-gray-700 hover:border-[#f28e63] bg-gray-50/50'
@@ -206,14 +205,13 @@ export default function DonatePage({ onBackToHome }) {
                       <select
                         value={formData.program}
                         onChange={(e) => setFormData({ ...formData, program: e.target.value })}
-                        className="w-full px-4 py-3 text-xs font-semibold rounded-xl border border-gray-200 focus:border-teal-700 outline-none bg-white text-gray-800 transition-all"
+                        className="w-full px-4 py-3 text-xs font-semibold rounded-xl border border-gray-200 focus:border-teal-700 outline-none bg-white text-gray-800 transition-all cursor-pointer"
                       >
-                        <option>Christmas Outreach 2026</option>
-                        <option>Free Education Centres (331 Target)</option>
-                        <option>Nourish with Love (Child Meal Drives)</option>
-                        <option>Little Light Montessori (Early Childhood)</option>
-                        <option>Children & Youth Development</option>
-                        <option>General Phase 1 Fund</option>
+                        {donationPage.programs.map((prog) => (
+                          <option key={prog} value={prog}>
+                            {prog}
+                          </option>
+                        ))}
                       </select>
                     </div>
 
@@ -231,7 +229,7 @@ export default function DonatePage({ onBackToHome }) {
                             key={method.id}
                             type="button"
                             onClick={() => setFormData({ ...formData, paymentMethod: method.id })}
-                            className={`p-3 rounded-xl border text-left flex items-center gap-2.5 transition-all duration-200 hover:scale-[1.01] ${
+                            className={`p-3 rounded-xl border text-left flex items-center gap-2.5 transition-all duration-200 hover:scale-[1.01] cursor-pointer ${
                               formData.paymentMethod === method.id
                                 ? 'border-teal-700 bg-teal-50/60 text-teal-950 font-bold shadow-sm'
                                 : 'border-gray-200 text-gray-600 hover:border-gray-300'
@@ -299,7 +297,7 @@ export default function DonatePage({ onBackToHome }) {
                     <div className="pt-4">
                       <RippleButton
                         type="submit"
-                        className="w-full py-4 rounded-2xl bg-[#f28e63] hover:bg-[#ea7849] text-white font-bold text-sm shadow-xl shadow-[#f28e63]/25 transition-all flex items-center justify-center gap-2 group"
+                        className="w-full py-4 rounded-2xl bg-[#f28e63] hover:bg-[#ea7849] text-white font-bold text-sm shadow-xl shadow-[#f28e63]/25 transition-all flex items-center justify-center gap-2 group cursor-pointer"
                       >
                         <Lock className="w-4 h-4 group-hover:scale-110 transition-transform duration-200" />
                         <span>Complete Donation of ${getEffectiveAmount()} ({formData.frequency})</span>
@@ -321,7 +319,7 @@ export default function DonatePage({ onBackToHome }) {
       </main>
 
       {/* Footer */}
-      <Footer />
+      <Footer onNavigateHome={onBackToHome} />
     </div>
   );
 }

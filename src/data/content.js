@@ -1,9 +1,9 @@
 export const siteData = {
   brand: {
     name: "LIFT Foundation",
-    subtitle: "LOVE IN FELLOWSHIP & TRUTH",
+    subtitle: "Love In Fellowship & Truth",
     tagline: "Sharing God's Love. Serving People. Transforming Lives.",
-    copyright: "© 2025 LIFT Foundation (liftfoundationsl.org). All rights reserved."
+    copyright: "© 2026 LIFT Foundation (liftfoundationsl.org). All rights reserved."
   },
 
   navLinks: [
@@ -311,9 +311,43 @@ export const siteData = {
 
   newsletter: {
     title: "Stay Connected With LIFT",
-    subtitle: "Subscribe to receive quarterly progress updates on our education centres and child nutrition programs.",
-    placeholder: "Enter your work or personal email address",
+    subtitle: "Receive updates about our projects, fundraising campaigns, and the impact of your support.",
+    inputLabel: "Email address",
+    placeholder: "Enter your email address",
     cta: "Subscribe"
+  },
+
+  donationPage: {
+    badge: "DEDICATED DONATION PAGE",
+    title: "Partner with Love In Fellowship & Truth Foundation",
+    description: "Every contribution helps us work towards a brighter future for children and vulnerable communities across Sri Lanka through education, nutrition, and practical care.",
+    accountabilityTitle: "Our Accountability Guarantees",
+    accountabilityPoints: [
+      {
+        title: "Responsible Stewardship",
+        desc: "We are committed to using contributions responsibly for their intended purposes."
+      },
+      {
+        title: "Project Updates",
+        desc: "Donors will receive updates on project progress as information becomes available."
+      },
+      {
+        title: "Secure Giving",
+        desc: "Payment options will be provided through verified payment channels."
+      }
+    ],
+    internationalDonorNotice: {
+      title: "International & Institutional Donors",
+      description: "For wire transfers, corporate sponsorships, or custom grant partnerships, contact info@liftfoundationsl.org."
+    },
+    amounts: ["25", "50", "100", "250"],
+    programs: [
+      "Divisional Free Education Centres Plan",
+      "Nourish with Love Meal Drives",
+      "Little Light Montessori",
+      "Christmas Outreach 2026",
+      "General Fund (Unrestricted)"
+    ]
   },
 
   educationProgram: {
@@ -1191,12 +1225,12 @@ export const siteData = {
 
   footer: {
     brandName: "LIFT Foundation",
-    brandSubtitle: "LOVE IN FELLOWSHIP & TRUTH",
+    brandSubtitle: "Love In Fellowship & Truth",
     tagline: "Sharing God's Love. Serving People. Transforming Lives.",
     columns: [
       {
         title: "Quick Links",
-        links: ["Home", "About Us", "Our Programs", "Our Projects", "Vision 2030", "How You Can Help", "Contact"]
+        links: ["Home", "About Us", "Our Programs", "Our Projects", "Our Vision", "How You Can Help", "Contact"]
       },
       {
         title: "Our Programs",
@@ -1204,17 +1238,22 @@ export const siteData = {
       },
       {
         title: "Key Projects",
-        links: ["Little Light Montessori", "Free Education Centres", "Nourish Meal Drives"]
+        links: [
+          "Little Light Montessori",
+          "Divisional Free Education Centres Plan",
+          "Nourish with Love Meal Drives",
+          "Christmas Outreach 2026"
+        ]
       }
     ],
     scriptureQuote: "Let your light shine before others, that they may see your good deeds and glorify your Father in heaven.",
     scriptureRef: "Matthew 5:16",
     socials: [
-      { name: "Facebook", icon: "facebook", href: "#" },
-      { name: "Instagram", icon: "instagram", href: "#" },
-      { name: "YouTube", icon: "youtube", href: "#" },
-      { name: "LinkedIn", icon: "linkedin", href: "#" }
+      { name: "Facebook", icon: "facebook", href: "https://facebook.com" },
+      { name: "Instagram", icon: "instagram", href: "https://instagram.com" },
+      { name: "YouTube", icon: "youtube", href: "https://youtube.com" },
+      { name: "LinkedIn", icon: "linkedin", href: "https://linkedin.com" }
     ],
-    copyright: "© 2025 LIFT Foundation (liftfoundationsl.org). All rights reserved."
+    copyright: "© 2026 LIFT Foundation (liftfoundationsl.org). All rights reserved."
   }
 };

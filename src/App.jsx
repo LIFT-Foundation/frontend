@@ -492,7 +492,17 @@ export default function App() {
       </main>
 
       {/* Footer */}
-      <Footer />
+      <Footer
+        onNavigateHome={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        onNavigateAbout={navigateToAbout}
+        onNavigateEducation={navigateToEducation}
+        onNavigateYouth={navigateToYouth}
+        onNavigateNourish={navigateToNourish}
+        onNavigateMontessori={navigateToMontessori}
+        onNavigateEducationProject={navigateToEducation}
+        onNavigateNourishProject={navigateToNourishProject}
+        onNavigateChristmasProject={navigateToChristmasProject}
+      />
 
       {/* Volunteer / Partner Modal */}
       {renderVolunteerModal()}

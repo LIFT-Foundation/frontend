@@ -42,33 +42,41 @@ export default function Newsletter() {
           {/* Right Side: Horizontal Form */}
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row items-center gap-2.5 w-full lg:w-auto"
+            className="w-full lg:w-auto flex flex-col gap-1.5"
           >
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder={newsletter.placeholder}
-              className="w-full sm:w-80 px-5 py-3 text-xs sm:text-sm rounded-full bg-white border border-transparent focus:border-peach-400 focus:ring-2 focus:ring-peach-200 outline-none text-gray-800 placeholder:text-gray-400 shadow-sm transition-all"
-            />
+            {newsletter.inputLabel && (
+              <label htmlFor="newsletter-email" className="text-xs font-semibold text-gray-700 sm:ml-2">
+                {newsletter.inputLabel}
+              </label>
+            )}
+            <div className="flex flex-col sm:flex-row items-center gap-2.5 w-full">
+              <input
+                id="newsletter-email"
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder={newsletter.placeholder}
+                className="w-full sm:w-80 px-5 py-3 text-xs sm:text-sm rounded-full bg-white border border-transparent focus:border-peach-400 focus:ring-2 focus:ring-peach-200 outline-none text-gray-800 placeholder:text-gray-400 shadow-sm transition-all"
+              />
 
-            <RippleButton
-              type="submit"
-              className="w-full sm:w-auto px-6 py-3 rounded-full bg-teal-950 hover:bg-teal-900 text-white font-semibold text-xs sm:text-sm tracking-wide shadow-sm hover:shadow-lg transition-all duration-200 flex-shrink-0 flex items-center justify-center gap-1.5 group"
-            >
-              {subscribed ? (
-                <>
-                  <Check className="w-4 h-4 text-peach-300" />
-                  <span>Subscribed!</span>
-                </>
-              ) : (
-                <>
-                  <span>{newsletter.cta}</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-                </>
-              )}
-            </RippleButton>
+              <RippleButton
+                type="submit"
+                className="w-full sm:w-auto px-6 py-3 rounded-full bg-teal-950 hover:bg-teal-900 text-white font-semibold text-xs sm:text-sm tracking-wide shadow-sm hover:shadow-lg transition-all duration-200 flex-shrink-0 flex items-center justify-center gap-1.5 group"
+              >
+                {subscribed ? (
+                  <>
+                    <Check className="w-4 h-4 text-peach-300" />
+                    <span>Subscribed!</span>
+                  </>
+                ) : (
+                  <>
+                    <span>{newsletter.cta}</span>
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                  </>
+                )}
+              </RippleButton>
+            </div>
           </form>
 
         </div>

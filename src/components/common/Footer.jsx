@@ -2,8 +2,135 @@ import React from 'react';
 import { HeartHandshake, Leaf } from 'lucide-react';
 import { siteData } from '../../data/content';
 
-export default function Footer() {
+export default function Footer({
+  onNavigateHome,
+  onNavigateAbout,
+  onNavigatePrograms,
+  onNavigateProjects,
+  onNavigateVision,
+  onNavigateHelp,
+  onNavigateContact,
+  onNavigateEducation,
+  onNavigateYouth,
+  onNavigateNourish,
+  onNavigateMontessori,
+  onNavigateEducationProject,
+  onNavigateNourishProject,
+  onNavigateChristmasProject,
+}) {
   const { footer } = siteData;
+
+  const handleLinkClick = (e, linkName) => {
+    e.preventDefault();
+    switch (linkName) {
+      // Quick Links
+      case 'Home':
+        if (onNavigateHome) onNavigateHome();
+        else window.scrollTo({ top: 0, behavior: 'smooth' });
+        break;
+      case 'About Us':
+        if (onNavigateAbout) onNavigateAbout();
+        else {
+          const el = document.getElementById('about');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+        break;
+      case 'Our Programs':
+        if (onNavigatePrograms) onNavigatePrograms();
+        else {
+          const el = document.getElementById('programs');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+        break;
+      case 'Our Projects':
+        if (onNavigateProjects) onNavigateProjects();
+        else {
+          const el = document.getElementById('projects');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+        break;
+      case 'Our Vision':
+      case 'Vision 2030':
+        if (onNavigateVision) onNavigateVision();
+        else {
+          const el = document.getElementById('vision') || document.getElementById('impact');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+        break;
+      case 'How You Can Help':
+        if (onNavigateHelp) onNavigateHelp();
+        else {
+          const el = document.getElementById('how-to-help') || document.getElementById('volunteer');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+        break;
+      case 'Contact':
+        if (onNavigateContact) onNavigateContact();
+        else {
+          const el = document.getElementById('contact');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+        break;
+
+      // Our Programs
+      case 'Education':
+        if (onNavigateEducation) onNavigateEducation();
+        else {
+          const el = document.getElementById('programs');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+        break;
+      case 'Children & Youth':
+        if (onNavigateYouth) onNavigateYouth();
+        else {
+          const el = document.getElementById('programs');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+        break;
+      case 'Nourish with Love':
+        if (onNavigateNourish) onNavigateNourish();
+        else {
+          const el = document.getElementById('programs');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+        break;
+
+      // Key Projects
+      case 'Little Light Montessori':
+        if (onNavigateMontessori) onNavigateMontessori();
+        else {
+          const el = document.getElementById('projects');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+        break;
+      case 'Divisional Free Education Centres Plan':
+      case 'Free Education Centres':
+        if (onNavigateEducationProject) onNavigateEducationProject();
+        else if (onNavigateEducation) onNavigateEducation();
+        else {
+          const el = document.getElementById('projects');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+        break;
+      case 'Nourish with Love Meal Drives':
+      case 'Nourish Meal Drives':
+        if (onNavigateNourishProject) onNavigateNourishProject();
+        else {
+          const el = document.getElementById('projects');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+        break;
+      case 'Christmas Outreach 2026':
+        if (onNavigateChristmasProject) onNavigateChristmasProject();
+        else {
+          const el = document.getElementById('projects');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+        break;
+      default:
+        break;
+    }
+  };
 
   const renderSocialIcon = (name) => {
     switch (name) {
@@ -51,7 +178,7 @@ export default function Footer() {
                 <span className="text-lg font-bold tracking-tight text-white block leading-tight">
                   {footer.brandName}
                 </span>
-                <span className="text-[8px] tracking-widest uppercase text-teal-300 font-semibold block">
+                <span className="text-[9px] tracking-wider uppercase text-teal-300 font-semibold block">
                   {footer.brandSubtitle}
                 </span>
               </div>
@@ -67,6 +194,8 @@ export default function Footer() {
                 <a
                   key={s.name}
                   href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={s.name}
                   className="w-7 h-7 rounded-full bg-teal-800/60 border border-teal-700/50 flex items-center justify-center text-teal-200 hover:text-white hover:bg-peach-500 hover:border-peach-500 transition-all duration-200"
                 >
@@ -84,9 +213,13 @@ export default function Footer() {
             <ul className="space-y-1.5 text-[11px] text-teal-200/70">
               {footer.columns[0].links.map((item) => (
                 <li key={item}>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <button
+                    type="button"
+                    onClick={(e) => handleLinkClick(e, item)}
+                    className="hover:text-white transition-colors text-left cursor-pointer"
+                  >
                     {item}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -100,15 +233,19 @@ export default function Footer() {
             <ul className="space-y-1.5 text-[11px] text-teal-200/70">
               {footer.columns[1].links.map((item) => (
                 <li key={item}>
-                  <a href="#programs" className="hover:text-white transition-colors">
+                  <button
+                    type="button"
+                    onClick={(e) => handleLinkClick(e, item)}
+                    className="hover:text-white transition-colors text-left cursor-pointer"
+                  >
                     {item}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 3: Transparency */}
+          {/* Column 3: Key Projects */}
           <div className="lg:col-span-2">
             <h4 className="text-[11px] font-bold uppercase tracking-wider text-teal-100 mb-3">
               {footer.columns[2].title}
@@ -116,9 +253,13 @@ export default function Footer() {
             <ul className="space-y-1.5 text-[11px] text-teal-200/70">
               {footer.columns[2].links.map((item) => (
                 <li key={item}>
-                  <a href="#" className="hover:text-white transition-colors">
+                  <button
+                    type="button"
+                    onClick={(e) => handleLinkClick(e, item)}
+                    className="hover:text-white transition-colors text-left cursor-pointer"
+                  >
                     {item}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -140,8 +281,12 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 text-center text-[11px] text-teal-300/50">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-teal-300/60 border-t border-teal-800/30 mt-2">
           <p>{footer.copyright}</p>
+          <div className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-teal-400 inline-block animate-pulse"></span>
+            <span className="text-[10px] text-teal-200/80 tracking-wide">liftfoundationsl.org</span>
+          </div>
         </div>
       </div>
     </footer>
